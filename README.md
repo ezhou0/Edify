@@ -1,0 +1,2 @@
+# Edify
+Spotify Clone
