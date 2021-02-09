@@ -1,0 +1,21 @@
+Started GET "/" for ::1 at 2021-02-08 22:09:59 -0500
+
+ActiveRecord::NoDatabaseError - FATAL:  database "edify_development" does not exist:
+
+Started POST "/__better_errors/f27dfd62e40379ae/variables" for ::1 at 2021-02-08 22:10:00 -0500
+Started GET "/" for ::1 at 2021-02-08 22:10:02 -0500
+
+ActiveRecord::NoDatabaseError - FATAL:  database "edify_development" does not exist:
+
+Started POST "/__better_errors/96339413e4adb25f/variables" for ::1 at 2021-02-08 22:10:03 -0500
+  [1m[35m (318.0ms)[0m  [1m[35mCREATE DATABASE "edify_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (179.8ms)[0m  [1m[35mCREATE DATABASE "edify_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-02-08 22:10:32 -0500
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 1973ms (Views: 1962.0ms | ActiveRecord: 0.0ms)
+
+
