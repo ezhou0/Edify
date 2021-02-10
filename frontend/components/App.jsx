@@ -1,5 +1,5 @@
 import React from "react";
-import HomeContainer from "./home/home";
+import HomeContainer from "./home/home_container";
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import { AuthRoute } from '../util/route_util';
