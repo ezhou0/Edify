@@ -1,14 +1,13 @@
 
-.home-container{
-   
-}
-
 .navbar{
     background-color: black;
     color:rgb(240, 239, 239);
-    display: block;
+    display: flex;
     height: 50px;
+    justify-content: space-between;
+    align-content: space-between;
 }
+
 
 .nav-link-button{
     margin-left: 10px;
@@ -18,16 +17,31 @@
 .nav-link-button:hover{
     color: #2db973;
 }
-.login-signup{
 
+.home-logo-div{
+display: flex;
+vertical-align: middle;
+margin-right: 300px;
+padding-left: 0;
 }
-.logo{
+
+.home-logo{
+    padding-top: 5px;
     padding-left: 20px;
+    display: flex;
+    width: 15%;
+    height: 75%;
+   
+    
 }
+
+
+
 .nav-links{
-  float: right;
-  display: flex;
+  padding-top: 20px;
+  display: inline-flex;
 }
+
 
 
 .splash-content{

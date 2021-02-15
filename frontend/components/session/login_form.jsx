@@ -41,9 +41,9 @@ class LoginForm extends React.Component {
              
              
              <div className="login-form-container">
-                 <header className = 'login-header'>
-                         <h1>Logo Goes Here</h1>
-                 </header>
+                     <header>
+                        {this.props.homeLink}    
+                     </header>
                  <div className = 'login-welcome'> To contine, log in to Edify.</div>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                 {this.renderErrors()}

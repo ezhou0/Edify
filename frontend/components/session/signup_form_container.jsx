@@ -9,6 +9,9 @@ const mapStateToProps = ({ errors }) => {
         errors: errors.session,
         formType: 'signup',
         navLink: <Link to="/login">Log in.</Link>,
+        homeLink: <Link to='/'> <div className='logo_div'>
+            <img className="logo" src={window.edifyURL} alt="Edify Logo" /> <div className='logo-text'>dify</div>
+        </div></Link>
     };
 };
 

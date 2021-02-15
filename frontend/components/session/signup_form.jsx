@@ -72,9 +72,7 @@ class SignupForm extends React.Component {
         return (
         <div className="signup-form-div">
             <header>
-                <div className ='logo_div'>
-                       
-                </div>
+               {this.props.homeLink};
             </header>
             <form onSubmit={this.handleSubmit} className="signup-form-container">
                 <h2 className='signup-msg' id='signup-top-msg'>Sign up for free to start listening.</h2>
