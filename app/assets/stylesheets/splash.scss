@@ -1,0 +1,81 @@
+
+.home-container{
+   
+}
+
+.navbar{
+    background-color: black;
+    color:rgb(240, 239, 239);
+    display: block;
+    height: 50px;
+}
+
+.nav-link-button{
+    margin-left: 10px;
+    margin-right: 20px;
+   line-height: 10px;
+}
+.nav-link-button:hover{
+    color: #2db973;
+}
+.login-signup{
+
+}
+.logo{
+    padding-left: 20px;
+}
+.nav-links{
+  float: right;
+  display: flex;
+}
+
+
+.splash-content{
+    background-image: linear-gradient(to bottom right,blue,purple);
+    width: 100%;
+    height: 100vh;
+   font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+    text-align: center;
+    padding-top: 20%;
+     color: rgb(240, 239, 239);
+}
+.splash-welcome{
+    font-family:inherit;
+    text-align: inherit;
+    font-weight: 900;
+    font-size: 48px;
+    letter-spacing: -0.04em !important;
+    margin-bottom: 24px;
+}
+   
+
+
+.splash-sub{
+ font-family: inherit;
+ text-align: inherit;
+ 
+}
+
+.splash-button{
+     margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 25px;
+    width: 227px;
+    min-height: 42px;
+    font-family: Verdana;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s; 
+    background-color: #dee2e0;
+    color: #2D46B9;
+    margin-left: 350px;
+}
+
+.splash-button:hover{
+    background-color: #ffffff;
+    cursor: pointer;
+}

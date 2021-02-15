@@ -69,71 +69,82 @@ class SignupForm extends React.Component {
 
 
     render() {
-        return (<div className="login-form-container">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
-                <h1>Sign up for free to start listening.</h1>
+        return (
+        <div className="signup-form-div">
+            <header>
+                <div className ='logo_div'>
+                       
+                </div>
+            </header>
+            <form onSubmit={this.handleSubmit} className="signup-form-container">
+                <h2 className='signup-msg' id='signup-top-msg'>Sign up for free to start listening.</h2>
                 {this.renderErrors()}
-                <div className="login-form">
-                    <label>What's your email?
-              <input type="text"
+                <h4 className='signup-instruction-header' id='sign-up header'>Sign up with your email address</h4>
+                <div >
+                        <label className='sign-up-form-label'>What's your email? </label>
+                        <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            className="login-input"
+                            className="signup-input"
                             placeholder='Enter your email.'
                         />
-                    </label>
+                   
                     <br/>
-                    <label>Confirm your email
+                        <label className='sign-up-form-label'>Confirm your email </label>
                             <input type="text"
                             value ={this.state.email2}
-                            className="login-input"
+                            className="signup-input"
                             placeholder='Re-enter your email.'
                             onChange={this.update('email2')}
                             
                         />
-                    </label>
-                    <br/>
-                    {this.state.confirmationError}
+        
                     <br />
-                    <label>Password:
+                    <label className='sign-up-form-label'>Password: </label>
               <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
-                            className="login-input"
+                            className="signup-input"
                             placeholder='Create a password.'
                         />
-                    </label>
                     <br/>
-                    <label> What should we call you?
+                    <label className='sign-up-form-label'> What should we call you? </label>
               <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
-                            className="login-input"
+                            className="signup-input"
                             placeholder = 'Enter a profile name.'
                         />
-                    </label>
-                    <br />
-
-                    <h3>What's your date of birth?</h3>
-                    <label>Month</label>
-                    <select id='month' name='Month' onChange={this.update('month')}> 
-                        <option value="DEFAULT" disabled> Month </option>
-                        <option value="01">January</option>
-                        <option value="01">February</option>
-                        <option value="01">March</option>
-                        <option value="01">April</option>
-                        <option value="01">May</option>
-                        <option value="01">June</option>
-                        <option value="01">July</option>
-                        <option value="01">August</option>
-                        <option value="01">September</option>
-                        <option value="01">October</option>
-                        <option value="01">November</option>
-                        <option value="01">December</option>
+                  
+                        <div className='profile-content'>This appears on your profile</div> 
+                    <br/>
+                    
+                    <label className='sign-up-form-label'> What's your date of birth?</label>
+                    <div className = 'date-entry-div'>
+                    <div className = 'month-div'>
+                    <label className='birthday-label'>Month</label>
+                    <select id='month' className = 'select-month' name='Month' onChange={this.update('month')}> 
+                            <option selected disabled value className = 'default-option'> Month </option>
+                            <option value="01">January</option>
+                            <option value="01">February</option>
+                            <option value="01">March</option>
+                            <option value="01">April</option>
+                            <option value="01">May</option>
+                            <option value="01">June</option>
+                            <option value="01">July</option>
+                            <option value="01">August</option>
+                            <option value="01">September</option>
+                            <option value="01">October</option>
+                            <option value="01">November</option>
+                            <option value="01">December</option>
                     </select>
-                    <label>Day</label>
+                    </div>
+
+                    <div className = 'day-div'>
+                    <label className='birthday-label'>Day</label>
                     <input type = "text" 
                             id="day" 
+                            className='month-input'
                             inputMode="numeric" 
                             maxLength="2" 
                             pattern="((0?[1-9])|([12][0-9])|(3[01]))" 
@@ -141,38 +152,35 @@ class SignupForm extends React.Component {
                             onChange={this.update('day')}>
                                 
                     </input>
-                    <label>Year</label>
-                    <input type="text"
-                        id="year"
-                        inputMode="numeric"
-                        maxLength="4"
-                        pattern="((19[0-9]{2})|(200[0-9]))"
-                        placeholder='YYYY'
-                        onChange={this.update('year')}>
-                    </input>
-
-                    <br/>
-                    <div></div>
-                    <label>What's your gender?</label>
-                    <input type="radio" value='Male' name='gender' onChange={this.update('gender')}/>Male 
-                   <input type="radio" value='Female' name='gender' onChange={this.update('gender')}/>Female 
-                   <input type="radio" value='Non-binary' name='gender' onChange={this.update('gender')}/>Non-binary
-
-                    <br/>
-
-                    <input type='checkbox' /> 
-                    <span>Share my registration data with Edify's content providers for marketing purposes</span>
-                    <br/>
-                    <input type = 'checkbox'/> <span>I'm not a robot</span>
-
-                    <div className='ToS'>
-                    <p>By clicking on Signup, you agree to Edify's Terms and Conditions of Use.</p>
-                    <p>To learn more about how Edify collects, uses, shares and protects your personal data please read Edify's Privacy Policy.</p>
                     </div>
-                    <input className="session-submit" type="submit" value={this.props.formType} />
+                    <div className = 'year-div'>
+                    <label className='birthday-label'>Year</label>
+                    <input type="text"
+                            id="year"
+                            className= 'year-input'
+                            inputMode="numeric"
+                            maxLength="4"
+                            pattern="((19[0-9]{2})|(200[0-9]))"
+                            placeholder='YYYY'
+                            onChange={this.update('year')}>
+                    </input>
+                    </div>
+                    </div>
+                    <br/>
+                    
+                    <label className='sign-up-form-label'>What's your gender?</label>
+                    <input type="radio" value='Male' className='gender' onChange={this.update('gender')}/>Male 
+                    <input type="radio" value='Female' className='gender' onChange={this.update('gender')}/>Female 
+                    <input type="radio" value='Non-binary' className='gender' onChange={this.update('gender')}/>Non-binary
+
+                    <br/>
+                    <br/>
+                    <br/>
+                    
+                    <input id='session-button'className="session-submit" type="submit" value='SIGN UP' />
                     <br/>
 
-                    <p>Have an account? {this.props.navLink} </p>
+                    <p className = 'login-link'>Have an account? {this.props.navLink} </p>
                 </div>
             </form>
         </div>);

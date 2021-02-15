@@ -1,0 +1,101 @@
+.login-form-container{
+    text-align: center;
+}
+
+.login-header{
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+  border-bottom: 1px solid #D9DADC;
+}
+.login-welcome{
+   text-align: center;
+   margin-left: auto;
+   margin-right: auto;
+    border-bottom: 1px solid #D9DADC;
+    padding-bottom: 20px;
+    width: 400px;
+     font-size: 16px;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    font-weight: 900;
+    font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+}
+
+.login-form-box{
+    text-align: center;
+    display:block;
+    margin-right: auto; 
+    margin-left: auto;
+    width: 400px;
+    height: 425px;
+}
+.login-label{
+    font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    display:flex;
+    padding-bottom: 10px;
+}
+.login-input{
+  display: block;
+     border: 1px solid #D9DADC;
+     width: 100%;
+     font-size: 14px;  
+    font-weight: 400;
+    line-height: 30px;
+     height: 40px;
+}
+
+.session-submit{
+    display: block;
+     border: 1px solid #D9DADC;
+     width: 100%;
+     font-size: 14px;
+     border-radius: 4x;
+    font-weight: 400;
+    line-height: 30px;
+     height: 40px;
+     text-align: center;
+     letter-spacing: 2px;
+}
+
+.sign-up-msg{
+font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+font-size: 18px;
+font-weight: 900;
+margin-bottom: 20px;
+margin-top: 10px;
+border-top:1px solid #D9DADC;
+padding-top: 40px;
+
+}
+
+.sign-up-button{
+    margin-bottom:30px;
+
+    display: block;
+     border:2px solid #616467;
+     border-radius: 25px;
+     width: 100%;
+     height: 50px;
+
+     font-size: 14px;
+    font-weight: 400;
+     
+     text-align: center;
+
+     line-height: 50px;
+     font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+     font-weight: 700;
+     letter-spacing: 2px;
+     
+    color: #616467;
+
+}
+
+.sign-up-button:hover{
+    color: white;
+    background: #616467;
+    box-shadow: inset 0 0 0 2px #616467;
+}

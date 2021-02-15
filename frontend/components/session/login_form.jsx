@@ -37,33 +37,42 @@ class LoginForm extends React.Component {
    
     render() {
         
-             return (<div className="login-form-container">
-            <form onSubmit={this.handleSubmit} className="login-form-box">
-                Welcome to Edify!
-          <br />
-          Please {this.props.formType} or {this.props.navLink}
+             return (
+             
+             
+             <div className="login-form-container">
+                 <header className = 'login-header'>
+                         <h1>Logo Goes Here</h1>
+                 </header>
+                 <div className = 'login-welcome'> To contine, log in to Edify.</div>
+                <form onSubmit={this.handleSubmit} className="login-form-box">
                 {this.renderErrors()}
                 <div className="login-form">
                     <br />
-                    <label>Username:
-              <input type="text"
+                    <label className = 'login-label'>Username:</label>
+                             <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
                             className="login-input"
+                            placeholder= 'Username'
                         />
-                    </label>
                     <br />
-                    <label>Password:
-              <input type="password"
+                    <label className = 'login-label'>Password:</label>
+                            <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             className="login-input"
+                            placeholder='Password'
                         />
-                    </label>
                     <br />
-                    <input className="session-submit" type="submit" value={this.props.formType} />
+                    <input className="session-submit" type="submit" value='LOG IN' />
+                    <div className='sign-up-msg'>Don't have an account?</div>
+                     <div className='sign-up-button'>{this.props.navLink}</div>
                 </div>
-            </form>
+                </form>
+            
+                   
+            
         </div>);
 
     }

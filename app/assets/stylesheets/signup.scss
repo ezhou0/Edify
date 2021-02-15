@@ -1,0 +1,168 @@
+
+
+
+.signup-form-div{
+     font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+     
+ }
+
+ .signup-msg {
+     text-align: center;
+     font-size: 28px;
+     letter-spacing: -0.04em;
+     display:block;
+     margin: auto;
+    padding-bottom: 15px;
+    font-weight: 700;
+    font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+ }
+ .signup-instruction-header {
+     border-top: 1px solid lightgray;
+     padding-top: 15px;
+     padding-bottom: 20px;
+     text-align: center;
+     margin: auto;
+     font-size: 18px;
+     font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+ }
+
+.signup-form-container {
+    text-align: center;
+    display:block;
+    margin-right: auto; 
+    margin-left: auto;
+    width: 400px;
+    height: 425px;
+ }
+
+ .sign-up-form-label{
+    font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    display:flex;
+    padding-bottom: 10px;
+ }
+
+ .profile-content{
+     font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+     font-size: 14px;
+    font-weight: 450;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin-top: 8px;
+    text-align: left;
+    padding-bottom: 10px;
+ }
+
+ .date-entry-div{
+     display: flex;
+   
+ }
+
+ .birthday-label{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    margin-right: 155px;
+    font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    padding-bottom: 10px;
+    padding-top: 0px;
+    
+ }
+
+ select{
+     border: 1px solid #D9DADC;
+     width: 150px;
+     font-size: 14px;
+     
+    font-size: 14px;
+    line-height: 30px;
+     height: 40px;
+    color: gray;
+     padding-left: 10px;
+     border-radius: 5px;
+     margin-right: 45px;
+     
+ }
+
+ .month-input{
+      border: 1px solid #D9DADC;
+     width: 50%;
+     font-size: 14px;
+      line-height: 30px;
+     height: 40px;
+     margin-right: 150px;
+ }
+
+  .year-input{
+      border: 1px solid #D9DADC;
+     width: 50%;
+     font-size: 14px;
+      line-height: 30px;
+     height: 40px;
+     margin-right: 150px;
+ }
+
+ 
+
+
+ .gender{
+     font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  margin-right: 10px;
+  margin-left: 0px;
+  margin-bottom: 10px;
+   
+ }
+
+ .signup-input{
+     display: block;
+     border: 1px solid #D9DADC;
+     width: 100%;
+     font-size: 14px;
+     border-radius: 4x;
+    font-weight: 400;
+    line-height: 30px;
+     height: 40px;
+    
+ }
+
+ 
+
+ input{
+     text-align: start;
+ }
+
+ #session-button {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-right: auto; 
+    margin-left: auto;
+    border-radius: 25px;
+    width: 400px;
+    height: 50px;
+    text-align: center;
+    font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 2px;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s; 
+   
+
+ }
+ .session-submit {
+    background: #1CB954;
+    color: white;
+ }
+
+ .session-submit:hover{
+    background: rgb(40, 204, 40);
+ }
+
+ .login-link{
+
+ }
