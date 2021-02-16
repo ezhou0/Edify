@@ -20,8 +20,7 @@
    
 }
 .signup-form-div{
-     font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
-     
+     font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;    
  }
 
  .signup-msg {
@@ -133,16 +132,12 @@
      margin-right: 150px;
  }
 
-ul{
-    
+.radio-div{
+    display: flex;
 }
-
-li{
-     justify-content: space-between;
-     display: inline;
-     
- }
-
+.radio-wrap{
+    margin-right: 40px;
+}
  .gender{
      margin: -1px;
      font-size: 14px;

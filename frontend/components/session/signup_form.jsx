@@ -249,11 +249,11 @@ class SignupForm extends React.Component {
                     <br/> */}
                     
                     <label className='sign-up-form-label'>What's your gender?</label>
-                    <ul className='radio-container'>
-                            <li><input type="radio" value='Male' className='gender' onChange={this.update('gender')} />Male </li>
-                            <li><input type="radio" value='Female' className='gender' onChange={this.update('gender')} />Female </li>
-                            <li><input type="radio" value='Non-binary' className='gender' onChange={this.update('gender')} />Non-binary</li>
-                    </ul>
+                    <div className = 'radio-div'>
+                        <p className='radio-wrap'> <input type="radio" value='Male' className='gender' onChange={this.update('gender')} />Male </p>
+                        <p className='radio-wrap'> <input type="radio" value='Female' className='gender' onChange={this.update('gender')} /> Female </p> 
+                        <p className='radio-wrap'> <input type="radio" value='Non-binary' className='gender' onChange={this.update('gender')} />Non-binary</p> 
+                    </div>
                     <div className="signup_session_label" className={this.genderErrors} id="under_input">{this.genderErrorMsg}</div>
                     <br/>
                     <br/>
