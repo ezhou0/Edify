@@ -9526,3 +9526,488 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 189ms (Views: 186.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for ::1 at 2021-02-15 15:00:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 504ms (Views: 495.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:00:25 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 536ms (Views: 530.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:00:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 458ms (Views: 452.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:30:50 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 442ms (Views: 438.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:31:07 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 67ms (Views: 61.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:45:55 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 515ms (Views: 510.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:46:05 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 89ms (Views: 81.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:46:22 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 557ms (Views: 550.9ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:54:20 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 505ms (Views: 499.2ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2044507765404154575)[0m
+  ↳ bin/rails:9
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to RemoveBirthday (20210215235504)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (63.3ms)[0m  [1m[35mALTER TABLE "users" DROP COLUMN "birthday"[0m
+  ↳ db/migrate/20210215235504_remove_birthday.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (4.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20210215235504"]]
+  ↳ bin/rails:9
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (6.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(2044507765404154575)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2021-02-15 15:55:44 -0800
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (31.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (68.0ms)
+Completed 200 OK in 672ms (Views: 628.0ms | ActiveRecord: 38.9ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:56:36 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 505ms (Views: 500.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:56:40 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (6.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 85ms (Views: 75.0ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 15:56:41 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 52ms (Views: 47.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 16:01:16 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 51ms (Views: 46.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2021-02-15 16:01:47 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 666ms (Views: 659.7ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:01:49 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (30.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "oueVaPjpVKV4QcdCtliEcg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 377ms (ActiveRecord: 40.3ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007f907993a9c0>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:01:50 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NV7DUbESzsjCF4PIku0Qmg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 353ms (ActiveRecord: 0.9ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007f9078717e78>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:01:51 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "o3I5KcsFbTofmQ4SoRkclQ"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 0.6ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007f907857e850>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:01:52 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "g3Us4doZxX2ip8lipwVACA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 311ms (ActiveRecord: 0.9ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007f90736b4350>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:01:53 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "gender"=>""}}
+Started POST "/api/user" for ::1 at 2021-02-15 16:01:54 -0800
+Started POST "/api/user" for ::1 at 2021-02-15 16:01:54 -0800
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HdxLsBoGmMiXWdXEh_uwLA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 302ms (ActiveRecord: 1.8ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007f9078367508>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Processing by Api::UsersController#create as JSON
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "gender"=>""}}
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "gender"=>""}}
+Started POST "/api/user" for ::1 at 2021-02-15 16:01:54 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasdf", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (296.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NY2IigrKdNdF-tkfvGgYUw"], ["LIMIT", 1]]
+  [1m[36mUser Load (296.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "5YYwj0bDxm2pN0EEKVXCXg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  ↳ app/models/user.rb:44
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Af0S6EoiOEOTlViXcXjjAQ"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (1.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (3.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+Completed 500 Internal Server Error in 909ms (ActiveRecord: 302.2ms)
+
+
+  ↳ app/controllers/api/users_controller.rb:7
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007f90781d0848>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 648ms (ActiveRecord: 298.9ms)
+
+
+Completed 500 Internal Server Error in 356ms (ActiveRecord: 1.9ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007f9072ecd4c0>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007f90781c8940>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started GET "/" for ::1 at 2021-02-15 16:44:41 -0800
+  [1m[35m (10.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 2755ms (Views: 2741.2ms | ActiveRecord: 3.8ms)
+
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:44:49 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfadsf", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "6FgIqf04Gm2IHbSpXIr3Lg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 334ms (ActiveRecord: 8.5ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007fc5f23a5d58>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:44:50 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfadsf", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "38v2FmgYIxc8DioDJ8ZBag"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 303ms (ActiveRecord: 0.8ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007fc5f5a0fa38>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started GET "/" for ::1 at 2021-02-15 16:45:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 94ms (Views: 85.4ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:45:25 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasd", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "UYdEEzPjpYaGc2vrwzXv_w"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 327ms (ActiveRecord: 6.8ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007fc5f2e8eaa8>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started GET "/" for ::1 at 2021-02-15 16:45:46 -0800
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (19.6ms)
+Started POST "/api/user" for ::1 at 2021-02-15 16:45:47 -0800
+Completed 200 OK in 1033ms (Views: 1017.7ms | ActiveRecord: 5.3ms)
+
+
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"asdfasd", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "yX9-Hc1FwBNQFftAqs0v1g"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 612ms (ActiveRecord: 159.6ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007fe4a40104d8>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started GET "/" for ::1 at 2021-02-15 16:52:37 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 507ms (Views: 494.2ms | ActiveRecord: 2.6ms)
+
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:52:42 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"edwinzhou99@gmail.com", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MwkYGKHgotPu3SszXcq6LA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 317ms (ActiveRecord: 1.0ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007fe49fdfb3b8>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started GET "/" for ::1 at 2021-02-15 16:53:24 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 89ms (Views: 83.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:53:27 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"edwinzhou99@gmail.com", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "8qUm2x7fbjPNsL3VUUnfqg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 314ms (ActiveRecord: 0.7ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007fe4a0496c90>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started GET "/" for ::1 at 2021-02-15 16:53:31 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 140ms (Views: 134.3ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:53:34 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"edwinzhou99@gmail.com", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "qnYPRCUskZSgZgsaYhgAqA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 500 Internal Server Error in 303ms (ActiveRecord: 0.8ms)
+
+
+
+NoMethodError - undefined method `birth_date' for #<User:0x00007fe49fc0add8>:
+  app/controllers/api/users_controller.rb:7:in `create'
+
+Started GET "/" for ::1 at 2021-02-15 16:54:29 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "PK-n6F86J5IZOV64jhNe2Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 80ms (Views: 70.2ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/api/user" for ::1 at 2021-02-15 16:54:32 -0800
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"username"=>"", "email"=>"edwinzhou99@gmail.com", "password"=>"[FILTERED]", "gender"=>""}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "NsbJTfnsdo4SXUSMAZCyZA"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (2.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", ""], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[36mUser Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "edwinzhou99@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/api/users_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/api/users_controller.rb:7
+Completed 422 Unprocessable Entity in 337ms (Views: 0.4ms | ActiveRecord: 11.9ms)
+
+

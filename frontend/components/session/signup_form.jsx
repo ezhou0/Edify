@@ -8,13 +8,21 @@ class SignupForm extends React.Component {
             email: '',
             password: '',
             gender: '', 
-            email2: '',
-            month: '',
-            day: '',
-            year: '',
-            birthday: '',
-            confirmationError: ''
+           
+            // month: '',
+            // day: '',
+            // year: '',
+            
+            
         };
+        this.usernameErrors = "username_errors_hidden";
+        this.passwordErrors = "password_errors_hidden";
+        this.usernameTaken = "";
+        this.usernameErrorMsg = "This appears on your profile.";
+        this.passwordErrorMsg = "";
+        this.passwordInput = "signup_session_input";
+        this.usernameInput = "signup_session_input";
+        
 
        
        
@@ -22,24 +30,22 @@ class SignupForm extends React.Component {
 
     }
 
-    verification() {
-        const confirmationError2= 'Emails dont match';
-        if(this.state.email !== this.state.email2){
-            //his.state.confirmationError = 'Emails do not match';
-            let error = Object.assign({confirmationError2}, this.props.errors);
-            return false;
-        }
-        return true;
-    }
 
     handleSubmit(e) {
         e.preventDefault();
-        //const isValid = this.verification();
-        this.getBirthDate();
+      
+        this.props.removeErrors();
         const user = Object.assign({}, this.state);
-        
         this.props.processForm(user);
         
+        this.usernameErrors = "username_errors_hidden";
+        this.passwordErrors = "password_errors_hidden";
+        this.usernameTaken = "";
+        this.usernameErrorMsg = "";
+        this.passwordErrorMsg = "";
+        this.passwordInput = "signup_session_input";
+        this.usernameInput = "signup_session_input";
+       // }
     }
 
     update(parameter) {
@@ -48,9 +54,42 @@ class SignupForm extends React.Component {
         });
     }
 
-    getBirthDate(){
-        this.state.birthday = new Date(this.state.year, this.state.month, this.state.day);
-    }
+    // validate() {
+       
+    //     let errors = this.props.errors;
+    //     let isValid = true;
+
+    //     if (this.state.name.value === '') {
+    //         isValid = false;
+    //         errors.name = "Please enter your name.";
+    //     }
+
+    //     if (this.state.email.value === '') {
+    //         isValid = false;
+    //         errors.email = "Please enter your email Address.";
+    //     }
+
+    //     if (this.state.password.value == '') {
+    //         isValid = false;
+    //         errors.password = "Please enter your password.";
+    //     }
+
+    //     if (this.state.email2.value === '') {
+    //         isValid = false;
+    //         errors.email2 = "Please confirm your email.";
+    //     }
+
+    //     if (typeof this.state.email.value !== "undefined" && typeof this.state.email2.value !== "undefined") {
+
+    //         if (this.state.email.value != this.state.email2.value) {
+    //             isValid = false;
+    //             errors.email = "Emails don't match.";
+    //         }
+    //     }
+
+
+    //     return isValid;
+    // }
 
     
 
@@ -88,7 +127,7 @@ class SignupForm extends React.Component {
                         />
                    
                     <br/>
-                        <label className='sign-up-form-label'>Confirm your email </label>
+                        {/* <label className='sign-up-form-label'>Confirm your email </label>
                             <input type="text"
                             value ={this.state.email2}
                             className="signup-input"
@@ -97,7 +136,7 @@ class SignupForm extends React.Component {
                             
                         />
         
-                    <br />
+                    <br /> */}
                     <label className='sign-up-form-label'>Password: </label>
               <input type="password"
                             value={this.state.password}
@@ -117,7 +156,7 @@ class SignupForm extends React.Component {
                         <div className='profile-content'>This appears on your profile</div> 
                     <br/>
                     
-                    <label className='sign-up-form-label'> What's your date of birth?</label>
+                    {/* <label className='sign-up-form-label'> What's your date of birth?</label>
                     <div className = 'date-entry-div'>
                     <div className = 'month-div'>
                     <label className='birthday-label'>Month</label>
@@ -164,7 +203,7 @@ class SignupForm extends React.Component {
                     </input>
                     </div>
                     </div>
-                    <br/>
+                    <br/> */}
                     
                     <label className='sign-up-form-label'>What's your gender?</label>
                     <input type="radio" value='Male' className='gender' onChange={this.update('gender')}/>Male 

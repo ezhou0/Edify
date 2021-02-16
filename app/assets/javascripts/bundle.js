@@ -618,7 +618,20 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
-    }
+    },
+    removeErrors: function (_removeErrors) {
+      function removeErrors() {
+        return _removeErrors.apply(this, arguments);
+      }
+
+      removeErrors.toString = function () {
+        return _removeErrors.toString();
+      };
+
+      return removeErrors;
+    }(function () {
+      return dispatch(removeErrors());
+    })
   };
 };
 
@@ -678,41 +691,36 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       username: '',
       email: '',
       password: '',
-      gender: '',
-      email2: '',
-      month: '',
-      day: '',
-      year: '',
-      birthday: '',
-      confirmationError: ''
+      gender: '' // month: '',
+      // day: '',
+      // year: '',
+
     };
+    _this.usernameErrors = "username_errors_hidden";
+    _this.passwordErrors = "password_errors_hidden";
+    _this.usernameTaken = "";
+    _this.usernameErrorMsg = "This appears on your profile.";
+    _this.passwordErrorMsg = "";
+    _this.passwordInput = "signup_session_input";
+    _this.usernameInput = "signup_session_input";
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(SignupForm, [{
-    key: "verification",
-    value: function verification() {
-      var confirmationError2 = 'Emails dont match';
-
-      if (this.state.email !== this.state.email2) {
-        //his.state.confirmationError = 'Emails do not match';
-        var error = Object.assign({
-          confirmationError2: confirmationError2
-        }, this.props.errors);
-        return false;
-      }
-
-      return true;
-    }
-  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault(); //const isValid = this.verification();
-
-      this.getBirthDate();
+      e.preventDefault();
+      this.props.removeErrors();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
+      this.usernameErrors = "username_errors_hidden";
+      this.passwordErrors = "password_errors_hidden";
+      this.usernameTaken = "";
+      this.usernameErrorMsg = "";
+      this.passwordErrorMsg = "";
+      this.passwordInput = "signup_session_input";
+      this.usernameInput = "signup_session_input"; // }
     }
   }, {
     key: "update",
@@ -722,12 +730,34 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       return function (e) {
         return _this2.setState(_defineProperty({}, parameter, e.currentTarget.value));
       };
-    }
-  }, {
-    key: "getBirthDate",
-    value: function getBirthDate() {
-      this.state.birthday = new Date(this.state.year, this.state.month, this.state.day);
-    }
+    } // validate() {
+    //     let errors = this.props.errors;
+    //     let isValid = true;
+    //     if (this.state.name.value === '') {
+    //         isValid = false;
+    //         errors.name = "Please enter your name.";
+    //     }
+    //     if (this.state.email.value === '') {
+    //         isValid = false;
+    //         errors.email = "Please enter your email Address.";
+    //     }
+    //     if (this.state.password.value == '') {
+    //         isValid = false;
+    //         errors.password = "Please enter your password.";
+    //     }
+    //     if (this.state.email2.value === '') {
+    //         isValid = false;
+    //         errors.email2 = "Please confirm your email.";
+    //     }
+    //     if (typeof this.state.email.value !== "undefined" && typeof this.state.email2.value !== "undefined") {
+    //         if (this.state.email.value != this.state.email2.value) {
+    //             isValid = false;
+    //             errors.email = "Emails don't match.";
+    //         }
+    //     }
+    //     return isValid;
+    // }
+
   }, {
     key: "renderErrors",
     value: function renderErrors() {
@@ -761,14 +791,6 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         placeholder: "Enter your email."
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sign-up-form-label"
-      }, "Confirm your email "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        value: this.state.email2,
-        className: "signup-input",
-        placeholder: "Re-enter your email.",
-        onChange: this.update('email2')
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-up-form-label"
       }, "Password: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
         value: this.state.password,
@@ -786,74 +808,6 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "profile-content"
       }, "This appears on your profile"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "sign-up-form-label"
-      }, " What's your date of birth?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "date-entry-div"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "month-div"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "birthday-label"
-      }, "Month"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
-        id: "month",
-        className: "select-month",
-        name: "Month",
-        onChange: this.update('month')
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        selected: true,
-        disabled: true,
-        value: true,
-        className: "default-option"
-      }, " Month "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "January"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "February"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "March"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "April"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "May"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "June"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "July"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "August"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "September"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "October"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "November"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
-        value: "01"
-      }, "December"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "day-div"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "birthday-label"
-      }, "Day"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        id: "day",
-        className: "month-input",
-        inputMode: "numeric",
-        maxLength: "2",
-        pattern: "((0?[1-9])|([12][0-9])|(3[01]))",
-        placeholder: "DD",
-        onChange: this.update('day')
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "year-div"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "birthday-label"
-      }, "Year"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        id: "year",
-        className: "year-input",
-        inputMode: "numeric",
-        maxLength: "4",
-        pattern: "((19[0-9]{2})|(200[0-9]))",
-        placeholder: "YYYY",
-        onChange: this.update('year')
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sign-up-form-label"
       }, "What's your gender?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
@@ -935,7 +889,20 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["signup"])(user));
-    }
+    },
+    removeErrors: function (_removeErrors) {
+      function removeErrors() {
+        return _removeErrors.apply(this, arguments);
+      }
+
+      removeErrors.toString = function () {
+        return _removeErrors.toString();
+      };
+
+      return removeErrors;
+    }(function () {
+      return dispatch(removeErrors());
+    })
   };
 };
 
