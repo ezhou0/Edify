@@ -46,7 +46,6 @@ class LoginForm extends React.Component {
                      </header>
                  <div className = 'login-welcome'> To contine, log in to Edify.</div>
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                {this.renderErrors()}
                 <div className="login-form">
                     <br />
                     <label className = 'login-label'>Username:</label>
@@ -64,13 +63,14 @@ class LoginForm extends React.Component {
                             className="login-input"
                             placeholder='Password'
                         />
+                    <div className = 'login-error'>{this.renderErrors()}</div>
                     <br />
                     <input className="session-submit" type="submit" value='LOG IN' />
                     <div className='sign-up-msg'>Don't have an account?</div>
                      <div className='sign-up-button'>{this.props.navLink}</div>
                 </div>
                 </form>
-            
+                   
                    
             
         </div>);
