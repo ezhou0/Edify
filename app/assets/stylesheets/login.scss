@@ -45,9 +45,18 @@
     display:flex;
     padding-bottom: 10px;
 }
-.login-input{
+.session_input{
   display: block;
      border: 1px solid #D9DADC;
+     width: 100%;
+     font-size: 14px;  
+    font-weight: 400;
+    line-height: 30px;
+     height: 40px;
+}
+.session_input_errors{
+    display: block;
+    border: 1px solid red;
      width: 100%;
      font-size: 14px;  
     font-weight: 400;

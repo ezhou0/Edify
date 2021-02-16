@@ -12,7 +12,7 @@
 .nav-link-button{
     margin-left: 10px;
     margin-right: 20px;
-   line-height: 10px;
+    line-height: 10px;
 }
 .nav-link-button:hover{
     color: #2db973;
@@ -23,6 +23,14 @@ display: flex;
 vertical-align: middle;
 margin-right: 300px;
 padding-left: 0;
+}
+
+.home-logo-link{
+display: flex;
+vertical-align: middle;
+margin-right: 300px;
+padding-left: 0;
+
 }
 
 .home-logo{

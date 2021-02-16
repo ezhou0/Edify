@@ -37,6 +37,11 @@ class LoginForm extends React.Component {
    
     render() {
         
+        let inputClass = "session_input"
+        if (this.props.errors.length) {
+            inputClass = "session_input_errors"
+        }
+        
              return (
              
              
@@ -50,20 +55,24 @@ class LoginForm extends React.Component {
                     <br />
                     <label className = 'login-label'>Username:</label>
                              <input type="text"
+                             id='login-input'
                             value={this.state.username}
                             onChange={this.update('username')}
-                            className="login-input"
+                            className={inputClass}
                             placeholder= 'Username'
-                        />
+                            // onClick={() => usernameInputClass = "session_input"}
+                             />
                     <br />
                     <label className = 'login-label'>Password:</label>
                             <input type="password"
+                            id = 'login-input'
                             value={this.state.password}
                             onChange={this.update('password')}
-                            className="login-input"
+                            className={inputClass}
                             placeholder='Password'
+                            // onClick={() => passwordInputClass = "session_input_errors"}
                         />
-                    <div className = 'login-error'>{this.renderErrors()}</div>
+                    {/* <div className = 'login-error'>{this.renderErrors()}</div> */}
                     <br />
                     <input className="session-submit" type="submit" value='LOG IN' />
                     <div className='sign-up-msg'>Don't have an account?</div>

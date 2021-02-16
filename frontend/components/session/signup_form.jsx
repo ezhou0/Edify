@@ -160,7 +160,8 @@ class SignupForm extends React.Component {
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
-                            className="signup-input"
+                            id="signup-input"
+                            className = {this.emailInput}
                             placeholder='Enter your email.'
                         />
                         
@@ -180,7 +181,8 @@ class SignupForm extends React.Component {
               <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
-                            className="signup-input"
+                            id="signup-input"
+                            className = {this.passwordInput}
                             placeholder='Create a password.'
                         />
                         <div className="signup_session_label" className={this.passwordErrors} id="under_input">{this.passwordErrorMsg}</div>
@@ -189,7 +191,8 @@ class SignupForm extends React.Component {
               <input type="text"
                             value={this.state.username}
                             onChange={this.update('username')}
-                            className="signup-input"
+                            id="signup-input"
+                            className = {this.usernameInput}
                             placeholder = 'Enter a profile name.'
                         />
                         <div className="signup_session_label" className={this.usernameErrors} id="under_input">{this.usernameErrorMsg}{this.usernameTaken}</div>
@@ -246,9 +249,11 @@ class SignupForm extends React.Component {
                     <br/> */}
                     
                     <label className='sign-up-form-label'>What's your gender?</label>
-                    <input type="radio" value='Male' className='gender' onChange={this.update('gender')}/>Male 
-                    <input type="radio" value='Female' className='gender' onChange={this.update('gender')}/>Female 
-                    <input type="radio" value='Non-binary' className='gender' onChange={this.update('gender')}/>Non-binary
+                    <ul className='radio-container'>
+                            <li><input type="radio" value='Male' className='gender' onChange={this.update('gender')} />Male </li>
+                            <li><input type="radio" value='Female' className='gender' onChange={this.update('gender')} />Female </li>
+                            <li><input type="radio" value='Non-binary' className='gender' onChange={this.update('gender')} />Non-binary</li>
+                    </ul>
                     <div className="signup_session_label" className={this.genderErrors} id="under_input">{this.genderErrorMsg}</div>
                     <br/>
                     <br/>

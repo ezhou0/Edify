@@ -133,8 +133,15 @@
      margin-right: 150px;
  }
 
- 
+ul{
+    
+}
 
+li{
+     justify-content: space-between;
+     display: inline;
+     
+ }
 
  .gender{
      margin: -1px;
@@ -142,14 +149,14 @@
     font-weight: 400;
     line-height: 20px;
     letter-spacing: 0.25px;
-  margin-right: 10px;
-  margin-left: 0px;
-  margin-bottom: 10px;
-  justify-content: space-evenly;
+    margin-right: 10px;
+    margin-left: 0px;
+    margin-bottom: 10px;
+  
    
  }
 
- .signup-input{
+ .signup_session_input{
      display: block;
      border: 1px solid #D9DADC;
      width: 100%;
@@ -160,6 +167,18 @@
      height: 40px;
      padding-bottom: 0px;
     
+ }
+
+ .email_input_errors, .password_input_errors, .username_input_errors{
+     display: block;
+     border: 1px solid red;
+     width: 100%;
+     font-size: 14px;
+     border-radius: 4x;
+    font-weight: 400;
+    line-height: 30px;
+     height: 40px;
+     padding-bottom: 0px;
  }
 
  
@@ -198,3 +217,5 @@
  .login-link{
     padding-bottom: 30px;
  }
+
+ 

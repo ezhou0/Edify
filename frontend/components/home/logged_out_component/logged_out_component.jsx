@@ -12,8 +12,10 @@ class LoggedOutComponent extends React.Component {
                 <div className='navbar'>
                    
                         <div className='home-logo-div'>
+                            <Link className='home-logo-link' to='/'>
                             <img className="home-logo" src={window.edifyURL} alt="Edify Logo" /> 
                             <div className='home-logo-text'>dify</div>
+                            </Link>
                         </div>
                         <div className='nav-links'>
                             <div className='nav-link-button'><Link to='./login'>Log in </Link></div>
