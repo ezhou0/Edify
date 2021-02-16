@@ -22,6 +22,9 @@ class SignupForm extends React.Component {
         this.passwordErrorMsg = "";
         this.passwordInput = "signup_session_input";
         this.usernameInput = "signup_session_input";
+        this.emailInput = "signup_session_input";
+        this.emailErrors = "email_errors_hidden";
+        this.genderErrors = "gender_errors_hidden";
         
 
        
@@ -34,17 +37,24 @@ class SignupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
       
-        this.props.removeErrors();
+        
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
         
         this.usernameErrors = "username_errors_hidden";
         this.passwordErrors = "password_errors_hidden";
+        this.emailErrors = "email_errors_hidden";
+        this.genderErrors = "gender_errors_hidden";
         this.usernameTaken = "";
         this.usernameErrorMsg = "";
         this.passwordErrorMsg = "";
+        this.emailErrorMsg = "";
         this.passwordInput = "signup_session_input";
         this.usernameInput = "signup_session_input";
+        this.emailInput = "signup_session_input";
+        this.genderErrors = "email_errors_hidden";
+        this.genderInput = "signup_input_errors";
+        this.genderErrorMsg = '';
        // }
     }
 
@@ -108,6 +118,35 @@ class SignupForm extends React.Component {
 
 
     render() {
+        this.props.errors.forEach(error => {
+            if (error.split(" ")[0] === "Username") {
+                this.usernameErrors = "username_errors_displayed";
+                this.usernameInput = "username_input_errors";
+                this.usernameErrorMsg = error;
+                if (error === "Username has already been taken") {
+                    this.usernameTaken = <Link to="/login"
+                        onClick={() => removeErrors()}>
+                        . Log in?
+                    </Link>;
+                };
+            } else if (error.split(" ")[0] === "Password") {
+                this.passwordErrors = "password_errors_displayed";
+                this.passwordInput = "password_input_errors";
+                this.passwordErrorMsg = error;
+            } else if (error.split(" ")[0] === "Email"){
+                this.emailErrors = "email_errors_displayed";
+                this.emailInput = "email_input_errors";
+                this.emailErrorMsg = error;
+            }
+            else if (error.split(" ")[0] === "Gender") {
+                this.genderErrors = "gender_errors_displayed";
+                this.genderInput = "gender_input_errors";
+                this.genderErrorMsg = error;
+            };
+            if (this.usernameErrors !== "username_errors_displayed") {
+                this.usernameErrorMsg = "This appears on your profile."
+            };
+        });
         return (
         <div className="signup-form-div">
             <header>
@@ -115,7 +154,6 @@ class SignupForm extends React.Component {
             </header>
             <form onSubmit={this.handleSubmit} className="signup-form-container">
                 <h2 className='signup-msg' id='signup-top-msg'>Sign up for free to start listening.</h2>
-                {this.renderErrors()}
                 <h4 className='signup-instruction-header' id='sign-up header'>Sign up with your email address</h4>
                 <div >
                         <label className='sign-up-form-label'>What's your email? </label>
@@ -125,7 +163,8 @@ class SignupForm extends React.Component {
                             className="signup-input"
                             placeholder='Enter your email.'
                         />
-                   
+                        
+                        <div className="signup_session_label" className={this.emailErrors} id="under_input">{this.emailErrorMsg}</div>
                     <br/>
                         {/* <label className='sign-up-form-label'>Confirm your email </label>
                             <input type="text"
@@ -144,6 +183,7 @@ class SignupForm extends React.Component {
                             className="signup-input"
                             placeholder='Create a password.'
                         />
+                        <div className="signup_session_label" className={this.passwordErrors} id="under_input">{this.passwordErrorMsg}</div>
                     <br/>
                     <label className='sign-up-form-label'> What should we call you? </label>
               <input type="text"
@@ -152,8 +192,8 @@ class SignupForm extends React.Component {
                             className="signup-input"
                             placeholder = 'Enter a profile name.'
                         />
-                  
-                        <div className='profile-content'>This appears on your profile</div> 
+                        <div className="signup_session_label" className={this.usernameErrors} id="under_input">{this.usernameErrorMsg}{this.usernameTaken}</div>
+                        
                     <br/>
                     
                     {/* <label className='sign-up-form-label'> What's your date of birth?</label>
@@ -209,7 +249,7 @@ class SignupForm extends React.Component {
                     <input type="radio" value='Male' className='gender' onChange={this.update('gender')}/>Male 
                     <input type="radio" value='Female' className='gender' onChange={this.update('gender')}/>Female 
                     <input type="radio" value='Non-binary' className='gender' onChange={this.update('gender')}/>Non-binary
-
+                    <div className="signup_session_label" className={this.genderErrors} id="under_input">{this.genderErrorMsg}</div>
                     <br/>
                     <br/>
                     <br/>

@@ -380,7 +380,7 @@ var LoggedOutComponent = /*#__PURE__*/function (_React$Component) {
         src: window.edifyURL,
         alt: "Edify Logo"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "logo-text"
+        className: "home-logo-text"
       }, "dify")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-links"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -703,6 +703,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
     _this.passwordErrorMsg = "";
     _this.passwordInput = "signup_session_input";
     _this.usernameInput = "signup_session_input";
+    _this.emailInput = "signup_session_input";
+    _this.emailErrors = "email_errors_hidden";
+    _this.genderErrors = "gender_errors_hidden";
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -711,16 +714,22 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.removeErrors();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
       this.usernameErrors = "username_errors_hidden";
       this.passwordErrors = "password_errors_hidden";
+      this.emailErrors = "email_errors_hidden";
+      this.genderErrors = "gender_errors_hidden";
       this.usernameTaken = "";
       this.usernameErrorMsg = "";
       this.passwordErrorMsg = "";
+      this.emailErrorMsg = "";
       this.passwordInput = "signup_session_input";
-      this.usernameInput = "signup_session_input"; // }
+      this.usernameInput = "signup_session_input";
+      this.emailInput = "signup_session_input";
+      this.genderErrors = "email_errors_hidden";
+      this.genderInput = "signup_input_errors";
+      this.genderErrorMsg = ''; // }
     }
   }, {
     key: "update",
@@ -770,6 +779,50 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this,
+          _React$createElement,
+          _React$createElement2,
+          _React$createElement3,
+          _React$createElement4;
+
+      this.props.errors.forEach(function (error) {
+        if (error.split(" ")[0] === "Username") {
+          _this3.usernameErrors = "username_errors_displayed";
+          _this3.usernameInput = "username_input_errors";
+          _this3.usernameErrorMsg = error;
+
+          if (error === "Username has already been taken") {
+            _this3.usernameTaken = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Link, {
+              to: "/login",
+              onClick: function onClick() {
+                return removeErrors();
+              }
+            }, ". Log in?");
+          }
+
+          ;
+        } else if (error.split(" ")[0] === "Password") {
+          _this3.passwordErrors = "password_errors_displayed";
+          _this3.passwordInput = "password_input_errors";
+          _this3.passwordErrorMsg = error;
+        } else if (error.split(" ")[0] === "Email") {
+          _this3.emailErrors = "email_errors_displayed";
+          _this3.emailInput = "email_input_errors";
+          _this3.emailErrorMsg = error;
+        } else if (error.split(" ")[0] === "Gender") {
+          _this3.genderErrors = "gender_errors_displayed";
+          _this3.genderInput = "gender_input_errors";
+          _this3.genderErrorMsg = error;
+        }
+
+        ;
+
+        if (_this3.usernameErrors !== "username_errors_displayed") {
+          _this3.usernameErrorMsg = "This appears on your profile.";
+        }
+
+        ;
+      });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-form-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, this.props.homeLink, ";"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -778,7 +831,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "signup-msg",
         id: "signup-top-msg"
-      }, "Sign up for free to start listening."), this.renderErrors(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+      }, "Sign up for free to start listening."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "signup-instruction-header",
         id: "sign-up header"
       }, "Sign up with your email address"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
@@ -789,7 +842,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.update('email'),
         className: "signup-input",
         placeholder: "Enter your email."
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement = {
+        className: "signup_session_label"
+      }, _defineProperty(_React$createElement, "className", this.emailErrors), _defineProperty(_React$createElement, "id", "under_input"), _React$createElement), this.emailErrorMsg), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sign-up-form-label"
       }, "Password: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
@@ -797,7 +852,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.update('password'),
         className: "signup-input",
         placeholder: "Create a password."
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement2 = {
+        className: "signup_session_label"
+      }, _defineProperty(_React$createElement2, "className", this.passwordErrors), _defineProperty(_React$createElement2, "id", "under_input"), _React$createElement2), this.passwordErrorMsg), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sign-up-form-label"
       }, " What should we call you? "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -805,9 +862,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.update('username'),
         className: "signup-input",
         placeholder: "Enter a profile name."
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "profile-content"
-      }, "This appears on your profile"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement3 = {
+        className: "signup_session_label"
+      }, _defineProperty(_React$createElement3, "className", this.usernameErrors), _defineProperty(_React$createElement3, "id", "under_input"), _React$createElement3), this.usernameErrorMsg, this.usernameTaken), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sign-up-form-label"
       }, "What's your gender?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "radio",
@@ -824,7 +881,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         value: "Non-binary",
         className: "gender",
         onChange: this.update('gender')
-      }), "Non-binary", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), "Non-binary", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement4 = {
+        className: "signup_session_label"
+      }, _defineProperty(_React$createElement4, "className", this.genderErrors), _defineProperty(_React$createElement4, "id", "under_input"), _React$createElement4), this.genderErrorMsg), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "session-button",
         className: "session-submit",
         type: "submit",
@@ -889,20 +948,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["signup"])(user));
-    },
-    removeErrors: function (_removeErrors) {
-      function removeErrors() {
-        return _removeErrors.apply(this, arguments);
-      }
-
-      removeErrors.toString = function () {
-        return _removeErrors.toString();
-      };
-
-      return removeErrors;
-    }(function () {
-      return dispatch(removeErrors());
-    })
+    }
   };
 };
 

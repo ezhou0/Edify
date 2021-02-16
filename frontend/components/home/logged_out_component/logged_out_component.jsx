@@ -13,7 +13,7 @@ class LoggedOutComponent extends React.Component {
                    
                         <div className='home-logo-div'>
                             <img className="home-logo" src={window.edifyURL} alt="Edify Logo" /> 
-                            <div className='logo-text'>dify</div>
+                            <div className='home-logo-text'>dify</div>
                         </div>
                         <div className='nav-links'>
                             <div className='nav-link-button'><Link to='./login'>Log in </Link></div>
