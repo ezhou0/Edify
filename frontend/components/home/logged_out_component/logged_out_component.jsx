@@ -28,7 +28,7 @@ class LoggedOutComponent extends React.Component {
                 <div className='splash-content'>
                     <h1 className='splash-welcome'>Listening is everything</h1>
                     <h4 className='splash-sub'>Millions of songs and podcasts. No credit card needed.</h4>
-                    <div className='splash-button'><Link to='./signup'>GET EDIFY FREE</Link></div>
+                    <div className='splash-button'><Link className ='home-splash-button'to='./signup'>GET EDIFY FREE</Link></div>
                 </div>
 
 

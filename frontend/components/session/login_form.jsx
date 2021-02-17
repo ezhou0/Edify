@@ -9,13 +9,16 @@ class LoginForm extends React.Component {
             password: ''
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        this.props.clearErrors();
     }
+
 
     handleSubmit(e) {
         e.preventDefault();
+        
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
+       
     }
 
     update(parameter) {

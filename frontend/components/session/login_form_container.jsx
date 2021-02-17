@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { login } from '../../actions/session_actions';
+import { login, clearErrors } from '../../actions/session_actions';
 import LoginForm from './login_form';
 
 const mapStateToProps = ({ errors }) => {
     return {
         errors: errors.session,
         formType: 'login',
-        navLink: <Link to="/signup">SIGN UP FOR EDIFY</Link>,
+        navLink: <Link className = 'login-to-signup-link'to="/signup">SIGN UP FOR EDIFY</Link>,
         homeLink: <Link to='/'> <div className='logo_div_login'>
         <img className="logo" src={window.edifyURL} alt="Edify Logo" /> <div className='logo-text'>dify</div> 
         </div></Link>
@@ -18,7 +18,7 @@ const mapStateToProps = ({ errors }) => {
 const mapDispatchToProps = dispatch => {
     return {
         processForm: user => dispatch(login(user)),
-        removeErrors: () => dispatch(removeErrors())
+        clearErrors: () => dispatch(clearErrors())
     };
 };
 

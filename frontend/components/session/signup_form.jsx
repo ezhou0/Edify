@@ -40,7 +40,7 @@ class SignupForm extends React.Component {
         
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        
+        this.props.clearErrors();
         this.usernameErrors = "username_errors_hidden";
         this.passwordErrors = "password_errors_hidden";
         this.emailErrors = "email_errors_hidden";
@@ -250,9 +250,9 @@ class SignupForm extends React.Component {
                     
                     <label className='sign-up-form-label'>What's your gender?</label>
                     <div className = 'radio-div'>
-                        <p className='radio-wrap'> <input type="radio" value='Male' className='gender' onChange={this.update('gender')} />Male </p>
-                        <p className='radio-wrap'> <input type="radio" value='Female' className='gender' onChange={this.update('gender')} /> Female </p> 
-                        <p className='radio-wrap'> <input type="radio" value='Non-binary' className='gender' onChange={this.update('gender')} />Non-binary</p> 
+                        <p className='radio-wrap'> <input type="radio" name = "gender"value='Male' className='gender' onChange={this.update('gender')} />Male </p>
+                        <p className='radio-wrap'> <input type="radio" name = "gender"value='Female' className='gender' onChange={this.update('gender')} /> Female </p> 
+                        <p className='radio-wrap'> <input type="radio" name = "gender" value='Non-binary' className='gender' onChange={this.update('gender')} />Non-binary</p> 
                     </div>
                     <div className="signup_session_label" className={this.genderErrors} id="under_input">{this.genderErrorMsg}</div>
                     <br/>
@@ -261,8 +261,9 @@ class SignupForm extends React.Component {
                     
                     <input id='session-button'className="session-submit" type="submit" value='SIGN UP' />
                     <br/>
-
-                    <p className = 'login-link'>Have an account? {this.props.navLink} </p>
+                    <div className = 'login-link-wrap'>
+                            <p className='login-link-filler'>Have an account? </p> <p className = 'login-link'> {this.props.navLink} </p>
+                    </div>
                 </div>
             </form>
         </div>);
