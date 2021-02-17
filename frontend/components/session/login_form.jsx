@@ -94,7 +94,16 @@ class LoginForm extends React.Component {
                         />
                     <div className = 'login-error'>{this.renderErrors()}</div> 
                     <br />
+
+                    <div className = 'login-button-wrapper'>
                     <input className="session-submit" type="submit" value='LOG IN' />
+
+                    <button type="submit"  className="session-submit"
+                         onClick={() => this.setState({ username: 'username', password: 'password' })}>
+                         DEMO LOG IN
+                    </button>
+                    </div>
+
                     <div className='sign-up-msg'>Don't have an account?</div>
                      {this.props.navLink}
                 </div>

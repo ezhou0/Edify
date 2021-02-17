@@ -64,8 +64,16 @@
      height: 40px;
 }
 
+.login-button-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .session-submit{
-    display: block;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-left: 5px;
      border: 1px solid #D9DADC;
      width: 100%;
      font-size: 14px;

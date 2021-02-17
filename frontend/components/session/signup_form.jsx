@@ -256,7 +256,7 @@ class SignupForm extends React.Component {
                     </div>
                     <div className="signup_session_label" className={this.genderErrors} id="under_input">{this.genderErrorMsg}</div>
                     <br/>
-                    <br/>
+                    
                     <br/>
                     
                     <input id='session-button'className="session-submit" type="submit" value='SIGN UP' />

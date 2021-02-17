@@ -548,6 +548,8 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       // this.props.errors.forEach(error => {
       //     if (error.split(" ")[0] === "Username") {
       //         this.usernameErrors = "username_errors_displayed";
@@ -596,11 +598,22 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
 
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-error"
-      }, this.renderErrors()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, this.renderErrors()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-button-wrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "session-submit",
         type: "submit",
         value: "LOG IN"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        type: "submit",
+        className: "session-submit",
+        onClick: function onClick() {
+          return _this3.setState({
+            username: 'username',
+            password: 'password'
+          });
+        }
+      }, "DEMO LOG IN")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sign-up-msg"
       }, "Don't have an account?"), this.props.navLink)));
     }
@@ -927,7 +940,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.update('gender')
       }), "Non-binary")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement4 = {
         className: "signup_session_label"
-      }, _defineProperty(_React$createElement4, "className", this.genderErrors), _defineProperty(_React$createElement4, "id", "under_input"), _React$createElement4), this.genderErrorMsg), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, _defineProperty(_React$createElement4, "className", this.genderErrors), _defineProperty(_React$createElement4, "id", "under_input"), _React$createElement4), this.genderErrorMsg), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "session-button",
         className: "session-submit",
         type: "submit",
