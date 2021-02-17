@@ -410,10 +410,10 @@ var LoggedOutComponent = /*#__PURE__*/function (_React$Component) {
         className: "splash-welcome"
       }, "Listening is everything"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
         className: "splash-sub"
-      }, "Millions of songs and podcasts. No credit card needed."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Millions of songs and podcasts. No credit card needed."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "home-splash-button",
         to: "./signup"
-      }, "GET EDIFY FREE")));
+      }, "GET EDIFY FREE"))));
     }
   }]);
 

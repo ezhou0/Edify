@@ -1,4 +1,7 @@
 
+.home-container{
+ background-image: linear-gradient(to bottom right,blue,purple);
+}
 .navbar{
     background-color: black;
     color:rgb(240, 239, 239);
@@ -59,12 +62,14 @@ padding-left: 0;
 
 
 .splash-content{
-    background-image: linear-gradient(to bottom right,blue,purple);
+   
     width: 100%;
     height: 100vh;
    font-family: proxima_nova,"Helvetica Neue",Helvetica,Arial,sans-serif;;
     text-align: center;
-    padding-top: 20%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
      color: rgb(240, 239, 239);
 }
 .splash-welcome{
@@ -86,8 +91,7 @@ padding-left: 0;
 
 .home-splash-button{
     
-    justify-content: center;
-    align-items :center;
+    
 
      margin-top: 60px;
     display: flex;
@@ -104,7 +108,9 @@ padding-left: 0;
     transition-duration: .3s; 
     background-color: #dee2e0;
     color: #2D46B9;
-    margin-left: 520px;
+    margin-left: 42%;
+
+    
 }
 
 .splash-button{
