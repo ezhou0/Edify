@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
@@ -10,6 +11,10 @@ class LoginForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.props.clearErrors();
+        this.usernameErrors = "username_errors_hidden";
+        this.passwordErrors = "password_errors_hidden";
+        this.passwordInput = "signup_session_input";
+        this.usernameInput = "signup_session_input";
     }
 
 
@@ -39,6 +44,18 @@ class LoginForm extends React.Component {
     }
    
     render() {
+
+        // this.props.errors.forEach(error => {
+        //     if (error.split(" ")[0] === "Username") {
+        //         this.usernameErrors = "username_errors_displayed";
+        //         this.usernameInput = "username_input_errors";
+        //         this.usernameErrorMsg = error;
+        //     } else if (error.split(" ")[0] === "Password") {
+        //         this.passwordErrors = "password_errors_displayed";
+        //         this.passwordInput = "password_input_errors";
+        //         this.passwordErrorMsg = error;
+        //     };
+        // });
         
         let inputClass = "session_input"
         if (this.props.errors.length) {
@@ -75,11 +92,11 @@ class LoginForm extends React.Component {
                             placeholder='Password'
                             // onClick={() => passwordInputClass = "session_input_errors"}
                         />
-                    {/* <div className = 'login-error'>{this.renderErrors()}</div> */}
+                    <div className = 'login-error'>{this.renderErrors()}</div> 
                     <br />
                     <input className="session-submit" type="submit" value='LOG IN' />
                     <div className='sign-up-msg'>Don't have an account?</div>
-                     <div className='sign-up-button'>{this.props.navLink}</div>
+                     {this.props.navLink}
                 </div>
                 </form>
                    

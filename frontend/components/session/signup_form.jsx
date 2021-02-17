@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from "react-router-dom";
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
@@ -123,12 +123,12 @@ class SignupForm extends React.Component {
                 this.usernameErrors = "username_errors_displayed";
                 this.usernameInput = "username_input_errors";
                 this.usernameErrorMsg = error;
-                if (error === "Username has already been taken") {
-                    this.usernameTaken = <Link to="/login"
-                        onClick={() => removeErrors()}>
-                        . Log in?
-                    </Link>;
-                };
+                // if (error === "Username has already been taken") {
+                //     this.usernameTaken = <Link to="/login"
+                //         onClick={() => clearErrors()}>
+                //         . Log in?
+                //     </Link>;
+                // };
             } else if (error.split(" ")[0] === "Password") {
                 this.passwordErrors = "password_errors_displayed";
                 this.passwordInput = "password_input_errors";

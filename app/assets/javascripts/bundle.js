@@ -513,6 +513,10 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
 
     _this.props.clearErrors();
 
+    _this.usernameErrors = "username_errors_hidden";
+    _this.passwordErrors = "password_errors_hidden";
+    _this.passwordInput = "signup_session_input";
+    _this.usernameInput = "signup_session_input";
     return _this;
   }
 
@@ -544,6 +548,17 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      // this.props.errors.forEach(error => {
+      //     if (error.split(" ")[0] === "Username") {
+      //         this.usernameErrors = "username_errors_displayed";
+      //         this.usernameInput = "username_input_errors";
+      //         this.usernameErrorMsg = error;
+      //     } else if (error.split(" ")[0] === "Password") {
+      //         this.passwordErrors = "password_errors_displayed";
+      //         this.passwordInput = "password_input_errors";
+      //         this.passwordErrorMsg = error;
+      //     };
+      // });
       var inputClass = "session_input";
 
       if (this.props.errors.length) {
@@ -579,15 +594,15 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         className: inputClass,
         placeholder: "Password" // onClick={() => passwordInputClass = "session_input_errors"}
 
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-error"
+      }, this.renderErrors()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "session-submit",
         type: "submit",
         value: "LOG IN"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sign-up-msg"
-      }, "Don't have an account?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sign-up-button"
-      }, this.props.navLink))));
+      }, "Don't have an account?"), this.props.navLink)));
     }
   }]);
 
@@ -668,6 +683,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -691,6 +707,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -808,18 +825,12 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         if (error.split(" ")[0] === "Username") {
           _this3.usernameErrors = "username_errors_displayed";
           _this3.usernameInput = "username_input_errors";
-          _this3.usernameErrorMsg = error;
-
-          if (error === "Username has already been taken") {
-            _this3.usernameTaken = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Link, {
-              to: "/login",
-              onClick: function onClick() {
-                return removeErrors();
-              }
-            }, ". Log in?");
-          }
-
-          ;
+          _this3.usernameErrorMsg = error; // if (error === "Username has already been taken") {
+          //     this.usernameTaken = <Link to="/login"
+          //         onClick={() => clearErrors()}>
+          //         . Log in?
+          //     </Link>;
+          // };
         } else if (error.split(" ")[0] === "Password") {
           _this3.passwordErrors = "password_errors_displayed";
           _this3.passwordInput = "password_input_errors";
@@ -966,7 +977,7 @@ var mapStateToProps = function mapStateToProps(_ref) {
     formType: 'signup',
     navLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: "/login"
-    }, "Log in."),
+    }, "Log in"),
     homeLink: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
       to: "/"
     }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
