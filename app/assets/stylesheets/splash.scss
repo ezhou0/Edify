@@ -85,14 +85,10 @@ padding-left: 0;
 }
 
 .home-splash-button{
-    height: 100%;
-    width: 100%;
+    
     justify-content: center;
     align-items :center;
-}
 
-.splash-button{
-    
      margin-top: 60px;
     display: flex;
     justify-content: center;
@@ -109,6 +105,11 @@ padding-left: 0;
     background-color: #dee2e0;
     color: #2D46B9;
     margin-left: 520px;
+}
+
+.splash-button{
+    
+    
 }
 
 .splash-button:hover{
