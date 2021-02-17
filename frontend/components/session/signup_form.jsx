@@ -15,6 +15,10 @@ class SignupForm extends React.Component {
             
             
         };
+
+        
+       
+
         this.usernameErrors = "username_errors_hidden";
         this.passwordErrors = "password_errors_hidden";
         this.usernameTaken = "";
@@ -28,34 +32,35 @@ class SignupForm extends React.Component {
         
 
        
-       
+        this.props.clearErrors();
         this.handleSubmit = this.handleSubmit.bind(this);
-
+        
     }
 
+    componentWillUnmount(){
+        this.props.clearErrors();
+    }
 
     handleSubmit(e) {
         e.preventDefault();
-      
-        
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
         this.props.clearErrors();
-        this.usernameErrors = "username_errors_hidden";
-        this.passwordErrors = "password_errors_hidden";
-        this.emailErrors = "email_errors_hidden";
-        this.genderErrors = "gender_errors_hidden";
-        this.usernameTaken = "";
-        this.usernameErrorMsg = "";
-        this.passwordErrorMsg = "";
-        this.emailErrorMsg = "";
-        this.passwordInput = "signup_session_input";
-        this.usernameInput = "signup_session_input";
-        this.emailInput = "signup_session_input";
-        this.genderErrors = "email_errors_hidden";
-        this.genderInput = "signup_input_errors";
-        this.genderErrorMsg = '';
-       // }
+        // this.usernameErrors = "username_errors_hidden";
+        // this.passwordErrors = "password_errors_hidden";
+        // this.emailErrors = "email_errors_hidden";
+        // this.genderErrors = "gender_errors_hidden";
+        // this.usernameTaken = "";
+        // this.usernameErrorMsg = "";
+        // this.passwordErrorMsg = "";
+        // this.emailErrorMsg = "";
+        // this.passwordInput = "signup_session_input";
+        // this.usernameInput = "signup_session_input";
+        // this.emailInput = "signup_session_input";
+        // this.genderErrors = "email_errors_hidden";
+        // this.genderInput = "signup_input_errors";
+        // this.genderErrorMsg = '';
+       
     }
 
     update(parameter) {
