@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        logout: () => dispatch(thunkLogout()),
+        logout: () => dispatch(logout()),
         fetchArtist: artistId => dispatch(FetchArtist(artistId)),
         fetchArtists: () => dispatch(FetchArtists()),
 

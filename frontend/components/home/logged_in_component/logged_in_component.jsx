@@ -28,7 +28,7 @@ class HomeMainComponent extends React.Component {
                             currentUser={currentUser}  />
                     </div>
                     <div className="main_component">
-                        <h4>Welcome to Edify, {currentUser.username}</h4>
+                        <h3>Welcome to Edify, {currentUser.username}</h3>
                     </div>
                     <div className="header_component">
                         <HeaderComponent currentUser={this.props.currentUser.username}
