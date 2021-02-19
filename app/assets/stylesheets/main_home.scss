@@ -1,4 +1,8 @@
-
+.main_div{
+    background-image: linear-gradient(rgb(113, 113, 151), black);
+    height: 100vh;
+    
+}
 .main_and_side_div{
     height: 100%;
     display: flex;
@@ -14,7 +18,7 @@
     top: 0;
     left: 0;
     background-color: #000000;
-    min-width: 280px;
+    min-width: 220px;
     height: 100%;
 }
 
@@ -25,6 +29,13 @@
     left: 0;
     right: 0;
     background-color: #191919;
-    min-height: 97px;
+    // min-height: 97px;
+    height: 13%;
     z-index: 1;
+}
+
+#user_profile_div{
+    width: 280px;
+    display: flex;
+    justify-content: space-between;
 }

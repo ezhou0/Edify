@@ -1,4 +1,5 @@
-import React from "react"
+import React from "react";
+import {Link} from 'react-router-dom';
 
 
 class SideBar extends React.Component {
@@ -11,14 +12,19 @@ class SideBar extends React.Component {
         return (
             <div className="sidebar_comp">
                 <div id="sidebar_top">
-                    <p>Logo here</p>
-                    <p>home tab here</p>
-                    <p>Search Bar here</p>
-                    <h5>Playlists</h5>
-                    <p>Create Playlist</p>
+                    <div className='loggedin-logo-div'>
+                            <img className="li-home-logo" src={window.edifyURL} alt="Edify Logo" />
+                            <div className='li-home-logo-text'>dify</div>
+                    </div>
+                    <div className = 'sidebar-top-content'>
+                        <p className = 'sidebar-tab'>Home</p>
+                        <p className = 'sidebar-tab'>Search Bar</p>
+                        <h5 className = 'playlist-header'>PLAYLISTS</h5>
+                        <p className = 'playlist-tab'> Create Playlist</p>
+                    </div>
                 </div>
                 <div id="sidebar_bottom">
-                    <p>map of playlists here</p>
+                    <p className='sidebar-bottom-content'>map of playlists here</p>
                 </div>
             </div>
         )

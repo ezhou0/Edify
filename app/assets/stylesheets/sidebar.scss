@@ -1,0 +1,83 @@
+.li-home-logo{
+    height: 50px;
+    width: 50px;
+    display: flex;
+    vertical-align: middle;
+}
+
+.loggedin-logo-div{
+    display: inline-flex;
+    margin-left: 20%;
+    margin-top: 10%;
+    margin-bottom: 20%;
+}
+
+.li-home-logo-text{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.sidebar_comp{
+    height: 100%;
+    font-family: Verdana;
+    font-weight: 600;
+    color: azure;
+}
+
+#sidebar_top{
+    border-bottom: 1px solid rgb(53, 51, 51);
+    min-height: 300px;
+    overflow-x: hidden;
+}
+
+.sidebar-top-content{
+    margin-left: 12%;
+}
+
+.sidebar-tab{
+    margin-bottom: 10%
+}
+.playlist-header{
+    padding-top: 8%;
+    font-size: 12px;
+    color: rgb(182, 180, 180);
+    letter-spacing: 3px;
+}
+
+.playlist-tab{
+    font-size: 14px;
+    
+}
+
+#sidebar_bottom{
+    height: 521px;
+    max-height: 521px;
+    overflow: hidden;
+}
+
+.sidebar_bottom-content{
+    margin-top: 30%
+}
+
+
+
+.sidebar_content:hover{
+    color: white;
+}
+
+
+
+#sidebar_bottom{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 30%
+}
+
+.sidebar_bottom{
+    border-top: 1px solid #B3B3B3;
+    width: 95%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
