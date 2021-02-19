@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import LoggedOutComponent from "./logged_out_component/logged_out_component";
 
 
@@ -12,12 +12,8 @@ class Home extends React.Component{
         const { currentUser, logout } = this.props;
         if (currentUser) {
             return (
-                <hgroup className="header-group">
-                    <h2 className="header-name">Hi, {currentUser.username}!</h2>
-                    <button className="header-button" onClick={logout}>Log Out</button>
-                    
-                </hgroup>
-            )} else {
+                <Redirect to="/home" currentUser={currentUser} logout={logout} />
+        )} else {
             return (
                 <LoggedOutComponent />
             )

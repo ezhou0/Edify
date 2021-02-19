@@ -23,3 +23,17 @@ export const AuthRoute = withRouter(
     )(Auth)
 );
 
+
+const Protc = ({ component: Component, path, loggedIn, exact }) => {
+    return (
+        <Route path={path} exact={exact} render={(props) => (
+            loggedIn ? (
+                <Component {...props} />
+            ) : (
+                    <Redirect to="/" />
+                )
+        )} />
+    )
+}
+
+export const ProtcRoute = withRouter(connect(mapStateToProps)(Protc))
