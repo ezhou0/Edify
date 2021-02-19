@@ -1,0 +1,30 @@
+
+.main_and_side_div{
+    height: 100%;
+    display: flex;
+}
+
+.main_content_window{
+    overflow: scroll;
+    margin-left: 280px;
+}
+
+.side_component{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    min-width: 280px;
+    height: 100%;
+}
+
+
+.playbar_component{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #191919;
+    min-height: 97px;
+    z-index: 1;
+}

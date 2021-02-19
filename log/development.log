@@ -13872,3 +13872,39 @@ Processing by StaticPagesController#root as HTML
 Completed 200 OK in 1506ms (Views: 1501.9ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for ::1 at 2021-02-19 05:19:23 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Gyy4WfnBl8b6-GrWu8E_XA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (7.8ms)
+Completed 500 Internal Server Error in 100ms (ActiveRecord: 1.3ms)
+
+
+
+Sass::SyntaxError - File to import not found or unreadable: login.
+Load paths:
+  /Users/Edwin/Desktop/Edify/app/assets/config
+  /Users/Edwin/Desktop/Edify/app/assets/images
+  /Users/Edwin/Desktop/Edify/app/assets/javascripts
+  /Users/Edwin/Desktop/Edify/app/assets/stylesheets
+  /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/jquery-rails-4.4.0/vendor/assets/javascripts
+  /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actioncable-5.2.4.4/lib/assets/compiled
+  /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activestorage-5.2.4.4/app/assets/javascripts
+  /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/actionview-5.2.4.4/lib/assets/compiled
+  /Users/Edwin/Desktop/Edify/node_modules:
+  app/views/layouts/application.html.erb:8:in `_app_views_layouts_application_html_erb___2594475273987425461_70289704626100'
+
+Started POST "/__better_errors/68fcb80fa7c0672c/variables" for ::1 at 2021-02-19 05:19:23 -0800
+Started GET "/" for ::1 at 2021-02-19 05:20:04 -0800
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Gyy4WfnBl8b6-GrWu8E_XA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 451ms (Views: 446.9ms | ActiveRecord: 2.1ms)
+
+
