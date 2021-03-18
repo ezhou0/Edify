@@ -13,4 +13,6 @@ class Song < ApplicationRecord
         foreign_key: :song_id,
         class_name: :playlist_songs
 
+    has_one_attached :audio
+
 end

@@ -10,5 +10,8 @@ class Album < ApplicationRecord
     has_many :album_songs,
         foreign_key: :album_id,
         class_name: :Song
+         
+    has_one_attached :album_photo
+end
 
 end
