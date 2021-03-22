@@ -35,4 +35,9 @@ song6 = Song.create(title: 'song6', album_id = album3.id)
 
 #TODO add song mp3
 
+playlist1 = Playlist.create!(name: 'first playlist', author_id: userBase.id)
+playlist2 = Playlist.create!(name: 'second playlist', author_id: userBase.id)
+
+
+
 
