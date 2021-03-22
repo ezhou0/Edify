@@ -1,21 +1,17 @@
 class Api::PlaylistSongsController < ApplicationController
     def create
-       @playlist_songs = PlaylistSong.new(playlist_song_params)
+       @playlist_song = PlaylistSong.new(playlist_song_params)
         @playlist_songs.save!
-        @playlist = Playlist.find_by(id: params[:song_on_playlist][:playlist_id])
-        @songs = @playlist.songs_on_playlist
-        render :show
     end
 
     def destroy
-        @song_on_playlist = SongsOnPlaylist.find(params[:id])
-        @playlist = @song_on_playlist.playlist
-        @song_on_playlist.destroy
-        @songs = @playlist.songs_on_playlist
-        render :show
+        @playlist_song = PlaylistSong.find_by(song_id: params[:playlist_song][:song_id], playlist_id: params[:playlist_song][:playlist_id])
+        @playlist_song.destroy!
+        @playlist = Playlist.find(params[:playlist_song][:playlist_id])
+        render 'api/playlists/show'
     end
     
     def songs_on_playlists_params
-        params.require(:song_on_playlist).permit(:playlist_id, :song_id)
+        params.require(:playlist_song).permit(:playlist_id, :song_id)
     end
 end
