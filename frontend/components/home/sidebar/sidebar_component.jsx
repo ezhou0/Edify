@@ -2,6 +2,7 @@ import React from "react";
 import {Link} from 'react-router-dom';
 
 
+
 class SideBar extends React.Component {
     constructor(props){
         super(props);
@@ -21,6 +22,7 @@ class SideBar extends React.Component {
                         <p className = 'sidebar-tab'>Search Bar</p>
                         <h5 className = 'playlist-header'>PLAYLISTS</h5>
                         <p className = 'playlist-tab'> Create Playlist</p>
+                        <button > </button>
                     </div>
                 </div>
                 <div id="sidebar_bottom">
