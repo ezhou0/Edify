@@ -14,4 +14,4 @@ class Album < ApplicationRecord
     has_one_attached :album_photo
 end
 
-end
+

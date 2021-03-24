@@ -99,7 +99,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ARTISTS", function() { return RECEIVE_ARTISTS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchArtist", function() { return FetchArtist; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchArtists", function() { return FetchArtists; });
-/* harmony import */ var _util_artist_api_util_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/artist_api_util.js */ "./frontend/util/artist_api_util.js");
+/* harmony import */ var _util_artist_api_util_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/artist_api_util.js */ "./frontend/util/artist_api_util.js");
 
 var RECEIVE_ARTIST = "RECEIVE_ARTIST";
 var RECEIVE_ARTISTS = "RECEIVE_ARTISTS";
@@ -120,14 +120,14 @@ var receiveArtists = function receiveArtists(artists) {
 
 var FetchArtist = function FetchArtist(artistId) {
   return function (dispatch) {
-    return _util_artist_api_util_js__WEBPACK_IMPORTED_MODULE_1__["fetchArtist"](artistId).then(function (artist) {
+    return _util_artist_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchArtist"](artistId).then(function (artist) {
       return dispatch(receiveArtist(artist));
     });
   };
 };
 var FetchArtists = function FetchArtists() {
   return function (dispatch) {
-    return _util_artist_api_util_js__WEBPACK_IMPORTED_MODULE_1__["fetchArtists"]().then(function (artists) {
+    return _util_artist_api_util_js__WEBPACK_IMPORTED_MODULE_0__["fetchArtists"]().then(function (artists) {
       return dispatch(receiveArtists(artists));
     });
   };
@@ -900,7 +900,7 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
         className: "playlist-header"
       }, "PLAYLISTS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "playlist-tab"
-      }, " Create Playlist"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " Create Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, " modal"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "sidebar_bottom"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "sidebar-bottom-content"

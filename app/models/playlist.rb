@@ -2,7 +2,7 @@ class Playlist < ApplicationRecord
     validates :name, :author_id, presence: true
 
     belongs_to :user,
-    foreign_key: :user_id,
+    foreign_key: :author_id,
     class_name: :User
     
     has_many :playlist_songs,
@@ -13,7 +13,5 @@ class Playlist < ApplicationRecord
     through: :playlist_songs,
     source: :song
 
-    
-end
 
 end
