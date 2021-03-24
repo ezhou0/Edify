@@ -41,8 +41,12 @@ playlist2 = Playlist.create!(name: 'second playlist', author_id: userBase.id)
 
 #playlist songs
 
-ps1 = 
-
+ps1 = PlaylistSong.create!(song_id: song1.id, playlist_id: playlist1.id)
+ps2 = laylistSong.create!(song_id: song2.id, playlist_id: playlist1.id)
+ps3 = laylistSong.create!(song_id: song3.id, playlist_id: playlist1.id)
+ps4 = laylistSong.create!(song_id: song4.id, playlist_id: playlist2.id)
+ps5 = laylistSong.create!(song_id: song5.id, playlist_id: playlist2.id)
+ps6 = laylistSong.create!(song_id: song6.id, playlist_id: playlist2.id)
 
 
 
