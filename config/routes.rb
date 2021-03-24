@@ -2,7 +2,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: 'static_pages#root'
   namespace :api, defaults: {format: :json} do
-    resource :user, only: [:create]
+    resources :user, only: [:create]
+    resources :artists, only: [:index, :show]
+
     resource :session, only: [:create,:destroy]
+    resources :albums, only: [:show]
+    resources :playlists, only: [:show, :create, :destroy, :update]
+    resources :playlist_songs, only: [:create, :destroy]
   end
 end

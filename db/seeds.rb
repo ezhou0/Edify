@@ -19,19 +19,19 @@ artist2 = Artist.create!(name: 'artist2')
 
 #albums
 
-album1 = Album.create!(name: 'artist1 album' year: 2021, artist_id: artist1.id, description: '1st album for artist1')
-album2 = Album.create!(name: 'artist1 2nd album' year: 2021, artist_id: artist1.id, description: '2nd album for artist1')
-album3 = Album.create!(name: 'artist2 album' year: 2021, artist_id: artist2.id, description: '1st album for artist2')
+album1 = Album.create!(name: 'artist1 album', year: 2021, artist_id: artist1.id, description: '1st album for artist1')
+album2 = Album.create!(name: 'artist1 2nd album', year: 2021, artist_id: artist1.id, description: '2nd album for artist1')
+album3 = Album.create!(name: 'artist2 album', year: 2021, artist_id: artist2.id, description: '1st album for artist2')
 
 #TODO add album covers
 
 #songs
-song1 = Song.create!(title: 'song1', album_id = album1.id)
-song2 = Song.create(title: 'song2', album_id = album1.id)
-song3 = Song.create(title: 'song3', album_id = album2.id)
-song4 = Song.create(title: 'song4', album_id = album2.id)
-song5 = Song.create(title: 'song5', album_id = album3.id)
-song6 = Song.create(title: 'song6', album_id = album3.id)
+song1 = Song.create!(title: 'song1', album_id: album1.id)
+song2 = Song.create(title: 'song2', album_id: album1.id)
+song3 = Song.create(title: 'song3', album_id: album2.id)
+song4 = Song.create(title: 'song4', album_id: album2.id)
+song5 = Song.create(title: 'song5', album_id: album3.id)
+song6 = Song.create(title: 'song6', album_id: album3.id)
 
 #TODO add song mp3
 
