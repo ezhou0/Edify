@@ -878,6 +878,7 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
   _createClass(SideBar, [{
     key: "render",
     value: function render() {
+      var playlists = this.props.playlists;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar_comp"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -904,7 +905,13 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
         id: "sidebar_bottom"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "sidebar-bottom-content"
-      }, "map of playlists here")));
+      }, "map of playlists here"), playlists.map(function (playlist) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/playlists/".concat(playlist.id),
+          key: playlist.id,
+          id: "sidebar_playlist"
+        }, playlist.title.length >= 20 ? playlist.title.slice(0, 20) + "..." : playlist.title);
+      })));
     }
   }]);
 

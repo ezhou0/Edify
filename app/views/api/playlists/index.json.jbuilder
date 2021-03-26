@@ -4,7 +4,7 @@ json.songs do
         title = song.song.title.titleize
         json.set! song.id do
             json.extract! song.song, :id, :album_id, :artist
-            json.sapId song.id
+            json.psId song.id
             json.title title
         end
     end

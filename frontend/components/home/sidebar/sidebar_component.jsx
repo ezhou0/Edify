@@ -9,8 +9,10 @@ class SideBar extends React.Component {
     }
 
     render() {
+        const {playlists} = this.props;
         
         return (
+            
             <div className="sidebar_comp">
                 <div id="sidebar_top">
                     <div className='loggedin-logo-div'>
@@ -27,6 +29,9 @@ class SideBar extends React.Component {
                 </div>
                 <div id="sidebar_bottom">
                     <p className='sidebar-bottom-content'>map of playlists here</p>
+                    { playlists.map(playlist => {
+                        return <Link to={`/playlists/${playlist.id}`} key={playlist.id} id="sidebar_playlist">{playlist.title.length >= 20 ? playlist.title.slice(0, 20) + "..." : playlist.title}</Link>
+                    })}
                 </div>
             </div>
         )
