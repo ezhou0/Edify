@@ -16,7 +16,7 @@ class HomeMainComponent extends React.Component {
         if (this.props.currentUser === undefined) {
             return null;
         }
-        const { currentUser} = this.props;
+        const { currentUser, playlists, createPlaylist, fetchPlaylists} = this.props;
         return (
             <div className="main_div">
                 <div className="playbar_component">
@@ -25,7 +25,10 @@ class HomeMainComponent extends React.Component {
                 <div className="main_and_side_div">
                     <div className="side_component">
                         <SideBarMain 
-                            currentUser={currentUser}  />
+                            currentUser={currentUser}
+                            createPlaylist = {createPlaylist}
+                            playlists = {playlists}
+                            fetchPlaylists = {fetchPlaylists}  />
                     </div>
                     <div className="main_component">
                         <h3>Welcome to Edify, {currentUser.username}</h3>

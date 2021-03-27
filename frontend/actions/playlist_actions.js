@@ -27,17 +27,17 @@ const removePlaylist = (playlistId) => {
 }
 
 
-export const thunkFetchUsersPlaylist = (userId) => dispatch => PlaylistsAPIUtil.fetchUsersPlaylists(userId)
+export const FetchUsersPlaylist = (userId) => dispatch => PlaylistsAPIUtil.fetchUsersPlaylists(userId)
     .then(playlists => dispatch(receiveUsersPlaylists(playlists)));
 
-export const thunkFetchPlaylist = playlistId => dispatch => PlaylistsAPIUtil.fetchPlaylist(playlistId)
+export const FetchPlaylist = playlistId => dispatch => PlaylistsAPIUtil.fetchPlaylist(playlistId)
     .then(playlist => dispatch(receivePlaylist(playlist)));
 
-export const thunkCreatePlaylist = playlist => dispatch => PlaylistsAPIUtil.createPlaylist(playlist)
+export const CreatePlaylist = playlist => dispatch => PlaylistsAPIUtil.createPlaylist(playlist)
     .then(playlist => dispatch(receivePlaylist(playlist)));
 
-export const thunkDeletePlaylist = playlistId => dispatch => PlaylistsAPIUtil.deletePlaylist(playlistId)
+export const DeletePlaylist = playlistId => dispatch => PlaylistsAPIUtil.deletePlaylist(playlistId)
     .then(() => dispatch(removePlaylist(playlistId)));
 
-export const thunkUpdatePlaylist = playlist => dispatch => PlaylistsAPIUtil.updatePlaylist(playlist)
+export const UpdatePlaylist = playlist => dispatch => PlaylistsAPIUtil.updatePlaylist(playlist)
     .then((playlist) => dispatch(receivePlaylist(playlist)));

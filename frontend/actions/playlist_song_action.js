@@ -16,9 +16,9 @@ const removeSong = (payload) => {
     };
 };
 
-export const thunkAddSongToPlaylist = (psIds) => dispatch => PSAPIutil.addSongToPlaylist(psIds)
+export const AddSongToPlaylist = (psIds) => dispatch => PSAPIutil.addSongToPlaylist(psIds)
     .then(playlist => dispatch(receivePlaylist(playlist)));
 
-export const thunkRemoveSongFromPlaylist = (psId) => dispatch => PSAPIutil.deleteSongFromPlaylist(psId)
+export const RemoveSongFromPlaylist = (psId) => dispatch => PSAPIutil.deleteSongFromPlaylist(psId)
     .then((playlist) => dispatch(receivePlaylist(playlist)));
 
