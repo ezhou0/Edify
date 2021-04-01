@@ -3,13 +3,11 @@ import HeaderComponent from "../header/header_component";
 import Playbar from "../playbar/playbar_component";
 import SideBarMain from "../sidebar/sidebar_component";
 
-class HomeMainComponent extends React.Component {
+class LoggedInComponent extends React.Component {
     constructor(props) {
         super(props);
     }
-    componentDidMount() {
-
-    }
+  
 
     render() {
         console.log("home_main_comp")
@@ -44,4 +42,4 @@ class HomeMainComponent extends React.Component {
     }
 }
 
-export default HomeMainComponent
+export default LoggedInComponent

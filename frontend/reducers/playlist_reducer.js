@@ -1,6 +1,6 @@
 import { RECEIVE_PLAYLIST, RECEIVE_USERS_PLAYLISTS, REMOVE_PLAYLIST } from "../actions/playlist_actions"
 import { RESET_STATE } from "../actions/session_actions"
-import { REMOVE_SONG } from "../actions/songs_on_playlists_action"
+import { REMOVE_SONG } from "../actions/playlist_song_action"
 export const playlistsReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
     const newState = Object.assign({}, oldState)

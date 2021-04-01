@@ -1,6 +1,6 @@
 import { connect } from "react-redux"
 import { FetchArtist } from "../../../actions/artist_actions"
-import {Fe}
+import {FetchUsersPlaylist, CreatePlaylist} from "../../../actions/playlist_actions";
 import { logout } from "../../../actions/session_actions";
 import LoggedInComponent from "./logged_in_component";
 import { withRouter } from 'react-router-dom';
