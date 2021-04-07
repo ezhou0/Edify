@@ -5,12 +5,14 @@ import { logout } from "../../../actions/session_actions";
 import LoggedInComponent from "./logged_in_component";
 import { withRouter } from 'react-router-dom';
 
+import { openModal, closeModal } from '../../../actions/modal_actions';
+
 
 const mapStateToProps = (state, ownProps) => {
     return {
         currentUser: state.entities.users[state.session.id],
         artists: Object.values(state.entities.artists),
-        playlists: Object.values(state.entities.playlists),
+        // playlists: Object.values(state.entities.playlists),
         
     }
 }
@@ -22,6 +24,8 @@ const mapDispatchToProps = dispatch => {
         fetchArtists: () => dispatch(FetchArtists()),
         fetchPlaylists: userId => dispatch(FetchUsersPlaylist(userId)),
         createPlaylist: playlist => dispatch(CreatePlaylist(playlist)),
+        openModal: (modal) => dispatch(openModal(modal)),
+        closeModal: (modal) => dispatch(closeModal(modal))
 
     }
 }

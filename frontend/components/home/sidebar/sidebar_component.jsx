@@ -24,14 +24,14 @@ class SideBar extends React.Component {
                         <p className = 'sidebar-tab'>Search Bar</p>
                         <h5 className = 'playlist-header'>PLAYLISTS</h5>
                         <p className = 'playlist-tab'> Create Playlist</p>
-                        <button> modal</button>
+                        <button onClick={() => this.props.openModal('playlist')}> modal </button>
                     </div>
                 </div>
                 <div id="sidebar_bottom">
                     <p className='sidebar-bottom-content'>map of playlists here</p>
-                    { playlists.map(playlist => {
+                    {/* { playlists.map(playlist => {
                         return <Link to={`/playlists/${playlist.id}`} key={playlist.id} id="sidebar_playlist">{playlist.title.length >= 20 ? playlist.title.slice(0, 20) + "..." : playlist.title}</Link>
-                    })}
+                    })} */}
                 </div>
             </div>
         )

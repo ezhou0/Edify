@@ -135,6 +135,35 @@ var FetchArtists = function FetchArtists() {
 
 /***/ }),
 
+/***/ "./frontend/actions/modal_actions.js":
+/*!*******************************************!*\
+  !*** ./frontend/actions/modal_actions.js ***!
+  \*******************************************/
+/*! exports provided: OPEN_MODAL, CLOSE_MODAL, openModal, closeModal */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OPEN_MODAL", function() { return OPEN_MODAL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLOSE_MODAL", function() { return CLOSE_MODAL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "openModal", function() { return openModal; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
+var OPEN_MODAL = 'OPEN_MODAL';
+var CLOSE_MODAL = 'CLOSE_MODAL';
+var openModal = function openModal(modal) {
+  return {
+    type: OPEN_MODAL,
+    modal: modal
+  };
+};
+var closeModal = function closeModal() {
+  return {
+    type: CLOSE_MODAL
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/playlist_actions.js":
 /*!**********************************************!*\
   !*** ./frontend/actions/playlist_actions.js ***!
@@ -683,11 +712,13 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
         className: "main_and_side_div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "side_component"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        currentUser: currentUser,
-        createPlaylist: createPlaylist,
-        playlists: playlists,
-        fetchPlaylists: fetchPlaylists
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_3__["default"] // currentUser={currentUser}
+      // createPlaylist = {createPlaylist}
+      // playlists = {playlists}
+      // fetchPlaylists = {fetchPlaylists} 
+      , {
+        openModal: this.props.openModal,
+        closeModal: this.props.closeModal
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main_component"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Welcome to Edify, ", currentUser.username)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -721,6 +752,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _logged_in_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./logged_in_component */ "./frontend/components/home/logged_in_component/logged_in_component.jsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+
 
 
 
@@ -731,8 +764,8 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     currentUser: state.entities.users[state.session.id],
-    artists: Object.values(state.entities.artists),
-    playlists: Object.values(state.entities.playlists)
+    artists: Object.values(state.entities.artists) // playlists: Object.values(state.entities.playlists),
+
   };
 };
 
@@ -752,6 +785,12 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     createPlaylist: function createPlaylist(playlist) {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["CreatePlaylist"])(playlist));
+    },
+    openModal: function openModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__["openModal"])(modal));
+    },
+    closeModal: function closeModal(modal) {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__["closeModal"])(modal));
     }
   };
 };
@@ -975,6 +1014,8 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
   _createClass(SideBar, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       var playlists = this.props.playlists;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar_comp"
@@ -998,17 +1039,15 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
         className: "playlist-header"
       }, "PLAYLISTS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "playlist-tab"
-      }, " Create Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, " modal"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, " Create Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: function onClick() {
+          return _this.props.openModal('playlist');
+        }
+      }, " modal "))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "sidebar_bottom"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "sidebar-bottom-content"
-      }, "map of playlists here"), playlists.map(function (playlist) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/playlists/".concat(playlist.id),
-          key: playlist.id,
-          id: "sidebar_playlist"
-        }, playlist.title.length >= 20 ? playlist.title.slice(0, 20) + "..." : playlist.title);
-      })));
+      }, "map of playlists here")));
     }
   }]);
 

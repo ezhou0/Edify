@@ -23,10 +23,13 @@ class LoggedInComponent extends React.Component {
                 <div className="main_and_side_div">
                     <div className="side_component">
                         <SideBarMain 
-                            currentUser={currentUser}
-                            createPlaylist = {createPlaylist}
-                            playlists = {playlists}
-                            fetchPlaylists = {fetchPlaylists}  />
+                            // currentUser={currentUser}
+                            // createPlaylist = {createPlaylist}
+                            // playlists = {playlists}
+                            // fetchPlaylists = {fetchPlaylists} 
+                            openModal={this.props.openModal}
+                            closeModal={this.props.closeModal}
+                        />
                     </div>
                     <div className="main_component">
                         <h3>Welcome to Edify, {currentUser.username}</h3>

@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session_form/login_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import CreatePlaylistFormContainer from '../home/sidebar/create_playlist/create_playlist_form_container';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) {
@@ -17,7 +18,7 @@ const Modal = ({ modal, closeModal }) => {
             component = <SignupFormContainer />;
             break;
         case 'playlist':
-            component = 
+            component = <CreatePlaylistFormContainer />; 
             break;
         default:
             return null;
