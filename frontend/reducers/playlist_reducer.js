@@ -1,5 +1,5 @@
 import { RECEIVE_PLAYLIST, RECEIVE_USERS_PLAYLISTS, REMOVE_PLAYLIST } from "../actions/playlist_actions"
-import { RESET_STATE } from "../actions/session_actions"
+// import { RESET_STATE } from "../actions/session_actions"
 import { REMOVE_SONG } from "../actions/playlist_song_action"
 export const playlistsReducer = (oldState = {}, action) => {
     Object.freeze(oldState)
@@ -22,8 +22,8 @@ export const playlistsReducer = (oldState = {}, action) => {
             delete slice[action.payload.psId];
             newState[action.payload.playlistId].songs = slice;
             return newState;
-        case RESET_STATE:
-            return {};
+        // case RESET_STATE:
+        //     return {};
         default:
             return oldState;
     };

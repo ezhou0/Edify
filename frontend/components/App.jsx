@@ -13,12 +13,12 @@ import Modal from './modal/modal';
 
 const App = () => (
     <div>
-        
+        <Modal/>
         <Switch>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
         <Route exact path="/" component={LoggedOutComponent}></Route>
-        <Route component={Modal} />
+        {/* <Route component={Modal} /> */}
         <ProtcRoute path="/home/" component={home} />
         <Route path="*">
             <Redirect to="/" />            

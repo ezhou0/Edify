@@ -23,8 +23,7 @@ class SideBar extends React.Component {
                         <p className = 'sidebar-tab'>Home</p>
                         <p className = 'sidebar-tab'>Search Bar</p>
                         <h5 className = 'playlist-header'>PLAYLISTS</h5>
-                        <p className = 'playlist-tab'> Create Playlist</p>
-                        <button onClick={() => this.props.openModal('playlist')}> modal </button>
+                        <button classNAme = 'playlist-tab' onClick={() => this.props.openModal('playlist')}> Create Playlist</button>
                     </div>
                 </div>
                 <div id="sidebar_bottom">
