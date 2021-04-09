@@ -1,8 +1,7 @@
 import { connect } from 'react-redux';
-//import { clearCardErrors, createCard } from '../../actions/card_actions';
-//import CreateCardForm from './create_card_form';
+
 import CreatePlaylistForm from './create_playlist_form';
-import { closeModal } from '../../actions/modal_actions';
+import { closeModal } from '../../../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
     return {

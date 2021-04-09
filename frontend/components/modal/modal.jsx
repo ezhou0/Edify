@@ -1,8 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import LoginFormContainer from '../session_form/login_form_container';
-import SignupFormContainer from '../session_form/signup_form_container';
+
 import CreatePlaylistFormContainer from '../home/sidebar/create_playlist/create_playlist_form_container';
 
 const Modal = ({ modal, closeModal }) => {
@@ -11,12 +10,12 @@ const Modal = ({ modal, closeModal }) => {
     }
     let component;
     switch (modal) {
-        case 'login':
-            component = <LoginFormContainer />;
-            break;
-        case 'signup':
-            component = <SignupFormContainer />;
-            break;
+        // case 'login':
+        //     component = <LoginFormContainer />;
+        //     break;
+        // case 'signup':
+        //     component = <SignupFormContainer />;
+        //     break;
         case 'playlist':
             component = <CreatePlaylistFormContainer />; 
             break;
