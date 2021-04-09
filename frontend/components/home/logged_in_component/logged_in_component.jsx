@@ -1,4 +1,5 @@
 import React from "react"
+import { Redirect } from "react-router";
 import HeaderComponent from "../header/header_component";
 import Playbar from "../playbar/playbar_component";
 import SideBarMain from "../sidebar/sidebar_component";
@@ -8,6 +9,11 @@ class LoggedInComponent extends React.Component {
         super(props);
     }
   
+    redirect(){
+        if(this.props.currentUser === false){
+            return <Redirect to='/' />
+        }
+    }
 
     render() {
         console.log("home_main_comp")
@@ -17,13 +23,14 @@ class LoggedInComponent extends React.Component {
         const { currentUser, playlists, createPlaylist, fetchPlaylists} = this.props;
         return (
             <div className="main_div">
+                {this.redirect()};
                 <div className="playbar_component">
                     <Playbar />
                 </div>
                 <div className="main_and_side_div">
                     <div className="side_component">
                         <SideBarMain 
-                            // currentUser={currentUser}
+                            currentUser={currentUser}
                             // createPlaylist = {createPlaylist}
                             // playlists = {playlists}
                             // fetchPlaylists = {fetchPlaylists} 
