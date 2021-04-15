@@ -7,6 +7,13 @@ class AlbumShowComponent extends React.Component{
     }
 
     render(){
+        return(
+            <div>
+                album show 
+
+            </div>
+
+        )
 
     }
 

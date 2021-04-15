@@ -6,10 +6,13 @@ import LoginFormContainer from './session/login_form_container';
 import { AuthRoute, ProtcRoute } from '../util/route_util';
 import LoggedinContainer from "./home/logged_in_component/logged_in_container";
 import ArtistIndexContainer from "./home/music/artists/artists_index_container"
-import ArtistShowContainer from "./home/music/artists/artist_show_container"
+import ArtistShowContainer from "./home/music/artists/artist_show_container";
+import AlbumShowContainer from './home/music/albums/album_show_container';
+
 import LoggedOutComponent from "./home/logged_out_component/logged_out_component";
 import home from "./home/home";
 import Modal from './modal/modal';
+
 
 const App = () => (
     <div>
@@ -18,7 +21,8 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
         <Route exact path="/" component={LoggedOutComponent}></Route>
-        {/* <Route component={Modal} /> */}
+       <ProtcRoute path = "/artists/:artist:Id" component={ArtistShowContainer}/>
+       <ProtcRoute path = '/albums/:albumId' component={AlbumShowContainer}/>
         <ProtcRoute path="/home/" component={home} />
         <Route path="*">
             <Redirect to="/" />            
