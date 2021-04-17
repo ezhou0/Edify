@@ -16,14 +16,14 @@ class LoggedInComponent extends React.Component {
     }
 
     render() {
-        console.log("home_main_comp")
+        // console.log("home_main_comp")
         if (this.props.currentUser === undefined) {
             return null;
         }
         const { currentUser, playlists, createPlaylist, fetchPlaylists} = this.props;
         return (
             <div className="main_div">
-                {this.redirect()};
+                {/* {this.redirect()}; */}
                 <div className="playbar_component">
                     <Playbar />
                 </div>
@@ -39,7 +39,7 @@ class LoggedInComponent extends React.Component {
                         />
                     </div>
                     <div className="main_component">
-                        <h3>Welcome to Edify, {currentUser.username}</h3>
+                        {/* <h3>Welcome to Edify, {currentUser.username}</h3> */}
                     </div>
                     <div className="header_component">
                         <HeaderComponent currentUser={this.props.currentUser.username}

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import { fetchArtists } from '../../../../util/artist_api_util';
-import ArtistIndexComponent from './artists_index_component';
+import ArtistIndexComponent from './artist_index_component';
 
 const mapStateToProps = state => {
     return{

@@ -3,7 +3,7 @@ export const RECEIVE_ALBUM = "RECEIVE_ALBUM"
 export const REMOVE_ALBUMS = "REMOVE_ALBUMS"
 
 
-const receiveAlbum = (album) => {
+export const receiveAlbum = (album) => {
     return {
         type: RECEIVE_ALBUM,
         album
@@ -16,5 +16,5 @@ export const removeAlbums = () => {
     }
 }
 
-export const thunkFetchAlbum = albumId => dispatch => AlbumAPIUtil.fetchAlbum(albumId)
+export const fetchAlbum = albumId => dispatch => AlbumAPIUtil.fetchAlbum(albumId)
     .then(album => dispatch(receiveAlbum(album)));
