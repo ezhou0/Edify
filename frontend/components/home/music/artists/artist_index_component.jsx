@@ -19,12 +19,12 @@ class ArtistIndexComponent extends React.Component{
                 <div id="artist_index_title_see_all">
                     <div className="index_title">Artists</div>
                     <div id="artist_index_see_all">
-                        <Link to="/searches/undefined/artists">See All</Link>
+                        <div>See All</div>
                     </div>
                 </div>
                 <div className="artist_profile_pic_div">
                     <div id="aritst_profile_pic_div_div">
-                        {artists.slice(1, 6).map(artist => {
+                        {artists.slice(0, 6).map(artist => {
                             return <ArtistIndexItem key={artist.id} artist={artist} />
                         })}
                     </div>

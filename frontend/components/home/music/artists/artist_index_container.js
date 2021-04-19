@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import { fetchArtists } from '../../../../util/artist_api_util';
+import { FetchArtists } from '../../../../actions/artist_actions'; 
 import ArtistIndexComponent from './artist_index_component';
 
 const mapStateToProps = state => {
@@ -9,9 +9,9 @@ const mapStateToProps = state => {
     }
 };
 
-const mapDispatchToProps= dispatch =>{
+const mapDispatchToProps= dispatch => {
     return{
-        fetchArtist: ()=> dispatch(fetchArtists()),
+        fetchArtists: () => dispatch(FetchArtists()),
     }
 };
 

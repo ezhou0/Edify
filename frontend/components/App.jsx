@@ -23,8 +23,8 @@ const App = () => (
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
         {/* <Route exact path="/" component={LoggedOutComponent}></Route> */}
-            <Route exact path="/" component={HomeContainer}></Route>
-       <ProtcRoute path = "/artists/:artist:Id" component={ArtistShowContainer}/>
+        <Route exact path="/" component={HomeContainer}></Route>
+       <ProtcRoute path = "/artists/:artistId" component={ArtistShowContainer}/>
        <ProtcRoute path = '/albums/:albumId' component={AlbumShowContainer}/>
         <ProtcRoute path="/home/" component={ArtistIndexContainer} />
         <Route path="*">

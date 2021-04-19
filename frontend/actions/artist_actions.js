@@ -1,4 +1,4 @@
-import * as ArtistApiUtil from "../util/artist_api_util.js"
+import * as ArtistApiUtil from "../util/artist_api_util"
 
 
 export const RECEIVE_ARTIST = "RECEIVE_ARTIST"
@@ -22,4 +22,4 @@ export const FetchArtist = artistId => dispatch => ArtistApiUtil.fetchArtist(art
     .then(artist => dispatch(receiveArtist(artist)));
 
 export const FetchArtists = () => dispatch => ArtistApiUtil.fetchArtists()
-    .then(artists => dispatch(receiveArtists(artists)))
+    .then(artists => dispatch(receiveArtists(artists)));

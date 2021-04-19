@@ -1,5 +1,6 @@
-@artists.each do |artist|
-     json.set! artist.id do
-        json.extract! artist, :id, :name
-    end
+json.artist do
+    name = @artist.name.titleize
+    json.extract! @artist, :id
+    json.name name
+    
 end

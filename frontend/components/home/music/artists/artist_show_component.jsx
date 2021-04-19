@@ -5,12 +5,16 @@ class ArtistShowComponent extends React.Component{
         super(props);
     }
 
+    componentDidMount(){
+        this.props.fetchArtist(this.props.match.params.artistId);
+    }
+
     render(){
         const artist = this.props.artist;
         
 
         return(
-            <div>
+            <div id='artist_show_container'>
                 <div className = 'artist_show_pic'>
                     pic goes here
                 </div>
@@ -32,10 +36,6 @@ class ArtistShowComponent extends React.Component{
                             Discography
                         </div>
 
-                        <div className = 'artist_album_div_albums'> 
-                            {/* albums.map()
-                             */}
-                        </div>
                     </div>
                 </div>
             </div>
