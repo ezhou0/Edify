@@ -33,6 +33,18 @@ class HeaderComponent extends React.Component {
     render() {
         return (
             <div id="header_component">
+                <div className="header_buttons_and_search">
+                    <button className="header_history" id="header_back_button"
+                        onClick={() => this.props.history.goBack()} value = 'back'>
+                        back
+                    </button>
+                    <button className="header_history" id="header_forward_button"
+                        onClick={() => this.props.history.goForward()} value = 'forward'>
+                       forward
+                    </button>
+                </div>
+
+
                 <div id={`${this.userProfile}`} className = 'header-content'>
                     <div id="header_profile">
                        

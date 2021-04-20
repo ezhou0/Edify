@@ -9,7 +9,7 @@ const entitiesReducer = combineReducers({
     users: usersReducer,
     artists: artistsReducer,
     albums: albumsReducer,
-    playlist: playlistsReducer,
+    playlists: playlistsReducer,
 });
 
 export default entitiesReducer;

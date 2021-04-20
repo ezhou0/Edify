@@ -8,7 +8,12 @@ class SideBar extends React.Component {
         super(props);
     }
 
+    // componentDidMount(){
+    //     this.props.fetchPlaylists
+    // }
+
     render() {
+        
         const {playlists} = this.props;
         
         return (
@@ -29,9 +34,10 @@ class SideBar extends React.Component {
                 </div>
                 <div id="sidebar_bottom">
                     <p className='sidebar-bottom-content'>map of playlists here</p>
-                    {/* { playlists.map(playlist => {
-                        return <Link to={`/playlists/${playlist.id}`} key={playlist.id} id="sidebar_playlist">{playlist.title.length >= 20 ? playlist.title.slice(0, 20) + "..." : playlist.title}</Link>
-                    })} */}
+                    { playlists.map(playlist => {
+                        return <div>{playlist.name}</div>
+                        // return <Link to={`/playlists/${playlist.id}`} key={playlist.id} id="sidebar_playlist">{playlist.title.length >= 20 ? playlist.title.slice(0, 20) + "..." : playlist.title}</Link>
+                    })}
                 </div>
             </div>
         )

@@ -32,10 +32,11 @@ class LoggedInComponent extends React.Component {
                         <SideBarMain 
                             currentUser={currentUser}
                             // createPlaylist = {createPlaylist}
-                            // playlists = {playlists}
-                            // fetchPlaylists = {fetchPlaylists} 
+                            playlists = {playlists}
+                            fetchPlaylists = {fetchPlaylists} 
                             openModal={this.props.openModal}
                             closeModal={this.props.closeModal}
+                            history={this.props.history}
                         />
                     </div>
                     <div className="main_component">
@@ -43,7 +44,7 @@ class LoggedInComponent extends React.Component {
                     </div>
                     <div className="header_component">
                         <HeaderComponent currentUser={this.props.currentUser.username}
-                            logout={this.props.logout} 
+                            logout={this.props.logout} history={this.props.history}
                         />
                     </div>
                 </div>

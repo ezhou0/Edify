@@ -26,6 +26,7 @@ const App = () => (
         <Route exact path="/" component={HomeContainer}></Route>
        <ProtcRoute path = "/artists/:artistId" component={ArtistShowContainer}/>
        <ProtcRoute path = '/albums/:albumId' component={AlbumShowContainer}/>
+        {/* <ProtcRoute path="/playlists/:playlistId" component={PlaylistShowContainer} /> */}
         <ProtcRoute path="/home/" component={ArtistIndexContainer} />
         <Route path="*">
             <Redirect to="/" />            

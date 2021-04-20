@@ -568,9 +568,27 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "header_component"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "header_buttons_and_search"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "header_history",
+        id: "header_back_button",
+        onClick: function onClick() {
+          return _this2.props.history.goBack();
+        },
+        value: "back"
+      }, "back"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "header_history",
+        id: "header_forward_button",
+        onClick: function onClick() {
+          return _this2.props.history.goForward();
+        },
+        value: "forward"
+      }, "forward")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "".concat(this.userProfile),
         className: "header-content"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -810,18 +828,20 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
         className: "side_component"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_4__["default"], {
         currentUser: currentUser // createPlaylist = {createPlaylist}
-        // playlists = {playlists}
-        // fetchPlaylists = {fetchPlaylists} 
         ,
+        playlists: playlists,
+        fetchPlaylists: fetchPlaylists,
         openModal: this.props.openModal,
-        closeModal: this.props.closeModal
+        closeModal: this.props.closeModal,
+        history: this.props.history
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main_component"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header_component"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_header_component__WEBPACK_IMPORTED_MODULE_2__["default"], {
         currentUser: this.props.currentUser.username,
-        logout: this.props.logout
+        logout: this.props.logout,
+        history: this.props.history
       }))));
     }
   }]);
@@ -860,8 +880,8 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     currentUser: state.entities.users[state.session.id],
-    artists: Object.values(state.entities.artists) // playlists: Object.values(state.entities.playlists),
-
+    artists: Object.values(state.entities.artists),
+    playlists: Object.values(state.entities.playlists)
   };
 };
 
@@ -1716,7 +1736,10 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, SideBar);
 
     return _super.call(this, props);
-  }
+  } // componentDidMount(){
+  //     this.props.fetchPlaylists
+  // }
+
 
   _createClass(SideBar, [{
     key: "render",
@@ -1754,7 +1777,9 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
         id: "sidebar_bottom"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "sidebar-bottom-content"
-      }, "map of playlists here")));
+      }, "map of playlists here"), playlists.map(function (playlist) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, playlist.name); // return <Link to={`/playlists/${playlist.id}`} key={playlist.id} id="sidebar_playlist">{playlist.title.length >= 20 ? playlist.title.slice(0, 20) + "..." : playlist.title}</Link>
+      })));
     }
   }]);
 
@@ -2600,7 +2625,7 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
   users: _users_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
   artists: _artists_reducer__WEBPACK_IMPORTED_MODULE_2__["default"],
   albums: _albums_reducer__WEBPACK_IMPORTED_MODULE_3__["default"],
-  playlist: _playlist_reducer__WEBPACK_IMPORTED_MODULE_4__["playlistsReducer"]
+  playlists: _playlist_reducer__WEBPACK_IMPORTED_MODULE_4__["playlistsReducer"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (entitiesReducer);
 
