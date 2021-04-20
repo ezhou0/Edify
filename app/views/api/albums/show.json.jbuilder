@@ -1,7 +1,7 @@
 json.album do
-    title = @album.title.titleize
+    title = @album.name.titleize
     json.extract! @album, :id, :artist_id, :year
-    json.title title
+    json.name title
 end
 
 json.artist do 

@@ -1108,9 +1108,16 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(AlbumShowComponent, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchAlbum(this.props.match.params.albumId);
+    }
+  }, {
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "album show");
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album_show_div"
+      }, "album show");
     }
   }]);
 
@@ -1151,7 +1158,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapDispatchToProps, mapStateToProps)(_album_show_component__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_album_show_component__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
