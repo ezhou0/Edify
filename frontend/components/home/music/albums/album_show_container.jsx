@@ -4,7 +4,7 @@ import AlbumShowComponent from './album_show_component';
 
 const mapStateToProps = (state, ownProps) => {
     return{
-        album: state.entities.albums[ownProps.match.params.albumId]
+        album: state.entities.albums[ownProps.match.params.albumId],
     }
 }
 

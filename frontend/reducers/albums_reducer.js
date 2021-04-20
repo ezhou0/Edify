@@ -10,7 +10,7 @@ const albumsReducer = (oldState = {}, action) => {
         case RECEIVE_ARTIST:
             return action.artist.albums;
         case RECEIVE_ALBUM:
-            newState[action.album.album.id] = action.album;
+            newState[action.album.id] = action.album;
             return newState;
         case REMOVE_ALBUMS:
             return {};

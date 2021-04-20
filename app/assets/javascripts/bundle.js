@@ -1117,7 +1117,21 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album_show_div"
-      }, "album show");
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album_show_top"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album_show_pic"
+      }, "Album pic here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album_show_info"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "album_show_album"
+      }, "Album"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "album_show_title"
+      }, this.props.album.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "album_show_info"
+      }, this.props.album.artist, " - ", this.props.album.year))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album_show_bottom"
+      }, "songs map go here"));
     }
   }]);
 
@@ -2510,7 +2524,7 @@ var albumsReducer = function albumsReducer() {
       return action.artist.albums;
 
     case _actions_album_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALBUM"]:
-      newState[action.album.album.id] = action.album;
+      newState[action.album.id] = action.album;
       return newState;
 
     case _actions_album_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_ALBUMS"]:
