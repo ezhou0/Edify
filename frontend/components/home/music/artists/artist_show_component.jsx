@@ -1,4 +1,6 @@
-import React from 'react';
+import React from 'react'; 
+import AlbumItem from '../albums/album_index_item';
+
 
 class ArtistShowComponent extends React.Component{
     constructor(props){
@@ -11,7 +13,8 @@ class ArtistShowComponent extends React.Component{
 
     render(){
         const artist = this.props.artist;
-        
+        const albums = this.props.albums;
+        let albumNum = 0;
 
         return(
             <div id='artist_show_container'>
@@ -34,6 +37,15 @@ class ArtistShowComponent extends React.Component{
                     <div className = 'artist_album_div'>
                         <div className = 'artist_album_div_title'>
                             Discography
+                        </div>
+
+                        <div>
+                            {albums.map(album => {
+                                albumNum += 1;
+                                return(
+                                    <AlbumItem key = {albumNum} album = {album} />
+                                )
+                            })}
                         </div>
 
                     </div>

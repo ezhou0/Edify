@@ -1,7 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-class AlbumIndexItem extends React.Component{
+class AlbumItem extends React.Component{
+
+
     render(){
         const {album} = this.props;
         return(
@@ -11,11 +13,11 @@ class AlbumIndexItem extends React.Component{
                 </div>
                 <div className = 'album_title_div'>
                     <div>
-                        {album.title}
+                        {album.name}
                     </div>
                     <div>
-                        {this.props.album.artist.name}
-                        <br/>
+                        {/* {this.props.album.artist.name}
+                        <br/> */}
                         {album.year}
                     </div>
                 
@@ -27,4 +29,4 @@ class AlbumIndexItem extends React.Component{
     }
 }
 
-export default AlbumIndexItem;
+export default AlbumItem;
