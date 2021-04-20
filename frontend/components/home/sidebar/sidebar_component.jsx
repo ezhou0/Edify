@@ -15,10 +15,11 @@ class SideBar extends React.Component {
             
             <div className="sidebar_comp">
                 <div id="sidebar_top">
-                    <div className='loggedin-logo-div'>
+                    <Link to = '/' className='loggedin-logo-div' >
+                        
                             <img className="li-home-logo" src={window.edifyURL} alt="Edify Logo" />
                             <div className='li-home-logo-text'>dify</div>
-                    </div>
+                    </Link>
                     <div className = 'sidebar-top-content'>
                         <p className = 'sidebar-tab'>Home</p>
                         <p className = 'sidebar-tab'>Search Bar</p>
