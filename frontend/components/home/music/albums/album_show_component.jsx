@@ -1,4 +1,5 @@
 import React from 'react';
+import SongsIndexContainer from '../songs/song_index_container';
 
 
 class AlbumShowComponent extends React.Component{
@@ -12,12 +13,13 @@ class AlbumShowComponent extends React.Component{
 
 
     render(){
-        
-        
 
+        
+        
+        let count = 0;
         return(
             <div className='album_show_div'>
-               
+                
 
                 <div className="album_show_top">
                     <div className="album_show_pic">
@@ -38,6 +40,19 @@ class AlbumShowComponent extends React.Component{
 
                 <div className="album_show_bottom">
                     songs map go here
+                    <div className="song_component_left" id="hash_and_title">
+                        <div className="ord_div">
+                            #
+                            </div>
+                        <div className="song_info">
+                            TITLE
+                            </div>
+                    </div>
+                    <SongsIndexContainer albumId = {this.props.album.id} />
+                    {/* {this.props.album.songs.map(song => {
+                        count +=1
+                        return <div  id="album_show_song"><SongContainer artist={this.props.album.artist[this.props.album.artist_id]} song={song} /></div>
+                    })} */}
                 </div>
 
             </div>

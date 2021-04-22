@@ -1,5 +1,6 @@
 import { RESET_STATE } from "../actions/session_actions";
-import { RECEIVE_CURRENT_SONG } from "../actions/song_actions";
+import { RECEIVE_CURRENT_SONG, RECEIVE_SONGS } from "../actions/song_actions";
+
 
 
 export const songsReducer = (oldState = { songInfo: {} }, action) => {
@@ -10,6 +11,8 @@ export const songsReducer = (oldState = { songInfo: {} }, action) => {
                 oldState.songInfo.currentSong.pause();
             }
             return { songInfo: action.songInfo };
+        case RECEIVE_SONGS:
+            return Object.assign({}, action.songs);
         case RESET_STATE:
             return { songInfo: {} };
         default:

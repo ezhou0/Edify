@@ -16,3 +16,4 @@ json.albums do
         end
     end
 end
+
