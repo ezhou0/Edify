@@ -1,4 +1,16 @@
 class Api::SongsController < ApplicationController
-    def create
-        @playlist_songs = Playlist
+    def index
+        if params[:album_id] == "browse"
+            @songs = Song.all
+        else
+            album = Album.find(params[:album_id])
+            @songs = album.songs
+        end
+        render :index
+    end
+
+    def show
+        @song = Song.find(params[:id])
+        render :show
+    end
 end

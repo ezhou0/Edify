@@ -7,16 +7,20 @@ class SongsIndex extends React.Component {
     }
 
     componentDidMount(){
+       
         this.props.fetchSongs(this.props.albumId);
+        debugger;
     }
+
     render(){
-        const {songs } = this.props;
+        
+        const { songs } = this.props;
         return(
             <ul className='songs-grid'>
                 {
                     songs.map(song=>(
                         <SongComponent 
-                        song={song}
+                        song= {song}
                         key = {song.id}
                         />
                     ))

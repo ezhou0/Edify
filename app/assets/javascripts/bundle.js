@@ -1698,6 +1698,7 @@ var SongsIndex = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSongs(this.props.albumId);
+      debugger;
     }
   }, {
     key: "render",
@@ -3087,29 +3088,20 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var songsReducer = function songsReducer() {
-  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
-    songInfo: {}
-  };
+  var oldState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(oldState);
 
   switch (action.type) {
-    case _actions_song_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_CURRENT_SONG"]:
-      if (oldState.songInfo.currentSong !== undefined) {
-        oldState.songInfo.currentSong.pause();
-      }
-
-      return {
-        songInfo: action.songInfo
-      };
-
+    // case RECEIVE_CURRENT_SONG:
+    //     if (oldState.songInfo.currentSong !== undefined) {
+    //         oldState.songInfo.currentSong.pause();
+    //     }
+    //     return { songInfo: action.songInfo };
     case _actions_song_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_SONGS"]:
       return Object.assign({}, action.songs);
-
-    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RESET_STATE"]:
-      return {
-        songInfo: {}
-      };
+    // case RESET_STATE:
+    //     return { songInfo: {} };
 
     default:
       return oldState;
