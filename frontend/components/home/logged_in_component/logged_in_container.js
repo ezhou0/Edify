@@ -28,6 +28,9 @@ const mapDispatchToProps = dispatch => {
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: (modal) => dispatch(closeModal(modal))
 
+
+        search: searchTerm => dispatch(thunkSearch(searchTerm)),
+        removeSearch: () => dispatch(removeSearch()),
     }
 }
 

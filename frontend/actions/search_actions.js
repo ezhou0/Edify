@@ -16,8 +16,8 @@ export const removeSearch = () => {
     }
 }
 
-export const thunkSearch = (searchTerm) => dispatch => SearchAPIUtil.search(searchTerm)
+export const Search = (searchTerm) => dispatch => SearchAPIUtil.search(searchTerm)
     .then(searchRes => dispatch(receiveSearch(searchRes)));
 
-export const thunkSearchAll = () => dispatch => SearchAPIUtil.searchAll()
+export const SearchAll = () => dispatch => SearchAPIUtil.searchAll()
     .then(searchRes => dispatch(receiveSearch(searchRes)));

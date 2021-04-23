@@ -37,6 +37,8 @@ class LoggedInComponent extends React.Component {
                             openModal={this.props.openModal}
                             closeModal={this.props.closeModal}
                             history={this.props.history}
+                            search={this.props.search}
+                            removeSearch={this.props.removeSearch}
                         />
                     </div>
                     <div className="main_component">

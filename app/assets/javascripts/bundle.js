@@ -338,7 +338,7 @@ var RemoveSongFromPlaylist = function RemoveSongFromPlaylist(psId) {
 /*!********************************************!*\
   !*** ./frontend/actions/search_actions.js ***!
   \********************************************/
-/*! exports provided: RECEIVE_SEARCH, REMOVE_SEARCH, removeSearch, thunkSearch, thunkSearchAll */
+/*! exports provided: RECEIVE_SEARCH, REMOVE_SEARCH, removeSearch, Search, SearchAll */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -346,8 +346,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SEARCH", function() { return RECEIVE_SEARCH; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_SEARCH", function() { return REMOVE_SEARCH; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeSearch", function() { return removeSearch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "thunkSearch", function() { return thunkSearch; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "thunkSearchAll", function() { return thunkSearchAll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Search", function() { return Search; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchAll", function() { return SearchAll; });
 /* harmony import */ var _util_search_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/search_api_util */ "./frontend/util/search_api_util.js");
 
 var RECEIVE_SEARCH = "RECIEVE_SEARCH";
@@ -365,14 +365,14 @@ var removeSearch = function removeSearch() {
     type: REMOVE_SEARCH
   };
 };
-var thunkSearch = function thunkSearch(searchTerm) {
+var Search = function Search(searchTerm) {
   return function (dispatch) {
     return _util_search_api_util__WEBPACK_IMPORTED_MODULE_0__["search"](searchTerm).then(function (searchRes) {
       return dispatch(receiveSearch(searchRes));
     });
   };
 };
-var thunkSearchAll = function thunkSearchAll() {
+var SearchAll = function SearchAll() {
   return function (dispatch) {
     return _util_search_api_util__WEBPACK_IMPORTED_MODULE_0__["searchAll"]().then(function (searchRes) {
       return dispatch(receiveSearch(searchRes));
@@ -931,7 +931,9 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
         fetchPlaylists: fetchPlaylists,
         openModal: this.props.openModal,
         closeModal: this.props.closeModal,
-        history: this.props.history
+        history: this.props.history,
+        search: this.props.search,
+        removeSearch: this.props.removeSearch
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main_component"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -956,60 +958,9 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
   !*** ./frontend/components/home/logged_in_component/logged_in_container.js ***!
   \*****************************************************************************/
 /*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_artist_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../actions/artist_actions */ "./frontend/actions/artist_actions.js");
-/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _logged_in_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./logged_in_component */ "./frontend/components/home/logged_in_component/logged_in_component.jsx");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-
-
-
-
-
-
-
-
-var mapStateToProps = function mapStateToProps(state, ownProps) {
-  return {
-    currentUser: state.entities.users[state.session.id],
-    artists: Object.values(state.entities.artists),
-    playlists: Object.values(state.entities.playlists)
-  };
-};
-
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    logout: function logout() {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["logout"])());
-    },
-    fetchArtist: function fetchArtist(artistId) {
-      return dispatch(Object(_actions_artist_actions__WEBPACK_IMPORTED_MODULE_1__["FetchArtist"])(artistId));
-    },
-    fetchArtists: function fetchArtists() {
-      return dispatch(FetchArtists());
-    },
-    fetchPlaylists: function fetchPlaylists(userId) {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["FetchUsersPlaylist"])(userId));
-    },
-    createPlaylist: function createPlaylist(playlist) {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["CreatePlaylist"])(playlist));
-    },
-    openModal: function openModal(modal) {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__["openModal"])(modal));
-    },
-    closeModal: function closeModal(modal) {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_6__["closeModal"])(modal));
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_5__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_logged_in_component__WEBPACK_IMPORTED_MODULE_4__["default"])));
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/Edwin/Desktop/Edify/frontend/components/home/logged_in_component/logged_in_container.js: Unexpected token, expected \",\" (32:8)\n\n\u001b[0m \u001b[90m 30 |\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 31 |\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 32 |\u001b[39m         search\u001b[33m:\u001b[39m searchTerm \u001b[33m=>\u001b[39m dispatch(thunkSearch(searchTerm))\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    |\u001b[39m         \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 33 |\u001b[39m         removeSearch\u001b[33m:\u001b[39m () \u001b[33m=>\u001b[39m dispatch(removeSearch())\u001b[33m,\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 34 |\u001b[39m     }\u001b[0m\n\u001b[0m \u001b[90m 35 |\u001b[39m }\u001b[0m\n    at Object._raise (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:776:17)\n    at Object.raiseWithData (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:769:17)\n    at Object.raise (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:737:17)\n    at Object.unexpected (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:9183:16)\n    at Object.expect (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:9169:28)\n    at Object.parseObjectLike (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:11021:14)\n    at Object.parseExprAtom (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:10589:23)\n    at Object.parseExprAtom (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:4795:20)\n    at Object.parseExprSubscripts (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:10248:23)\n    at Object.parseUpdate (/Users/Edwin/Desktop/Edify/node_modules/@babel/parser/lib/index.js:10228:21)");
 
 /***/ }),
 
