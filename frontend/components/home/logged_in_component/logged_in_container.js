@@ -26,7 +26,7 @@ const mapDispatchToProps = dispatch => {
         fetchPlaylists: userId => dispatch(FetchUsersPlaylist(userId)),
         createPlaylist: playlist => dispatch(CreatePlaylist(playlist)),
         openModal: (modal) => dispatch(openModal(modal)),
-        closeModal: (modal) => dispatch(closeModal(modal))
+        closeModal: (modal) => dispatch(closeModal(modal)),
 
 
         search: searchTerm => dispatch(thunkSearch(searchTerm)),

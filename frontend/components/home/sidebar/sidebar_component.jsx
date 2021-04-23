@@ -6,11 +6,27 @@ import {Link} from 'react-router-dom';
 class SideBar extends React.Component {
     constructor(props){
         super(props);
+        this.state = { search: "" };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     // componentDidMount(){
     //     this.props.fetchPlaylists
     // }
+
+    handleSearch(e) {
+        e.preventDefault();
+        if (this.state.search !== "") {
+            this.props.removeSearch();
+            this.props.search(this.state.search);
+            this.props.history.push(`/searches/${this.state.search}`)
+        }
+    }
+
+    handleChange(e) {
+        this.setState({ search: e.currentTarget.value });
+    }
 
     render() {
         
@@ -27,7 +43,11 @@ class SideBar extends React.Component {
                     </Link>
                     <div className = 'sidebar-top-content'>
                         <p className = 'sidebar-tab'>Home</p>
-                        <p className = 'sidebar-tab'>Search Bar</p>
+                        <input type="text" placeholder="Search" 
+                           className = 'sidebar-tab'
+                            value={this.state.search}
+                            onChange={this.handleChange}
+                        />
                         <h5 className = 'playlist-header'>PLAYLISTS</h5>
                         <button className = 'playlist-tab' onClick={() => this.props.openModal('playlist')}> Create Playlist</button>
                     </div>
