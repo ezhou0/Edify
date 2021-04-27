@@ -1,0 +1,116 @@
+// Place all the styles related to the artists controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#artist-index{
+   max-height: max-content;
+    background: linear-gradient(#181818, #131313 );
+    padding-top: 60px;
+    min-height: 100vh;
+    height: max-content;
+    padding-bottom: 150px;
+    margin-left: 225px;
+}
+#artist_index_see_all{
+    font-size: 13px;
+    color: #B3B3B3;
+    font-weight: 400;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#artist_index_see_all:hover{
+    text-decoration: underline;
+}
+
+#artist_index_see_all{
+    font-size: 13px;
+    color: #B3B3B3;
+    font-weight: 400;
+    margin-right: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+#aritst_profile_pic_div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 25px;
+}
+
+.artist_profile_pic_div{
+    min-height: min-content;
+    max-height: max-content;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // min-width: 1250px;
+}
+
+.index_title{
+    height: 50px;
+    width: 50px;
+    color: azure;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 35px;
+}
+#artist_show_container{
+     padding-left: 30%;
+}
+
+
+//index item
+
+.profile-item{
+    // border: 1px solid red;
+    border-radius: 10px;
+    color: azure;
+    height: 287px;
+    width: 210px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s; 
+    background-color: #222222;
+}
+
+.profile-item:hover{
+    background-color: #282828;
+}
+.profile_pic{
+    height: 180px;
+    width: 180px;
+//     border-radius: 50%;
+    overflow: hidden;
+    margin-top: 10px;
+    object-fit: cover;
+    color: white;
+}
+
+.profile_name{
+    width: 100%;
+    margin-left: 37px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+}
+
+.profile_item_description{
+    margin-top: 5px;
+    font-size: 14px;
+    color: #B1B1B1
+}

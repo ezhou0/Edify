@@ -8,14 +8,12 @@ class AlbumShowComponent extends React.Component{
     }
 
     componentDidMount() {
+        window.scrollTo(0,0);
         this.props.fetchAlbum(this.props.match.params.albumId);
     }
 
 
     render(){
-
-        
-        
         let count = 0;
         return(
             <div className='album_show_div'>

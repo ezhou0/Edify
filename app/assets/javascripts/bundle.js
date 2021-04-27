@@ -1253,6 +1253,7 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
   _createClass(AlbumShowComponent, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      window.scrollTo(0, 0);
       this.props.fetchAlbum(this.props.match.params.albumId);
     }
   }, {
