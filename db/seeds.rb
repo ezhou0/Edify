@@ -16,6 +16,7 @@ artist1 = Artist.create!(name: 'artist1', description: 'this is an artist')
 artist2 = Artist.create!(name: 'artist2')
 
 #TODOlink artist picture and attach photo
+artist1pic = open()
 
 #albums
 
