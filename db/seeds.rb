@@ -15,9 +15,16 @@ user2 = User.create(username: 'username2', email: 'email2.com', password: 'passw
 artist1 = Artist.create!(name: 'artist1', description: 'this is an artist')
 artist2 = Artist.create!(name: 'artist2')
 
-#TODOlink artist picture and attach photo
-artist1pic = open()
-artist2pic = open()
+#link artist pic
+artist1pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+duo.jpeg')
+artist2pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+piano.jpeg')
+
+#attach pic to artist
+
+artist1.artist_photo.attach(io: artist1pic, filename: 'artist1pic')
+artist2.artist_photo.attach(io: artist2pic, filename: 'artist2pic')
+
+
 
 #albums
 
@@ -25,7 +32,14 @@ album1 = Album.create!(name: 'artist1 album', year: 2021, artist_id: artist1.id,
 album2 = Album.create!(name: 'artist1 2nd album', year: 2021, artist_id: artist1.id, description: '2nd album for artist1')
 album3 = Album.create!(name: 'artist2 album', year: 2021, artist_id: artist2.id, description: '1st album for artist2')
 
-#TODO add album covers
+#link album covers
+
+album1pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album1.jpeg')
+album2pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album2.png')
+album3pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album3.jpeg')
+
+#
+album1.album_photo.attach(io: album1pic, filename: 'album1pic')
 
 #songs
 song1 = Song.create!(title: 'song1', album_id: album1.id)
