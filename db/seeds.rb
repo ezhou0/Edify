@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'open-uri'
+
 userBase = User.create(username: 'username', email: 'email.com', password: 'password', gender: 'Male' )
 user1 = User.create(username: 'username1', email: 'email1.com', password: 'password1', gender: 'Female' )
 user2 = User.create(username: 'username2', email: 'email2.com', password: 'password2', gender: 'Non-binary')
@@ -16,13 +18,13 @@ artist1 = Artist.create!(name: 'artist1', description: 'this is an artist')
 artist2 = Artist.create!(name: 'artist2')
 
 #link artist pic
-artist1pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+duo.jpeg')
-artist2pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+piano.jpeg')
+artist1pic = open("https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+duo.jpeg")
+artist2pic = open("https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+piano.jpeg")
 
 #attach pic to artist
 
-artist1.artist_photo.attach(io: artist1pic, filename: 'artist1pic')
-artist2.artist_photo.attach(io: artist2pic, filename: 'artist2pic')
+artist1.artist_photo.attach(io: artist1pic, filename: 'cat+duo.jpeg')
+artist2.artist_photo.attach(io: artist2pic, filename: 'cat+piano.jpeg')
 
 
 

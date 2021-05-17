@@ -19,7 +19,7 @@ class ArtistShowComponent extends React.Component{
         return(
             <div id='artist_show_container'>
                 <div className = 'artist_show_pic'>
-                    pic goes here
+                    <img id="show_profile_pic" src={artist.photo} />
                 </div>
 
                 <div className = 'artist_show_div'>
