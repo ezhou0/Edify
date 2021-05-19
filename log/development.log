@@ -31666,3 +31666,279 @@ Redirected to https://edify-app-dev.s3.us-west-1.amazonaws.com/HJSP8CYxJLBb6iZjV
 Completed 302 Found in 11ms (ActiveRecord: 2.1ms)
 
 
+Started GET "/api/artists/1" for ::1 at 2021-05-19 16:13:02 -0700
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:8
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (584.2ms)
+Completed 500 Internal Server Error in 618ms (ActiveRecord: 2.1ms)
+
+
+
+NameError - undefined local variable or method `artist' for #<#<Class:0x00007fab1bea9bd8>:0x00007fab166c8e50>
+Did you mean?  @artist:
+  app/views/api/artists/show.json.jbuilder:5:in `block in _app_views_api_artists_show_json_jbuilder___2176212065146122031_70186440981860'
+  app/views/api/artists/show.json.jbuilder:1:in `_app_views_api_artists_show_json_jbuilder___2176212065146122031_70186440981860'
+  app/controllers/api/artists_controller.rb:9:in `show'
+
+Started GET "/api/artists/1" for ::1 at 2021-05-19 16:13:44 -0700
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (4.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:8
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (640.7ms)
+Completed 500 Internal Server Error in 663ms (ActiveRecord: 4.8ms)
+
+
+
+NameError - undefined local variable or method `artist' for #<#<Class:0x00007fab1bea9bd8>:0x00007fab17c53798>
+Did you mean?  @artist:
+  app/views/api/artists/show.json.jbuilder:5:in `block in _app_views_api_artists_show_json_jbuilder___2176212065146122031_70186407461800'
+  app/views/api/artists/show.json.jbuilder:1:in `_app_views_api_artists_show_json_jbuilder___2176212065146122031_70186407461800'
+  app/controllers/api/artists_controller.rb:9:in `show'
+
+Started POST "/__better_errors/38c1973d6c9b7e6c/variables" for ::1 at 2021-05-19 16:13:45 -0700
+Started GET "/" for ::1 at 2021-05-19 16:14:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 129ms (Views: 123.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2021-05-19 16:14:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 69ms (Views: 65.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2021-05-19 16:14:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 82ms (Views: 79.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/artists/" for ::1 at 2021-05-19 16:14:44 -0700
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (2.2ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (4.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  Rendered api/artists/index.json.jbuilder (57.3ms)
+Completed 200 OK in 73ms (Views: 61.7ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a3d71cfd9b0272f9d9728e1590bde5b73dc13d77/catpiano.jpeg" for ::1 at 2021-05-19 16:14:45 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--091249ce7adbfdf0dfad17751e155d3d6b526c8e/catduo.jpeg" for ::1 at 2021-05-19 16:14:45 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a3d71cfd9b0272f9d9728e1590bde5b73dc13d77", "filename"=>"catpiano"}
+  [1m[36mActiveStorage::Blob Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.2ms) [0m[34mGenerated URL for file at key: F2dpYPHFA4pFQe24hwSnjjo6 (https://edify-app-dev.s3.us-west-1.amazonaws.com/F2dpYPHFA4pFQe24hwSnjjo6?response-content-disposition=inline%3B%20filename%3D%22catpiano.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catpiano.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T231445Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1475323211b2a0a2992f1269fb1e18c8c94096fbe4747fc825e04756cfcb3a94)[0m
+Redirected to https://edify-app-dev.s3.us-west-1.amazonaws.com/F2dpYPHFA4pFQe24hwSnjjo6?response-content-disposition=inline%3B%20filename%3D%22catpiano.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catpiano.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T231445Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=1475323211b2a0a2992f1269fb1e18c8c94096fbe4747fc825e04756cfcb3a94
+Completed 302 Found in 9ms (ActiveRecord: 3.1ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--091249ce7adbfdf0dfad17751e155d3d6b526c8e", "filename"=>"catduo"}
+  [1m[36mActiveStorage::Blob Load (1.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.1ms) [0m[34mGenerated URL for file at key: HJSP8CYxJLBb6iZjVzNYmGxz (https://edify-app-dev.s3.us-west-1.amazonaws.com/HJSP8CYxJLBb6iZjVzNYmGxz?response-content-disposition=inline%3B%20filename%3D%22catduo.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catduo.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T231445Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bcb9a06abcd463eeb571c9f5bdd331380a2dd79b81060a7732d3c151366f41c5)[0m
+Redirected to https://edify-app-dev.s3.us-west-1.amazonaws.com/HJSP8CYxJLBb6iZjVzNYmGxz?response-content-disposition=inline%3B%20filename%3D%22catduo.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catduo.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T231445Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=bcb9a06abcd463eeb571c9f5bdd331380a2dd79b81060a7732d3c151366f41c5
+Completed 302 Found in 9ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2021-05-19 16:14:45 -0700
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (1.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:8
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (454.6ms)
+Completed 500 Internal Server Error in 474ms (ActiveRecord: 1.9ms)
+
+
+
+NameError - undefined local variable or method `artist_photo' for #<#<Class:0x00007fab1bea9bd8>:0x00007fab16341390>:
+  app/views/api/artists/show.json.jbuilder:5:in `block in _app_views_api_artists_show_json_jbuilder___2176212065146122031_70186399646980'
+  app/views/api/artists/show.json.jbuilder:1:in `_app_views_api_artists_show_json_jbuilder___2176212065146122031_70186399646980'
+  app/controllers/api/artists_controller.rb:9:in `show'
+
+Started GET "/api/artists/" for ::1 at 2021-05-19 16:15:50 -0700
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (1.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (1.2ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  Rendered api/artists/index.json.jbuilder (16.9ms)
+Completed 200 OK in 37ms (Views: 31.7ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for ::1 at 2021-05-19 16:15:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 64ms (Views: 58.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/artists/" for ::1 at 2021-05-19 16:15:50 -0700
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  Rendered api/artists/index.json.jbuilder (16.4ms)
+Completed 200 OK in 29ms (Views: 24.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2021-05-19 16:15:51 -0700
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:8
+  Rendering api/artists/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:5
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:5
+  [1m[36mAlbum Load (3.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/show.json.jbuilder:9
+  Rendered api/artists/show.json.jbuilder (33.5ms)
+Completed 200 OK in 44ms (Views: 29.5ms | ActiveRecord: 12.8ms)
+
+
+  [1m[36mAlbum Load (1.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mAlbum Load (0.7ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" ORDER BY "albums"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5052.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS "edify_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5041.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "edify_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5031.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "edify_development"[0m
+  ↳ bin/rails:9
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AJK_SFWqMIKzDVmM5ABtvg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "email.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:11
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "MEDb1Ec-zh96Dl1hstKvvg"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username1"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "email1.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "H4o4XrYXC3XvmncsPfk1VQ"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username2"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "email2.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mArtist Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "artist1"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:17
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:17
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (5051.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "edify_development"[0m
+  ↳ bin/rails:9

@@ -1,5 +1,4 @@
 class Album < ApplicationRecord
-    # t.integer "artist_id", null: false
     
     validates :name, :year, :artist_id, :description, presence: true
      
