@@ -17,16 +17,6 @@ user2 = User.create(username: 'username2', email: 'email2.com', password: 'passw
 artist1 = Artist.create!(name: 'artist1', description: 'this is an artist')
 artist2 = Artist.create!(name: 'artist2')
 
-#link artist pic
-artist1pic = open("https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+duo.jpeg")
-artist2pic = open("https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+piano.jpeg")
-
-#attach pic to artist
-
-artist1.artist_photo.attach(io: artist1pic, filename: 'cat+duo.jpeg')
-artist2.artist_photo.attach(io: artist2pic, filename: 'cat+piano.jpeg')
-
-
 
 #albums
 
@@ -40,8 +30,8 @@ album1pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album1.jp
 album2pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album2.png')
 album3pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album3.jpeg')
 
-#
-album1.album_photo.attach(io: album1pic, filename: 'album1pic')
+# #
+# album1.album_photo.attach(io: album1pic, filename: 'album1pic')
 
 #songs
 song1 = Song.create!(title: 'song1', album_id: album1.id)
