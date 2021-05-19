@@ -8,7 +8,7 @@ class ArtistIndexItem extends React.Component{
         return(
             <Link to={`/artists/${artist.id}`} className ='profile-item'>
                 <div className='profile_pic'>
-                    picture goes here
+                    <img src={artist.photo}/>
                 </div>
 
                 <div className = 'profile_name'>

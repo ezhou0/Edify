@@ -31439,3 +31439,230 @@ FOREIGN KEY ("blob_id")
   [1m[36mArtist Load (4.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mArtist Load (4.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+[36m  S3 Storage (314.2ms) [0m[32mUploaded file to key: HJSP8CYxJLBb6iZjVzNYmGxz (checksum: aGrZzfR0d78nwLKzc+lpPw==)[0m
+  [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (15.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "HJSP8CYxJLBb6iZjVzNYmGxz"], ["filename", "catduo.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 8018], ["checksum", "aGrZzfR0d78nwLKzc+lpPw=="], ["created_at", "2021-05-19 18:08:47.035764"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (7.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "artist_photo"], ["record_type", "Artist"], ["record_id", 1], ["blob_id", 1], ["created_at", "2021-05-19 18:08:47.087163"]]
+  [1m[36mArtist Update (2.0ms)[0m  [1m[33mUPDATE "artists" SET "updated_at" = $1 WHERE "artists"."id" = $2[0m  [["updated_at", "2021-05-19 18:08:47.096691"], ["id", 1]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b3485240-e9a2-4213-ae65-ff3a1ba264ad) to Async(default) with arguments: #<GlobalID:0x00007feb84c313e8 @uri=#<URI::GID gid://edify/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b3485240-e9a2-4213-ae65-ff3a1ba264ad] Performing ActiveStorage::AnalyzeJob (Job ID: b3485240-e9a2-4213-ae65-ff3a1ba264ad) from Async(default) with arguments: #<GlobalID:0x00007feb840d30c8 @uri=#<URI::GID gid://edify/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b3485240-e9a2-4213-ae65-ff3a1ba264ad] [36m  S3 Storage (331.9ms) [0m[34mDownloaded file from key: HJSP8CYxJLBb6iZjVzNYmGxz[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b3485240-e9a2-4213-ae65-ff3a1ba264ad] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b3485240-e9a2-4213-ae65-ff3a1ba264ad]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b3485240-e9a2-4213-ae65-ff3a1ba264ad]   [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b3485240-e9a2-4213-ae65-ff3a1ba264ad]   [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b3485240-e9a2-4213-ae65-ff3a1ba264ad] Performed ActiveStorage::AnalyzeJob (Job ID: b3485240-e9a2-4213-ae65-ff3a1ba264ad) from Async(default) in 361.94ms
+Started GET "/" for ::1 at 2021-05-19 11:20:33 -0700
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "sOInutqXUOgfVYgO5-WAKg"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered static_pages/root.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 2047ms (Views: 2039.3ms | ActiveRecord: 4.8ms)
+
+
+Started POST "/api/session" for ::1 at 2021-05-19 11:20:39 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"username"=>"username", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "username"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:12
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:44
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."username" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["username", "username"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND "users"."id" != $2 LIMIT $3[0m  [["email", "email.com"], ["id", 1], ["LIMIT", 1]]
+  ↳ app/models/user.rb:28
+  [1m[36mUser Update (2.0ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["updated_at", "2021-05-19 18:20:39.331460"], ["id", 1]]
+  ↳ app/models/user.rb:28
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:28
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (2.3ms)
+Completed 200 OK in 303ms (Views: 10.0ms | ActiveRecord: 11.1ms)
+
+
+Started GET "/api/artists/" for ::1 at 2021-05-19 11:20:39 -0700
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  Rendered api/artists/index.json.jbuilder (40.4ms)
+Completed 500 Internal Server Error in 75ms (ActiveRecord: 9.5ms)
+
+
+
+Module::DelegationError - to_model delegated to attachment, but attachment is nil:
+  app/views/api/artists/index.json.jbuilder:6:in `block (2 levels) in _app_views_api_artists_index_json_jbuilder___2775501188626118176_70186442231860'
+  app/views/api/artists/index.json.jbuilder:3:in `block in _app_views_api_artists_index_json_jbuilder___2775501188626118176_70186442231860'
+  app/views/api/artists/index.json.jbuilder:1:in `_app_views_api_artists_index_json_jbuilder___2775501188626118176_70186442231860'
+  app/controllers/api/artists_controller.rb:4:in `index'
+
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" ORDER BY "artists"."id" DESC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+[36m  S3 Storage (298.3ms) [0m[32mUploaded file to key: F2dpYPHFA4pFQe24hwSnjjo6 (checksum: 3Y9EUn4fssbxpzVe1cNO2A==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "F2dpYPHFA4pFQe24hwSnjjo6"], ["filename", "catpiano.jpeg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 6531], ["checksum", "3Y9EUn4fssbxpzVe1cNO2A=="], ["created_at", "2021-05-19 18:23:54.249079"]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveStorage::Attachment Create (1.5ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "artist_photo"], ["record_type", "Artist"], ["record_id", 2], ["blob_id", 2], ["created_at", "2021-05-19 18:23:54.278161"]]
+  [1m[36mArtist Update (0.9ms)[0m  [1m[33mUPDATE "artists" SET "updated_at" = $1 WHERE "artists"."id" = $2[0m  [["updated_at", "2021-05-19 18:23:54.283305"], ["id", 2]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6eed511a-31da-45fc-921f-e1e027eca68a) to Async(default) with arguments: #<GlobalID:0x00007feb84bcaf58 @uri=#<URI::GID gid://edify/ActiveStorage::Blob/2>>
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6eed511a-31da-45fc-921f-e1e027eca68a] Performing ActiveStorage::AnalyzeJob (Job ID: 6eed511a-31da-45fc-921f-e1e027eca68a) from Async(default) with arguments: #<GlobalID:0x00007feb84b89d78 @uri=#<URI::GID gid://edify/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6eed511a-31da-45fc-921f-e1e027eca68a] [36m  S3 Storage (89.3ms) [0m[34mDownloaded file from key: F2dpYPHFA4pFQe24hwSnjjo6[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6eed511a-31da-45fc-921f-e1e027eca68a] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6eed511a-31da-45fc-921f-e1e027eca68a]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6eed511a-31da-45fc-921f-e1e027eca68a]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 2]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6eed511a-31da-45fc-921f-e1e027eca68a]   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6eed511a-31da-45fc-921f-e1e027eca68a] Performed ActiveStorage::AnalyzeJob (Job ID: 6eed511a-31da-45fc-921f-e1e027eca68a) from Async(default) in 99.25ms
+Started GET "/" for ::1 at 2021-05-19 11:24:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (2.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.5ms)
+Completed 200 OK in 173ms (Views: 162.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/artists/" for ::1 at 2021-05-19 11:24:05 -0700
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  Rendered api/artists/index.json.jbuilder (126.4ms)
+Completed 200 OK in 141ms (Views: 123.8ms | ActiveRecord: 17.0ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2021-05-19 11:24:07 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--091249ce7adbfdf0dfad17751e155d3d6b526c8e/catduo.jpeg" for ::1 at 2021-05-19 11:24:07 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--091249ce7adbfdf0dfad17751e155d3d6b526c8e", "filename"=>"catduo"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (10.9ms) [0m[34mGenerated URL for file at key: HJSP8CYxJLBb6iZjVzNYmGxz (https://edify-app-dev.s3.us-west-1.amazonaws.com/HJSP8CYxJLBb6iZjVzNYmGxz?response-content-disposition=inline%3B%20filename%3D%22catduo.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catduo.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T182407Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=83db90fda1cc5b59b2d48e1efc72e02a262cfc4fb34bfdaf8132b886153940f7)[0m
+Redirected to https://edify-app-dev.s3.us-west-1.amazonaws.com/HJSP8CYxJLBb6iZjVzNYmGxz?response-content-disposition=inline%3B%20filename%3D%22catduo.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catduo.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T182407Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=83db90fda1cc5b59b2d48e1efc72e02a262cfc4fb34bfdaf8132b886153940f7
+Completed 302 Found in 17ms (ActiveRecord: 0.4ms)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:8
+  Rendering api/artists/show.json.jbuilder
+  Rendered api/artists/show.json.jbuilder (424.3ms)
+Completed 500 Internal Server Error in 436ms (ActiveRecord: 1.1ms)
+
+
+
+NameError - undefined local variable or method `artist' for #<#<Class:0x00007fab1bea9bd8>:0x00007fab17c69610>
+Did you mean?  @artist:
+  app/views/api/artists/show.json.jbuilder:5:in `block in _app_views_api_artists_show_json_jbuilder___2176212065146122031_70186435381200'
+  app/views/api/artists/show.json.jbuilder:1:in `_app_views_api_artists_show_json_jbuilder___2176212065146122031_70186435381200'
+  app/controllers/api/artists_controller.rb:9:in `show'
+
+Started GET "/api/artists/" for ::1 at 2021-05-19 11:24:11 -0700
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (1.6ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Attachment Load (2.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  Rendered api/artists/index.json.jbuilder (30.6ms)
+Completed 200 OK in 44ms (Views: 34.7ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/" for ::1 at 2021-05-19 11:29:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 506ms (Views: 501.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2021-05-19 11:29:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 141ms (Views: 136.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-05-19 11:29:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "IWRfKybWPJ5ExYTcjwIC1g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 464ms (Views: 460.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/artists/" for ::1 at 2021-05-19 11:29:52 -0700
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:6
+  Rendered api/artists/index.json.jbuilder (21.5ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a3d71cfd9b0272f9d9728e1590bde5b73dc13d77/catpiano.jpeg" for ::1 at 2021-05-19 11:29:52 -0700
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--091249ce7adbfdf0dfad17751e155d3d6b526c8e/catduo.jpeg" for ::1 at 2021-05-19 11:29:52 -0700
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--a3d71cfd9b0272f9d9728e1590bde5b73dc13d77", "filename"=>"catpiano"}
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.9ms) [0m[34mGenerated URL for file at key: F2dpYPHFA4pFQe24hwSnjjo6 (https://edify-app-dev.s3.us-west-1.amazonaws.com/F2dpYPHFA4pFQe24hwSnjjo6?response-content-disposition=inline%3B%20filename%3D%22catpiano.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catpiano.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T182952Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=aaeddae4f2009ac60dfbe6a439cd3e9d1162b3c36036f9ae8e3f60fc3016f294)[0m
+Redirected to https://edify-app-dev.s3.us-west-1.amazonaws.com/F2dpYPHFA4pFQe24hwSnjjo6?response-content-disposition=inline%3B%20filename%3D%22catpiano.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catpiano.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T182952Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=aaeddae4f2009ac60dfbe6a439cd3e9d1162b3c36036f9ae8e3f60fc3016f294
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--091249ce7adbfdf0dfad17751e155d3d6b526c8e", "filename"=>"catduo"}
+  [1m[36mActiveStorage::Blob Load (1.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /Users/Edwin/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (2.0ms) [0m[34mGenerated URL for file at key: HJSP8CYxJLBb6iZjVzNYmGxz (https://edify-app-dev.s3.us-west-1.amazonaws.com/HJSP8CYxJLBb6iZjVzNYmGxz?response-content-disposition=inline%3B%20filename%3D%22catduo.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catduo.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T182952Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5afbe67ab1ef235ba8b7560be6422b8dd0e780179b742218a96d68087881143c)[0m
+Redirected to https://edify-app-dev.s3.us-west-1.amazonaws.com/HJSP8CYxJLBb6iZjVzNYmGxz?response-content-disposition=inline%3B%20filename%3D%22catduo.jpeg%22%3B%20filename%2A%3DUTF-8%27%27catduo.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZI2YK4G5O3WSDOFQ%2F20210519%2Fus-west-1%2Fs3%2Faws4_request&X-Amz-Date=20210519T182952Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5afbe67ab1ef235ba8b7560be6422b8dd0e780179b742218a96d68087881143c
+Completed 302 Found in 11ms (ActiveRecord: 2.1ms)
+
+

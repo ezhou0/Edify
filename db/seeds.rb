@@ -26,9 +26,9 @@ album3 = Album.create!(name: 'artist2 album', year: 2021, artist_id: artist2.id,
 
 #link album covers
 
-album1pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album1.jpeg')
-album2pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album2.png')
-album3pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album3.jpeg')
+# album1pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album1.jpeg')
+# album2pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album2.png')
+# album3pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album3.jpeg')
 
 # #
 # album1.album_photo.attach(io: album1pic, filename: 'album1pic')
