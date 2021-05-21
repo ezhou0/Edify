@@ -21,7 +21,7 @@ class AlbumShowComponent extends React.Component{
 
                 <div className="album_show_top">
                     <div className="album_show_pic">
-                        Album pic here
+                        <img id="show_top_pic" src={album.photo}/>
                     </div>
                     <div className="album_show_info">
                         <div id="album_show_album">

@@ -2,6 +2,7 @@ json.album do
     title = @album.name.titleize
     json.extract! @album, :id, :artist_id, :year
     json.name title
+    json.photo url_for(@album.album_photo)
 end
 
 json.artist do 

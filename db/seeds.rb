@@ -17,6 +17,12 @@ user2 = User.create(username: 'username2', email: 'email2.com', password: 'passw
 artist1 = Artist.create!(name: 'artist1', description: 'this is an artist')
 artist2 = Artist.create!(name: 'artist2')
 
+artist1pic = open("https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catduo.jpeg")
+artist2pic = open("https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catpiano.jpeg")
+
+artist1.artist_photo.attach(io: artist1pic, filename:'catduo.jpeg' )
+artist2.artist_photo.attach(io: artist2pic, filename:'catpiano.jpeg' )
+
 
 #albums
 
@@ -26,12 +32,14 @@ album3 = Album.create!(name: 'artist2 album', year: 2021, artist_id: artist2.id,
 
 #link album covers
 
-# album1pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album1.jpeg')
-# album2pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album2.png')
-# album3pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/cat+album3.jpeg')
+album1pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catalbum1.jpeg')
+album2pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catalbum2.png')
+album3pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catalbum3.jpeg')
 
 # #
-# album1.album_photo.attach(io: album1pic, filename: 'album1pic')
+album1.album_photo.attach(io: album1pic, filename: 'catalbum1.jpeg')
+album2.album_photo.attach(io: album2pic, filename: 'catalbum2.png')
+album3.album_photo.attach(io: album3pic, filename: 'catalbum3.jpeg')
 
 #songs
 song1 = Song.create!(title: 'song1', album_id: album1.id)
