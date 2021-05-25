@@ -13,15 +13,13 @@ json.artist do
     end
 end
 
-json.songs @songs
-
-# json.songs do 
-#     artist = @album.artist
-#     @album.album_songs.each do |song|
-#         title = song.title.titleize
-#         json.set! song.id do
-#             json.extract! song, :id, :album_id
-#             json.title title
-#         end
-#     end
-# end
+json.songs do 
+    artist = @album.artist
+     @album.album_songs.each do |song|
+         title = song.title.titleize
+         json.set! song.id do
+             json.extract! song, :id, :album_id
+             json.title title
+         end
+     end
+ end

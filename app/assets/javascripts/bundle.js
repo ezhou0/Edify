@@ -1268,7 +1268,7 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
         className: "album_show_pic"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "show_top_pic",
-        src: album.photo
+        src: this.props.album.photo
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album_show_info"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
