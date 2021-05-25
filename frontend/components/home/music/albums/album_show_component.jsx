@@ -46,11 +46,11 @@ class AlbumShowComponent extends React.Component{
                             TITLE
                             </div>
                     </div>
-                    <SongsIndexContainer albumId = {this.props.album.id} />
-                    {/* {this.props.album.songs.map(song => {
+                    {/* <SongsIndexContainer albumId = {this.props.album.id} /> */}
+                    {this.props.album.songs.map(song => {
                         count +=1
-                        return <div  id="album_show_song"><SongContainer artist={this.props.album.artist[this.props.album.artist_id]} song={song} /></div>
-                    })} */}
+                        return <div  key = {count} id="album_show_song"><SongContainer artist={this.props.album.artist[this.props.album.artist_id]} song={song} /></div>
+                    })}
                 </div>
 
             </div>
