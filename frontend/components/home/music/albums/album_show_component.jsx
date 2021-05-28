@@ -1,5 +1,5 @@
 import React from 'react';
-import SongsIndexContainer from '../songs/song_index_container';
+import SongContainer from '../songs/song_container';
 
 
 class AlbumShowComponent extends React.Component{
@@ -47,10 +47,10 @@ class AlbumShowComponent extends React.Component{
                             </div>
                     </div>
                     {/* <SongsIndexContainer albumId = {this.props.album.id} /> */}
-                    {this.props.album.songs.map(song => {
+                    {/* {this.props.album.songs.map(song => {
                         count +=1
                         return <div  key = {count} id="album_show_song"><SongContainer artist={this.props.album.artist[this.props.album.artist_id]} song={song} /></div>
-                    })}
+                    })} */}
                 </div>
 
             </div>
