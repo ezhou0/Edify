@@ -1260,6 +1260,8 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this = this;
+
       var count = 0;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album_show_div"
@@ -1287,7 +1289,16 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
         className: "ord_div"
       }, "#"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "song_info"
-      }, "TITLE"))));
+      }, "TITLE")), this.props.album.songs.map(function (song) {
+        count += 1;
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: count,
+          id: "album_show_song"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_song_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          artist: _this.props.album.artist[_this.props.album.artist_id],
+          song: song
+        }));
+      })));
     }
   }]);
 
