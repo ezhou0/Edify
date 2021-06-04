@@ -10,7 +10,7 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
-
+export const RESET_STATE = "RESET_STATE"
 
 export const receiveCurrentUser = currentUser => {
     return {
@@ -35,6 +35,12 @@ export const receiveErrors = errors => {
 export const clearErrors = () => (dispatch) => {
     dispatch(receiveErrors([]));
 };
+
+export const resetState = () => {
+    return {
+        type: RESET_STATE,
+    }
+}
 
 
 

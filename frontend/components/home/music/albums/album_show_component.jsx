@@ -15,6 +15,11 @@ class AlbumShowComponent extends React.Component{
 
     render(){
         let count = 0;
+
+        let songs = "";
+        if (this.props.album.songs !== undefined) {
+            songs = Object.values(this.props.album.songs)
+        }
         return(
             <div className='album_show_div'>
                 
@@ -46,8 +51,8 @@ class AlbumShowComponent extends React.Component{
                             TITLE
                             </div>
                     </div>
-                    {/* <SongsIndexContainer albumId = {this.props.album.id} /> */}
-                    {this.props.album.songs.map(song => {
+                    
+                    {songs.map(song => {
                         count +=1
                         return <div  key = {count} id="album_show_song"><SongContainer artist={this.props.album.artist[this.props.album.artist_id]} song={song} /></div>
                     })}
