@@ -1,43 +1,41 @@
 class Api::PlaylistsController < ApplicationController
-    def show_user
-        @playlists = User.find(params[:id]).playlists
-        render :show_user_playlist
+   def index
+        user = current_user
+        @playlists = user.playlists
+        render 'api/playlists/index'
     end
 
     def show
         @playlist = Playlist.find(params[:id])
-        @songs = @playlist.playlist_songs
-        render :show
+        render 'api/playlists/show'
     end
 
     def create
         @playlist = Playlist.new(playlist_params)
-        @songs = @playlist.playlist_songs
-        if @playlist.save!
-            render :show
-        end
-    end
-
-    def destroy
-        @playlist = Playlist.find(params[:id])
-        if(current_user.id == @playlist.user_id)
-            @playlist.destroy
+        if @playlist.save
+            render 'api/playlists/show'
         end
     end
 
     def update
         @playlist = Playlist.find(params[:id])
-        if(current_user.id == @playlist.user_id)
-            @songs = @playlist.playlist_songs
-            if @playlist.update!({title: playlist_params[:title]})
-                render :show
-            end
+
+        if @playlist.update(playlist_params)
+            render 'api/playlists/show'
         end
     end
+
+    def destroy
+        @playlist = Playlist.find(params[:id])
+        if @playlist.destroy
+            render :show
+        end
+    end
+
 
     private
 
     def playlist_params
-        params.require(:playlist).permit(:title, :user_id)
+        params.require(:playlist).permit(:title, :author_id)
     end
 end
