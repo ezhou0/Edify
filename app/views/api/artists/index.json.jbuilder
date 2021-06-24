@@ -1,8 +1,7 @@
- @artists.each do |artist|
-        name = artist.name.titleize
-        json.set! artist.id do
-            json.extract! artist, :id
-            json.name name
-            json.photo url_for(artist.artist_photo)
-        end
+json.(@artists) do |artist|
+    json.id artist.id
+    json.name artist.name
+    json.description artist.description
+    json.songs artist.songs
+    json.albums artist.albums
 end
