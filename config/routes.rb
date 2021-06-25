@@ -6,12 +6,14 @@ Rails.application.routes.draw do
     resources :artists, only: [:index, :show]
 
     resource :session, only: [:create,:destroy]
-    resources :albums, only: [:show]
-    resources :playlists, only: [:show, :create, :destroy, :update]
+    resources :albums, only: [:show, :index] do
+      resources :songs, only: [:index]
+    end
+    resources :songs, only: [:show]
+    resources :playlists, only: [:show, :index, :create, :destroy, :update]
     resources :playlist_songs, only: [:create, :destroy]
-  #  resources :songs, only: [:show, :index]
+    resources :songs, only: [:show]
+    resources :search, only: [:index]
 
-    get '/searches/:search', to: 'searches#search', as: 'search_term'
-    get '/searches_all/', to: 'searches#all', as: 'search_all'  
   end
 end
