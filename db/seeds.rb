@@ -42,12 +42,12 @@ album2.album_photo.attach(io: album2pic, filename: 'catalbum2.png')
 album3.album_photo.attach(io: album3pic, filename: 'catalbum3.jpeg')
 
 #songs
-song1 = Song.create!(title: 'song1', album_id: album1.id)
-song2 = Song.create(title: 'song2', album_id: album1.id)
-song3 = Song.create(title: 'song3', album_id: album2.id)
-song4 = Song.create(title: 'song4', album_id: album2.id)
-song5 = Song.create(title: 'song5', album_id: album3.id)
-song6 = Song.create(title: 'song6', album_id: album3.id)
+song1 = Song.create!(title: 'song1', album_id: album1.id, track_number: 1)
+song2 = Song.create(title: 'song2', album_id: album1.id, track_number: 2)
+song3 = Song.create(title: 'song3', album_id: album2.id, track_number: 1)
+song4 = Song.create(title: 'song4', album_id: album2.id, track_number: 2)
+song5 = Song.create(title: 'song5', album_id: album3.id, track_number: 1)
+song6 = Song.create(title: 'song6', album_id: album3.id, track_number: 2)
 
 #TODO add song mp3
 
