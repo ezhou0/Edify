@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import Root from './components/root';
 import configureStore from './store/store';
 import { FetchPlaylist } from "./actions/playlist_actions";
+import {logout} from './actions/session_actions';
 
 
 
@@ -25,13 +26,14 @@ import { FetchPlaylist } from "./actions/playlist_actions";
         } else {
             store = configureStore();
         }
+        // store = configureStore();
+        ReactDOM.render(<Root store={store} />, root);
         window.getState = store.getState;
         window.dispatch = store.dispatch;
 
        
 
         window.FetchPlaylist = FetchPlaylist;
-        ReactDOM.render(
-            <Root store={store} />, root);
+        window.logout = logout;
     });
 

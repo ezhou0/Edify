@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, Redirect, Route } from "react-router-dom"
 
-class LoggedOutComponent extends React.Component {
+class SplashComponent extends React.Component {
     constructor(props) {
         super(props)
     }
@@ -37,4 +37,4 @@ class LoggedOutComponent extends React.Component {
     }
 }
 
-export default LoggedOutComponent;
+export default SplashComponent;

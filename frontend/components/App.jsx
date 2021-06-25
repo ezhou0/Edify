@@ -4,37 +4,40 @@ import HomeContainer from "./home/home_container";
 import SignupFormContainer from './session/signup_form_container';
 import LoginFormContainer from './session/login_form_container';
 import { AuthRoute, ProtcRoute } from '../util/route_util';
-import LoggedinContainer from "./home/logged_in_component/logged_in_container";
+import LoggedinContainer from "./logged_in_component/logged_in_container";
 import ArtistIndexContainer from "./home/music/artists/artist_index_container"
-import ArtistShowContainer from "./home/music/artists/artist_show_container";
-import AlbumShowContainer from './home/music/albums/album_show_container';
-import SearchContainer from '../components/search/search_container';
+// import ArtistShowContainer from "./home/music/artists/artist_show_container";
+// import AlbumShowContainer from './home/music/albums/album_show_container';
+// import SearchContainer from '../components/search/search_container';
 
-import LoggedOutComponent from "./home/logged_out_component/logged_out_component";
+import SplashComponent from "./splash/splash_component";
 import home from "./home/home";
 import Modal from './modal/modal';
-import LoggedInComponent from "./home/logged_in_component/logged_in_component";
+import LoggedInComponent from "./logged_in_component/logged_in_component";
+import home_container from "./home/home_container";
+import ArtistIndexComponent from "./home/music/artists/artist_index_component";
 
 
 const App = () => (
     <div>
         <LoggedinContainer/>
         <Modal/>
-        <Switch>
+        <Switch> 
+        <AuthRoute exact path='/' component = {SplashComponent}/> 
         <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} /> 
-        {/* <Route exact path="/" component={LoggedOutComponent}></Route> */}
-        <Route exact path="/" component={HomeContainer}></Route>
-       <ProtcRoute path = "/artists/:artistId" component={ArtistShowContainer}/>
-       <ProtcRoute path = '/albums/:albumId' component={AlbumShowContainer}/>
-        {/* <ProtcRoute path="/playlists/:playlistId" component={PlaylistShowContainer} /> */}
-        <ProtcRoute path="/home/" component={ArtistIndexContainer} />
-        <ProtcRoute path="/searches/:searchTerm" component={SearchContainer} />
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />  
+        <ProtcRoute path='/home/' component={ArtistIndexContainer} />
+        
+        
+       {/* <ProtcRoute path = "/artists/:artistId" component={ArtistShowContainer}/>
+       <ProtcRoute path = '/albums/:albumId' component={AlbumShowContainer}/>  
+    <ProtcRoute path="/home/" component={ArtistIndexContainer} /> }
+         <ProtcRoute path="/searches/:searchTerm" component={SearchContainer} />
         <Route path="*">
             <Redirect to="/" />            
-        </Route>
+        </Route>  */}
 
-        </Switch> 
+        </Switch>
     </div>
 );
 

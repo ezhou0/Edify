@@ -1,11 +1,11 @@
 import { connect } from "react-redux"
-import { FetchArtist } from "../../../actions/artist_actions"
-import {FetchUsersPlaylist, CreatePlaylist} from "../../../actions/playlist_actions";
-import { logout } from "../../../actions/session_actions";
+import { FetchArtist } from "../../actions/artist_actions"
+import {FetchUsersPlaylist, CreatePlaylist} from "../../actions/playlist_actions";
+import { logout } from "../../actions/session_actions";
 import LoggedInComponent from "./logged_in_component";
 import { withRouter } from 'react-router-dom';
 
-import { openModal, closeModal } from '../../../actions/modal_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => {

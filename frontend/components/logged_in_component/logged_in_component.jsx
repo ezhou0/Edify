@@ -1,8 +1,9 @@
 import React from "react"
 import { Redirect } from "react-router";
-import HeaderComponent from "../header/header_component";
-import Playbar from "../playbar/playbar_component";
-import SideBarMain from "../sidebar/sidebar_component";
+import HeaderComponent from "../home/header/header_component";
+import ArtistIndexComponent from "../home/music/artists/artist_index_component";
+import Playbar from "../home/playbar/playbar_component";
+import SideBarMain from "../home/sidebar/sidebar_component";
 
 class LoggedInComponent extends React.Component {
     constructor(props) {
@@ -23,7 +24,7 @@ class LoggedInComponent extends React.Component {
         const { currentUser, playlists, createPlaylist, fetchPlaylists} = this.props;
         return (
             <div className="main_div">
-                {/* {this.redirect()}; */}
+                {this.redirect()};
                 <div className="playbar_component">
                     <Playbar />
                 </div>
@@ -43,6 +44,7 @@ class LoggedInComponent extends React.Component {
                     </div>
                     <div className="main_component">
                         {/* <h3>Welcome to Edify, {currentUser.username}</h3> */}
+                         
                     </div>
                     <div className="header_component">
                         <HeaderComponent currentUser={this.props.currentUser.username}
