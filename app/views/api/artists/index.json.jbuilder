@@ -4,4 +4,5 @@ json.(@artists) do |artist|
     json.description artist.description
     json.songs artist.songs
     json.albums artist.albums
+    json.photo url_for(artist.artist_photo)
 end
