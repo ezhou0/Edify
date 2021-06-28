@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import SongContainer from '../songs/song_container';
+import SongsIndexContainer from '../songs/songs_index_container';
 
 
 class AlbumShowComponent extends React.Component{
@@ -75,7 +75,9 @@ class AlbumShowComponent extends React.Component{
                 <div className = "album-show-name">{album.albumName}</div>
                 <div className='album-artist-link'> <Link to={`/artists/${album.artist.id}`} >{album.artist.name}</Link> </div>
                 <h1 className="album-year">Year: {album.year}</h1>
-                
+                < SongsIndexContainer className="album-show" albumId={album.id} />
+
+
             </div>
         )
 
