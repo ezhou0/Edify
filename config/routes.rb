@@ -12,7 +12,6 @@ Rails.application.routes.draw do
     resources :songs, only: [:show]
     resources :playlists, only: [:show, :index, :create, :destroy, :update]
     resources :playlist_songs, only: [:create, :destroy]
-    resources :songs, only: [:show]
     resources :search, only: [:index]
 
   end
