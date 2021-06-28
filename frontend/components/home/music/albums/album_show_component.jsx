@@ -74,6 +74,8 @@ class AlbumShowComponent extends React.Component{
                 </div>
                 <div className = "album-show-name">{album.albumName}</div>
                 <div className='album-artist-link'> <Link to={`/artists/${album.artist.id}`} >{album.artist.name}</Link> </div>
+                <h1 className="album-year">Year: {album.year}</h1>
+                
             </div>
         )
 

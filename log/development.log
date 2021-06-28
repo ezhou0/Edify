@@ -42962,3 +42962,29 @@ Processing by Api::ArtistsController#index as JSON
 Completed 200 OK in 70ms (Views: 61.3ms | ActiveRecord: 8.2ms)
 
 
+Started GET "/" for ::1 at 2021-06-28 00:10:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "Rddpiti8GlHMHaPtJsEH6g"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  Rendered api/users/_user.json.jbuilder (1.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 163ms (Views: 158.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/albums/1" for ::1 at 2021-06-28 00:10:26 -0700
+Processing by Api::AlbumsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAlbum Load (2.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/albums_controller.rb:3
+  Rendering api/albums/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (7.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Album"], ["name", "album_photo"], ["LIMIT", 1]]
+  ↳ app/views/api/albums/show.json.jbuilder:6
+  [1m[36mActiveStorage::Blob Load (5.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/api/albums/show.json.jbuilder:6
+  [1m[36mArtist Load (5.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/api/albums/show.json.jbuilder:8
+  Rendered api/albums/show.json.jbuilder (39.8ms)
+Completed 200 OK in 63ms (Views: 36.8ms | ActiveRecord: 21.8ms)
+
+
