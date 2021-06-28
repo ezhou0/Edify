@@ -62,11 +62,15 @@ class AlbumShowComponent extends React.Component{
 
         // )
 
-        const {album} = this.props;
+        const { album } = this.props;
         if (!album) {return null;} 
         return (
+            
             <div>
                 image, album info, song map
+                <div className="album_show_pic">
+                         <img id="show_top_pic" src={album.photo}/>
+                </div>
             </div>
         )
 
