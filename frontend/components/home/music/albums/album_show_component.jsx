@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import SongContainer from '../songs/song_container';
 
 
@@ -72,6 +73,7 @@ class AlbumShowComponent extends React.Component{
                          <img id="show_top_pic" src={album.photo}/>
                 </div>
                 <div className = "album-show-name">{album.albumName}</div>
+                <div className='album-artist-link'> <Link to={`/artists/${album.artist.id}`} >{album.artist.name}</Link> </div>
             </div>
         )
 
