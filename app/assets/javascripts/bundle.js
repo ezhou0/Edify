@@ -935,51 +935,53 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      // let count = 0;
+      // let songs = "";
+      // if (this.props.album.songs !== undefined) {
+      //     songs = Object.values(this.props.album.songs)
+      // }
+      // return(
+      //     <div className='album_show_div'>
+      //         <div className="album_show_top">
+      //             <div className="album_show_pic">
+      //                 <img id="show_top_pic" src={this.props.album.photo}/>
+      //             </div>
+      //             <div className="album_show_info">
+      //                 <div id="album_show_album">
+      //                     Album
+      //                 </div>
+      //                 <div id="album_show_title">
+      //                     {this.props.album.name}
+      //                 </div>
+      //                 <div id="album_show_info">
+      //                     {this.props.album.artist} - {this.props.album.year}
+      //                 </div>
+      //             </div>
+      //         </div>
+      //         <div className="album_show_bottom">
+      //             songs map go here
+      //             <div className="song_component_left" id="hash_and_title">
+      //                 <div className="ord_div">
+      //                     #
+      //                     </div>
+      //                 <div className="song_info">
+      //                     TITLE
+      //                     </div>
+      //             </div>
+      //             {songs.map(song => {
+      //                 count +=1
+      //                 return <div  key = {count} id="album_show_song"><SongContainer artist={this.props.album.artist[this.props.album.artist_id]} song={song} /></div>
+      //             })}
+      //         </div>
+      //     </div>
+      // )
+      var album = this.props.album;
 
-      var count = 0;
-      var songs = "";
-
-      if (this.props.album.songs !== undefined) {
-        songs = Object.values(this.props.album.songs);
+      if (!album) {
+        return null;
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "album_show_div"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "album_show_top"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "album_show_pic"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        id: "show_top_pic",
-        src: this.props.album.photo
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "album_show_info"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "album_show_album"
-      }, "Album"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "album_show_title"
-      }, this.props.album.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "album_show_info"
-      }, this.props.album.artist, " - ", this.props.album.year))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "album_show_bottom"
-      }, "songs map go here", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "song_component_left",
-        id: "hash_and_title"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "ord_div"
-      }, "#"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "song_info"
-      }, "TITLE")), songs.map(function (song) {
-        count += 1;
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: count,
-          id: "album_show_song"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_song_container__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          artist: _this.props.album.artist[_this.props.album.artist_id],
-          song: song
-        }));
-      })));
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "image, album info, song map");
     }
   }]);
 
