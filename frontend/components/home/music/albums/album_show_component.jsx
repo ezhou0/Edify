@@ -71,6 +71,7 @@ class AlbumShowComponent extends React.Component{
                 <div className="album_show_pic">
                          <img id="show_top_pic" src={album.photo}/>
                 </div>
+                <div className = "album-show-name">{album.albumName}</div>
             </div>
         )
 

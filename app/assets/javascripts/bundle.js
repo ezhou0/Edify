@@ -986,7 +986,9 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "show_top_pic",
         src: album.photo
-      })));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album-show-name"
+      }, album.albumName));
     }
   }]);
 
