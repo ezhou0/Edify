@@ -2,7 +2,7 @@ import React from "react"
 import { Redirect } from "react-router";
 import HeaderComponent from "../home/header/header_component";
 import ArtistIndexComponent from "../home/music/artists/artist_index_component";
-import Playbar from "../home/playbar/playbar_component";
+import Playbar from '../home/playbar/playbar_component'
 import SideBarMain from "../home/sidebar/sidebar_component";
 
 class LoggedInComponent extends React.Component {
@@ -51,6 +51,7 @@ class LoggedInComponent extends React.Component {
                             logout={this.props.logout} history={this.props.history}
                         />
                     </div>
+                    
                 </div>
             </div>
         )
