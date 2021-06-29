@@ -386,7 +386,7 @@ var SearchAll = function SearchAll() {
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, RESET_STATE, receiveCurrentUser, logoutCurrentUser, receiveErrors, clearErrors, resetState, signup, login, logout */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, RESET_STATE, TOGGLE_PLAY_STATE, receiveCurrentUser, logoutCurrentUser, receiveErrors, clearErrors, resetState, signup, login, logout, togglePlayState */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -395,6 +395,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT_CURRENT_USER", function() { return LOGOUT_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SESSION_ERRORS", function() { return RECEIVE_SESSION_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RESET_STATE", function() { return RESET_STATE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TOGGLE_PLAY_STATE", function() { return TOGGLE_PLAY_STATE; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCurrentUser", function() { return receiveCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutCurrentUser", function() { return logoutCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
@@ -403,6 +404,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "togglePlayState", function() { return togglePlayState; });
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_api_util */ "./frontend/util/session_api_util.js");
 // login(user)(thunk action creator)
 // logout()(thunk action creator)
@@ -415,6 +417,7 @@ var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 var RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 var RESET_STATE = "RESET_STATE";
+var TOGGLE_PLAY_STATE = 'TOGGLE_PLAY_STATE';
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -465,6 +468,12 @@ var logout = function logout() {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function () {
       return dispatch(logoutCurrentUser());
     });
+  };
+};
+var togglePlayState = function togglePlayState(songId) {
+  return {
+    type: TOGGLE_PLAY_STATE,
+    songId: songId
   };
 };
 
@@ -935,53 +944,15 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // let count = 0;
-      // let songs = "";
-      // if (this.props.album.songs !== undefined) {
-      //     songs = Object.values(this.props.album.songs)
-      // }
-      // return(
-      //     <div className='album_show_div'>
-      //         <div className="album_show_top">
-      //             <div className="album_show_pic">
-      //                 <img id="show_top_pic" src={this.props.album.photo}/>
-      //             </div>
-      //             <div className="album_show_info">
-      //                 <div id="album_show_album">
-      //                     Album
-      //                 </div>
-      //                 <div id="album_show_title">
-      //                     {this.props.album.name}
-      //                 </div>
-      //                 <div id="album_show_info">
-      //                     {this.props.album.artist} - {this.props.album.year}
-      //                 </div>
-      //             </div>
-      //         </div>
-      //         <div className="album_show_bottom">
-      //             songs map go here
-      //             <div className="song_component_left" id="hash_and_title">
-      //                 <div className="ord_div">
-      //                     #
-      //                     </div>
-      //                 <div className="song_info">
-      //                     TITLE
-      //                     </div>
-      //             </div>
-      //             {songs.map(song => {
-      //                 count +=1
-      //                 return <div  key = {count} id="album_show_song"><SongContainer artist={this.props.album.artist[this.props.album.artist_id]} song={song} /></div>
-      //             })}
-      //         </div>
-      //     </div>
-      // )
       var album = this.props.album;
 
       if (!album) {
         return null;
       }
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "image, album info, song map", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album-show-container"
+      }, "image, album info, song map", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album_show_pic"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "show_top_pic",
@@ -1428,7 +1399,10 @@ var SongsIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this$props = this.props,
           songs = _this$props.songs,
-          fetchSong = _this$props.fetchSong; // debugger
+          fetchSong = _this$props.fetchSong,
+          togglePlayState = _this$props.togglePlayState,
+          currentSong = _this$props.currentSong,
+          playState = _this$props.playState; // debugger
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "songs-grid sub-grid"
@@ -1436,7 +1410,10 @@ var SongsIndex = /*#__PURE__*/function (_React$Component) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           song: song,
           fetchSong: fetchSong,
-          key: song.id
+          key: song.id,
+          togglePlayState: togglePlayState,
+          currentSong: currentSong,
+          playState: playState
         });
       }));
     }
@@ -1469,9 +1446,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    songs: Object.values(state.entities.songs) // currentSong: state.session.currentSong,
-    // playState: state.session.playState
-
+    songs: Object.values(state.entities.songs),
+    currentSong: state.session.currentSong,
+    playState: state.session.playState
   };
 };
 
@@ -1482,8 +1459,10 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchSong: function fetchSong(songId) {
       return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_2__["fetchCurrentSong"])(songId));
-    } // togglePlayState: (songId) => dispatch(togglePlayState(songId)),
-
+    },
+    togglePlayState: function togglePlayState(songId) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["togglePlayState"])(songId));
+    }
   };
 };
 
@@ -1511,7 +1490,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var SongsIndexItem = function SongsIndexItem(_ref) {
   var song = _ref.song,
-      fetchSong = _ref.fetchSong;
+      fetchSong = _ref.fetchSong,
+      togglePlayState = _ref.togglePlayState,
+      playState = _ref.playState,
+      currentSong = _ref.currentSong;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "song-container-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1519,7 +1501,11 @@ var SongsIndexItem = function SongsIndexItem(_ref) {
     onClick: function onClick() {
       fetchSong(song.id);
     }
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, currentSong && song.id === currentSong.id && playState ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-pause"
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-play"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "p/pa")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "song-name"
   }, song.trackNumber, " ", song.name)));
 };
@@ -3209,10 +3195,14 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_song_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/song_actions */ "./frontend/actions/song_actions.js");
+
 
 
 var _nullUser = Object.freeze({
-  id: null
+  id: null,
+  currentSong: null,
+  playState: false
 });
 
 var sessionReducer = function sessionReducer() {
@@ -3233,6 +3223,23 @@ var sessionReducer = function sessionReducer() {
       return {
         id: null
       };
+
+    case _actions_song_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_SONG"]:
+      return !state.currentSong || state.currentSong.id !== action.song.id ? Object.assign({}, state, {
+        currentSong: action.song,
+        playState: true
+      }) : state.playState ? Object.assign({}, state, {
+        playState: false
+      }) : Object.assign({}, state, {
+        playState: true
+      });
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["TOGGLE_PLAY_STATE"]:
+      return state.playState ? Object.assign({}, state, {
+        playState: false
+      }) : Object.assign({}, state, {
+        playState: true
+      });
 
     default:
       return state;

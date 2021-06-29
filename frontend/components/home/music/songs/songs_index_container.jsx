@@ -6,8 +6,8 @@ import { togglePlayState } from '../../../../actions/session_actions';
 const mapStateToProps = state => {
     return {
         songs: Object.values(state.entities.songs),
-        // currentSong: state.session.currentSong,
-        // playState: state.session.playState
+         currentSong: state.session.currentSong,
+         playState: state.session.playState
     }
 
 };
@@ -15,7 +15,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => ({
     fetchSongs: (albumId) => dispatch(fetchSongs(albumId)),
     fetchSong: (songId) => dispatch(fetchCurrentSong(songId)),
-    // togglePlayState: (songId) => dispatch(togglePlayState(songId)),
+    togglePlayState: (songId) => dispatch(togglePlayState(songId)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SongsIndex);

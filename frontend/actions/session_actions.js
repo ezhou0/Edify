@@ -11,6 +11,7 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 export const RESET_STATE = "RESET_STATE"
+export const TOGGLE_PLAY_STATE = 'TOGGLE_PLAY_STATE';
 
 export const receiveCurrentUser = currentUser => {
     return {
@@ -61,3 +62,10 @@ export const logout = () => dispatch => {
         .then(() => (dispatch(logoutCurrentUser())
         ));
 };
+
+export const togglePlayState = (songId) => {
+    return {
+        type: TOGGLE_PLAY_STATE,
+        songId
+    }
+}
