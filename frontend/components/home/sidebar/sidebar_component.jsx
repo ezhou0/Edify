@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import PlaylistIndexContainer from '../music/playlists/playlist_index_container';
 
 
 
@@ -53,11 +54,7 @@ class SideBar extends React.Component {
                     </div>
                 </div>
                 <div id="sidebar_bottom">
-                    <p className='sidebar-bottom-content'>map of playlists here</p>
-                    { playlists.map(playlist => {
-                        return <div>{playlist.name}</div>
-                        // return <Link to={`/playlists/${playlist.id}`} key={playlist.id} id="sidebar_playlist">{playlist.title.length >= 20 ? playlist.title.slice(0, 20) + "..." : playlist.title}</Link>
-                    })}
+                    <PlaylistIndexContainer />
                 </div>
             </div>
         )
