@@ -35,10 +35,6 @@ class PlaylistIndex extends React.Component {
         if (!currentUser) return null;
         return (
             <div className="playlist-index">
-                <div className="playlist-header">
-                    <h3>PLAYLISTS</h3>
-                    <button onClick={() => this.createPlaylist(defPlaylist)}>+</button>
-                </div>
                 <ul>
                     {playlists.map((playlist) => (
                         <PlaylistIndexItem
