@@ -49,7 +49,21 @@ song4 = Song.create(title: 'song4', album_id: album2.id, track_number: 2)
 song5 = Song.create(title: 'song5', album_id: album3.id, track_number: 1)
 song6 = Song.create(title: 'song6', album_id: album3.id, track_number: 2)
 
-#TODO add song mp3
+#songs mp3
+song1mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/dreams.mp3')
+song2mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/goodmorning.mp3')
+song3mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/kawaii.mp3')
+song4mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/nimbus.mp3')
+song5mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/places.mp3')
+song6mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/summer.mp3')
+
+# #
+song1.audio.attach(io: song1mp3, filename: 'dreams.mp3')
+song2.audio.attach(io: song2mp3, filename: 'goodmorning.mp3')
+song3.audio.attach(io: song3mp3, filename: 'kawaii.mp3')
+song4.audio.attach(io: song4mp3, filename: 'nimbus.mp3')
+song5.audio.attach(io: song5mp3, filename: 'places.mp3')
+song6.audio.attach(io: song6mp3, filename: 'summer.mp3')
 
 #playlists
 playlist1 = Playlist.create!(name: 'first playlist', author_id: userBase.id)
