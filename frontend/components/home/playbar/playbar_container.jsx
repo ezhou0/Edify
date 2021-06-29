@@ -1,19 +1,19 @@
 import {connect} from 'react-redux';
-import { receiveCurrentSong } from '../../../actions/song_actions';
+import { logout, demoLogin, togglePlayState } from '../../../actions/session_actions';
 import PlaybarComponent from './playbar_component';
+import Player from './player';
 
 const mapStateToProps = state => {
     return{
-        song: state.currentSong.songInfo.song,
-        artist: state.currentSong.songInfo.artist,
-        currentSong: state.currentSong.songInfo.currentSong,
-        songId: state.currentSong.songInfo.song,
+        currentUser: session.id,
+        currentSong: session.currentSong,
+        playState: session.playState
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return{
-        recieveSong: songInfo => dispatch(receiveCurrentSong(songInfo))
+        togglePlayState: songId => dispatch(togglePlayState(songId))
     };
 };
 
