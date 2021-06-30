@@ -27,28 +27,30 @@ class ArtistShowComponent extends React.Component{
                     <div className = 'artist_show_name'>
                         {artist.name}
                     </div>
-                    <div>
-                        play button
-                    </div>
-
-                    <div>
-                        Songs 
-                    </div>
-
-                    <div className = 'artist_album_div'>
-                        <div className = 'artist_album_div_title'>
-                            Discography
-                        </div>
-
+                    <div className = 'artist_show_bulk'>
                         <div>
-                            {albums.map(album => {
-                                albumNum += 1;
-                                return(
-                                    <AlbumItem key = {albumNum} album = {album} />
-                                )
-                            })}
+                            play button here
                         </div>
 
+                        <div className='artist_album_div_title'>
+                            Songs 
+                        </div>
+
+                        <div className = 'artist_album_div'>
+                            <div className = 'artist_album_div_title'>
+                                Discography
+                            </div>
+
+                            <div id="artist_album_div_album">
+                                {albums.map(album => {
+                                    albumNum += 1;
+                                    return(
+                                        <AlbumItem key = {albumNum} album = {album} />
+                                    )
+                                })}
+                            </div>
+
+                        </div>
                     </div>
                 </div>
             </div>

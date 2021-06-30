@@ -22,13 +22,30 @@
 
 .artist_show_div{
     
-    margin-top: 275px;
+    margin-top: 155px;
     margin-left: 225px;
-    min-height: 100vh;
-    background: linear-gradient(rgba(0,0,0,.87), rgba(0,0,0,1) );
-    
-   
-    color: white;
+  
+    color:#dedcd7
+}
+
+.artist_show_name{
+    margin-left: 30px;
+    margin-bottom: 50px;
+    font-size: 100px;
+    font-weight: 500;
+    color: black;
+}
+
+.artist_show_bulk{
+ background: linear-gradient(rgba(0,0,0,.87), rgba(0,0,0,1) );
+ min-height: 100vh;
+ padding-left: 30px;
+ padding-top: 30px;
+}
+
+.artist_album_div_title{
+    font-size: 30px;
+    font-weight: 600;
 }
 
 

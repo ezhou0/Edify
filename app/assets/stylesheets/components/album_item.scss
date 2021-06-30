@@ -1,0 +1,50 @@
+
+#artist_album_div_album{
+    display: flex;
+    flex-direction: row;
+    margin-top: 30px;
+}
+
+.album_item_div{
+    border-radius: 10px;
+    color: azure;
+    height: 287px;
+    width: 210px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition-property: background-color,border-color,color,box-shadow,filter;
+    transition-duration: .3s; 
+    background-color: #222222;
+}
+
+.album_item_cover{
+     height: 180px;
+    width: 180px;
+//     border-radius: 50%;
+    overflow: hidden;
+    margin-top: 10px;
+    object-fit: cover;
+    color: white;
+}
+
+.album_title_div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 180px;
+    height: 60px;
+    margin-bottom: 10px;
+    word-break: break-all;
+    overflow-y: scroll;
+}
+
+.album_year{
+    font-weight: 400;
+    color: #B3B3B3;
+    font-size: 13px;
+}

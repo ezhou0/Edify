@@ -23,7 +23,7 @@ class ArtistIndexComponent extends React.Component{
                     </div>
                 </div>
                 <div className="artist_profile_pic_div">
-                    <div id="aritst_profile_pic_div_div">
+                    <div id="artist_profile_pic_div_div">
                         {artists.slice(0, 6).map(artist => {
                             return <ArtistIndexItem key={artist.id} artist={artist} />
                         })}
