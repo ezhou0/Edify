@@ -1,3 +1,14 @@
+// #artist_show_container{
+    
+//     padding-top: 60px;
+//     min-height: 100vh;
+//     height: max-content;
+    
+//     padding-bottom: 150px;
+//     padding-left: 225px;
+   
+// }
+
 .artist_show_pic{
     height: 385px;
     width: 100%;
@@ -5,30 +16,19 @@
     overflow: hidden;
     position: fixed;
     top: 0;
-    z-index: -99;
+    z-index: -1;
+    display: flex;
 }
 
 .artist_show_div{
     
-    height: max-content;
-    margin-bottom: 80px;
-    background: linear-gradient(#222222 15%, #131313 );
-    padding-bottom: 150px;
-    display: flex;
-    flex-direction: column;
+    margin-top: 275px;
+    margin-left: 225px;
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,.87), rgba(0,0,0,1) );
+    
+   
+    color: white;
 }
-// .artist_show_name{
-//    font-size: 70px;
-//    font-weight: 700;
-//    margin-top: 20px;
-  
-
-// }
-// .artist_album_div{
-//     height: 390px;
-//     display: flex;
-//     flex-direction: column;
-//     justify-content: space-around;
-// }
 
 

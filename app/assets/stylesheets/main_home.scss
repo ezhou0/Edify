@@ -1,18 +1,22 @@
 
-.main_and_side_div{
-    height: 100%;
-    display: flex;
+.main_div{
+  margin: 0;
+  padding: 0;
+}
+.main-view{
+    top: 0;
 }
 
-.main_content_window{
-    overflow: scroll;
-    margin-left: 280px;
+.playbar_component{
+    position: fixed;
+    margin-right: 50px;
+    left: 0;
+    width: 100%;
 }
 
 .side_component{
     position: fixed;
     top: 0;
-    left: 0;
     background-color: #000000;
     min-width: 220px;
     height: 100%;

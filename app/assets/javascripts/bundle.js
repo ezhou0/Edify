@@ -918,20 +918,26 @@ var AlbumShowComponent = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album-show-container"
-      }, "image, album info, song map", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "album_show_pic"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album-top"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "show_top_pic",
         src: album.photo
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album-info"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album-show-album"
+      }, "Album"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album-show-name"
       }, album.albumName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album-show-sub"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album-artist-link"
       }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/artists/".concat(album.artist.id)
-      }, album.artist.name), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "album-year"
-      }, "Year: ", album.year), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_songs_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, album.artist.name), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "album-artist-year"
+      }, "\u2022 ", album.year)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_songs_songs_index_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         className: "album-show",
         albumId: album.id
       }));
@@ -1227,6 +1233,7 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
   _createClass(ArtistShowComponent, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      window.scrollTo(0, 0);
       this.props.fetchArtist(this.props.match.params.artistId);
     }
   }, {
@@ -2198,7 +2205,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _home_header_header_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../home/header/header_component */ "./frontend/components/home/header/header_component.jsx");
-/* harmony import */ var _home_music_artists_artist_index_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/music/artists/artist_index_component */ "./frontend/components/home/music/artists/artist_index_component.jsx");
+/* harmony import */ var _home_music_artists_artist_index_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../home/music/artists/artist_index_container */ "./frontend/components/home/music/artists/artist_index_container.js");
 /* harmony import */ var _home_playbar_playbar_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../home/playbar/playbar_component */ "./frontend/components/home/playbar/playbar_component.jsx");
 /* harmony import */ var _home_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../home/sidebar/sidebar_component */ "./frontend/components/home/sidebar/sidebar_component.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -2253,7 +2260,6 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // console.log("home_main_comp")
       if (this.props.currentUser === undefined) {
         return null;
       }
@@ -2268,8 +2274,6 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
       }, this.redirect(), ";", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playbar_component"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_playbar_playbar_component__WEBPACK_IMPORTED_MODULE_4__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main_and_side_div"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "side_component"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_sidebar_sidebar_component__WEBPACK_IMPORTED_MODULE_5__["default"], {
         currentUser: currentUser // createPlaylist = {createPlaylist}
@@ -2282,14 +2286,12 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
         search: this.props.search,
         removeSearch: this.props.removeSearch
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main_component"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header_component"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_header_header_component__WEBPACK_IMPORTED_MODULE_2__["default"], {
         currentUser: this.props.currentUser.username,
         logout: this.props.logout,
         history: this.props.history
-      }))));
+      })));
     }
   }]);
 

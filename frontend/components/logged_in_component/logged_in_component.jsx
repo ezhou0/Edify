@@ -1,7 +1,7 @@
 import React from "react"
 import { Redirect } from "react-router";
 import HeaderComponent from "../home/header/header_component";
-import ArtistIndexComponent from "../home/music/artists/artist_index_component";
+import ArtistIndexContainer from "../home/music/artists/artist_index_container";
 import Playbar from '../home/playbar/playbar_component'
 import SideBarMain from "../home/sidebar/sidebar_component";
 
@@ -17,7 +17,6 @@ class LoggedInComponent extends React.Component {
     }
 
     render() {
-        // console.log("home_main_comp")
         if (this.props.currentUser === undefined) {
             return null;
         }
@@ -28,8 +27,8 @@ class LoggedInComponent extends React.Component {
                 <div className="playbar_component">
                     <Playbar />
                 </div>
-                <div className="main_and_side_div">
-                    <div className="side_component">
+               
+                <div className="side_component">
                         <SideBarMain 
                             currentUser={currentUser}
                             // createPlaylist = {createPlaylist}
@@ -41,18 +40,13 @@ class LoggedInComponent extends React.Component {
                             search={this.props.search}
                             removeSearch={this.props.removeSearch}
                         />
-                    </div>
-                    <div className="main_component">
-                        {/* <h3>Welcome to Edify, {currentUser.username}</h3> */}
-                         
-                    </div>
+                </div>
                     <div className="header_component">
                         <HeaderComponent currentUser={this.props.currentUser.username}
                             logout={this.props.logout} history={this.props.history}
                         />
                     </div>
-                    
-                </div>
+                
             </div>
         )
     }

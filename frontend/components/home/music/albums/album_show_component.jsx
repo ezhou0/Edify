@@ -22,13 +22,18 @@ class AlbumShowComponent extends React.Component{
         return (
             
             <div className = 'album-show-container'>
-                image, album info, song map
-                <div className="album_show_pic">
-                         <img id="show_top_pic" src={album.photo}/>
+                <div className = 'album-top'>
+                    <img id="show_top_pic" src={album.photo} />
+                    <div className = 'album-info'>
+                        <div className = 'album-show-album'>Album</div>
+                        <div className = "album-show-name">{album.albumName}</div>
+                        <div className = 'album-show-sub'>
+                            <div className='album-artist-link'> <Link to={`/artists/${album.artist.id}`} >{album.artist.name}</Link> </div>
+                            <div className = 'album-artist-year'>• {album.year}</div>
+                        </div>
+                    </div>
+                    
                 </div>
-                <div className = "album-show-name">{album.albumName}</div>
-                <div className='album-artist-link'> <Link to={`/artists/${album.artist.id}`} >{album.artist.name}</Link> </div>
-                <h1 className="album-year">Year: {album.year}</h1>
                 < SongsIndexContainer className="album-show" albumId={album.id} />
 
 

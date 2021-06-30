@@ -2,35 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.album_show_div{
-     background: linear-gradient(#42607A 15%, #131313 );;
+.album-show-container{
+     background: linear-gradient(#42607A 15%, #131313 );
+     height: 100vh;
+
 }
 
-.album_show_top{
-    min-height: 380px;
+.album-top{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
+    margin-left: 250px;
 
 }
-.album_show_top > * {
-    margin-bottom: 25px;
-    
-}
 
-.album_show_pic{
+
+#show_top_pic{
    display: flex;
+   flex-direction: row;
     height: 235px;
     width: 235px;
-    margin-left: 500px;
+    margin-left: 0px;
 }
 
-.album_show_info{
+.album-info{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
-    margin-left: 25px;
+    margin-left: 30px;
     height: 165px;
     color: #ffffff;
 }
@@ -39,9 +38,6 @@
     height: max-content;
 }
 
-.album-show-container{
-    margin-left: 400px;
-}
 .album-show-name{
     font-size: 70px;
     font-family: Verdana;

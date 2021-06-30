@@ -1,20 +1,22 @@
 #header_component{
-    max-height: 60px;
-    min-height: 60px;
+    max-height: 50px;
+    min-height: 50px;
     position: fixed;
     top: 0;
     right: 0;
-    left: 280px;
+    left: 225px;
     width: fill;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // background-color: rgba(0, 0, 0, 1)
+    background-color: #181818;
 }
 
 
-.header-content{
-    margin-left: 80%;
-}
+// .header-content{
+//     margin-left: 80%;
+// }
 
 .header_history{
     
