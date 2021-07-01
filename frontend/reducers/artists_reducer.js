@@ -1,17 +1,15 @@
 import { RECEIVE_ARTIST, RECEIVE_ARTISTS } from "../actions/artist_actions";
 
 
-const artistsReducer = (oldState = {}, action) => {
-    Object.freeze(oldState);
+const artistsReducer = (state = {}, action) => {
+    Object.freeze(state);
     switch(action.type){
         case RECEIVE_ARTISTS:
-            return action.artists;
+            return Object.assign({}, action.artists);
         case RECEIVE_ARTIST:
-            const newState = Object.assign({}, oldState);
-            newState[action.artist.artist.id] = action.artist.artist;
-            return newState;
+            return Object.assign({}, state, { [action.artist.id]: action.artist });
         default:
-            return oldState;
+            return state;
     };
 }
 

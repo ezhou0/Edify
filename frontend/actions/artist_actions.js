@@ -18,8 +18,13 @@ const receiveArtists = (artists) => {
     }
 }
 
-export const FetchArtist = artistId => dispatch => ArtistApiUtil.fetchArtist(artistId)
-    .then(artist => dispatch(receiveArtist(artist)));
+export const fetchArtists = () => dispatch => {
+    return ArtistApiUtil.receiveArtists()
+        .then(artists => dispatch(receiveArtists(artists)));
+};
 
-export const FetchArtists = () => dispatch => ArtistApiUtil.fetchArtists()
-    .then(artists => dispatch(receiveArtists(artists)));
+export const fetchArtist = artistId => dispatch => {
+    return ArtistApiUtil.receiveArtist(artistId)
+        .then(artist => dispatch(receiveArtist(artist)));
+};
+

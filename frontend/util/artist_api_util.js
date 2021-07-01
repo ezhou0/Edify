@@ -1,11 +1,11 @@
-export const fetchArtists = () => {
+export const receiveArtists = () => {
     return $.ajax({
         url: `/api/artists/`,
         method: 'GET'
     });
 }
 
-export const fetchArtist = (artistId) => {
+export const receiveArtist = (artistId) => {
     return $.ajax({
         url: `/api/artists/${artistId}`,
         method: 'GET'

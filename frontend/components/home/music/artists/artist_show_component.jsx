@@ -42,12 +42,21 @@ class ArtistShowComponent extends React.Component{
                             </div>
 
                             <div id="artist_album_div_album">
-                                {albums.map(album => {
+                                {/* {albums.map(album => {
                                     albumNum += 1;
                                     return(
                                         <AlbumItem key = {albumNum} album = {album} />
                                     )
-                                })}
+                                })} */}
+                                {this.props.artist.albums.map(album => {
+                                    return (
+                                        <AlbumItem
+                                            album={album}
+                                            key={`${album.id}${this.props.artist.name}`}
+                                        />
+                                    )
+                                })
+                                }
                             </div>
 
                         </div>
