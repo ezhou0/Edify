@@ -1069,7 +1069,7 @@ var ArtistIndexComponent = /*#__PURE__*/function (_React$Component) {
         className: "artist_profile_pic_div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         id: "artist_profile_pic_div_div"
-      }, artists.map(function (artist) {
+      }, artists.slice(1, 10).map(function (artist) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_artist_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: artist.id,
           artist: artist
@@ -1146,7 +1146,7 @@ var ArtistIndexItem = function ArtistIndexItem(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "artist-index-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-    to: "/artists/".concat(props.artist.id),
+    to: "/artists/".concat(props.artist.id - 1),
     className: "profile-item"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "profile_pic"
