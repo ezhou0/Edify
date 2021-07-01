@@ -84,10 +84,16 @@
     background-color: rgba(0,0,0,0.2); 
     display: flex;
     flex-direction: column;
+   
 }
 
-.album_show_bottom > * {
-    margin-left: 35px;
+.album-song-bot-top{
+    padding-left: 35px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid darkgray;
+    font-size: 75%;
+    font-weight: 750;
+    color: darkgray
 }
 
 
@@ -96,9 +102,17 @@
     display: flex;
     flex-direction: row;
     color: white;
-    margin-top: 15px;
+    padding-top: 20px;
+    padding-bottom:20px;
+    margin-left: 35px;
+
+}
+
+.song-container-container:hover{
+   background-color: #969696;  
+   
 }
 
 .song-name{
-    margin-left: 250px;
+    margin-left: 245px;
 }
