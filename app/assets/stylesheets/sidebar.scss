@@ -69,8 +69,8 @@
 #sidebar_bottom{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 30%
+    
+    
 }
 
 .sidebar_bottom{
@@ -78,6 +78,24 @@
     width: 95%;
     display: flex;
     flex-direction: column-reverse;
+}
+
+
+.playlist-index{
+    margin-top: 10px;
+  padding-left: 27px;
+}
+
+.playlist-index-item{
+    padding-top: 10px;
+    padding-bottom: 10px;
+     font-size: 13px;
+     font-weight: 525;
+     color:darkgray;
+}
+
+.playlist-index-item:hover{
+     color: azure;
 }
 
 
