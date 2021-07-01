@@ -22,21 +22,38 @@ class AlbumShowComponent extends React.Component{
         return (
             
             <div className = 'album-show-container'>
-                <div className = 'album-top'>
-                    <img id="show_top_pic" src={album.photo} />
-                    <div className = 'album-info'>
-                        <div className = 'album-show-album'>Album</div>
-                        <div className = "album-show-name">{album.albumName}</div>
-                        <div className = 'album-show-sub'>
-                            <div className='album-artist-link'> <Link to={`/artists/${album.artist.id}`} >{album.artist.name}</Link> </div>
-                            <div className = 'album-artist-year'>• {album.year}</div>
-                        </div>
-                    </div>
-                    
+                <div className = 'album-show-top'>
+                <div className = 'album_show_pic'>
+                     <img id='album-show-profile'src={album.photo} />
                 </div>
-                < SongsIndexContainer className="album-show" albumId={album.id} />
+               
+                   
+                <div className = 'album-info'>
+                    <div className = 'album-show-album'>ALBUM</div>
+                    <div className = "album-show-name">{album.albumName}</div>
+                    <div className = 'album-show-sub'>
+                        <div className='album-artist-link'> <Link to={`/artists/${album.artist.id}`} >{album.artist.name} </Link> </div>                            <div className = 'album-artist-year'> • {album.year}</div>
+                    </div>
+                 </div>
+                </div>
+                
 
+                <div className='album_show_bottom'>
+                    <div className = 'album-song-bot-top'>
+                        <div className='album-song-orderNum'>
+                            #
+                        </div>
+                        <div className = 'album-song-title'>
+                            TITLE
+                        </div>
 
+                    </div>
+                     < SongsIndexContainer className="album-show" albumId={album.id} />
+                </div>
+
+                    
+                
+                
             </div>
         )
 

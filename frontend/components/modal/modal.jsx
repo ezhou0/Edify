@@ -2,7 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 
-import CreatePlaylistFormContainer from '../home/sidebar/create_playlist/create_playlist_form_container';
+// import CreatePlaylistFormContainer from '../home/sidebar/create_playlist/create_playlist_form_container';
 
 const Modal = ({ modal, closeModal }) => {
     if (!modal) {
@@ -16,9 +16,9 @@ const Modal = ({ modal, closeModal }) => {
         // case 'signup':
         //     component = <SignupFormContainer />;
         //     break;
-        case 'playlist':
-            component = <CreatePlaylistFormContainer />; 
-            break;
+        // case 'playlist':
+        //     component = <CreatePlaylistFormContainer />; 
+        //     break;
         default:
             return null;
     }

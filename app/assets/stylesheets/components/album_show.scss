@@ -4,38 +4,58 @@
 
 .album-show-container{
      background: linear-gradient(#42607A 15%, #131313 );
-     height: 100vh;
-
+     
+     margin-left: 225px;
+   
 }
 
-.album-top{
-    display: flex;
+
+
+
+.album-show-top{
+    display:flex;
     flex-direction: row;
-    margin-left: 250px;
-
 }
 
+.show_top_pic{
+    display: flex;
 
-#show_top_pic{
-   display: flex;
-   flex-direction: row;
+
+   
+}
+
+#album-show-profile{
     height: 235px;
     width: 235px;
-    margin-left: 0px;
+   padding-top: 60px;
+   padding-left: 30px;
 }
 
 .album-info{
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+
     justify-content: space-between;
+    margin-top: 132px;
     margin-left: 30px;
     height: 165px;
     color: #ffffff;
 }
 
 .album_show_bottom{
-    height: max-content;
+   
+}
+
+.album-song-bot-top{
+     display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    color: white;
+    
+}
+
+.album-song-orderNum{
+    margin-right: 245px;
 }
 
 .album-show-name{
@@ -44,13 +64,22 @@
     
 }
 
-.album-artist-link{
-    margin-left: 500px;
+.album-show-sub{
+    display: flex;
+    flex-direction: row;
+    
 }
 
+.album-artist-link{
+    margin-right: 5px;
+}
+
+
+
 .album_show_bottom{
-    min-height: 500px;
-    padding-bottom: 150px;
+    margin-top: 60px;
+    min-height: 100vh;
+    
     background-color: rgb(0,0,0); 
     background-color: rgba(0,0,0,0.2); 
     display: flex;
@@ -60,11 +89,16 @@
 .album_show_bottom > * {
     margin-left: 35px;
 }
-.song_component_div{
+
+
+
+.song-container{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    height: 55px;
-    border-radius: 12px;  
+    color: white;
+    margin-top: 15px;
+}
+
+.song-name{
+    margin-left: 250px;
 }
