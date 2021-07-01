@@ -1,13 +1,7 @@
-export const search = (searchTerm) => {
+export const getSearchResults = (search) => {
     return $.ajax({
-        url: `/api/searches/${searchTerm}`,
-        method: 'GET'
+        url: "/api/searches",
+        method: "GET",
+        data: { search },
     });
-}
-
-export const searchAll = () => {
-    return $.ajax({
-        url: 'api/searches_all',
-        method: 'GET'
-    })
-}
+};

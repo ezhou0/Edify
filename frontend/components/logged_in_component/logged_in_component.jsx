@@ -31,14 +31,13 @@ class LoggedInComponent extends React.Component {
                 <div className="side_component">
                         <SideBarMain 
                             currentUser={currentUser}
-                            // createPlaylist = {createPlaylist}
+                            
                             playlists = {playlists}
                             fetchPlaylists = {fetchPlaylists} 
                             openModal={this.props.openModal}
                             closeModal={this.props.closeModal}
                             history={this.props.history}
-                            search={this.props.search}
-                            removeSearch={this.props.removeSearch}
+                           
                         />
                 </div>
                     <div className="header_component">

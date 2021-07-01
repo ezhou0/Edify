@@ -1,5 +1,6 @@
 import React from 'react'; 
 import AlbumItem from '../albums/album_index_item';
+import SongsIndexItem from '../songs/songs_index_item';
 
 
 class ArtistShowComponent extends React.Component{
@@ -34,6 +35,16 @@ class ArtistShowComponent extends React.Component{
 
                         <div className='artist_album_div_title'>
                             Songs 
+                        </div>
+                        <div>
+                            {this.props.artist.songs.map(song=>{
+                                return (
+                                    <SongsIndexItem
+                                        song = {song}
+                                        key = {song.id}
+                                    />
+                                )
+                            })}
                         </div>
 
                         <div className = 'artist_album_div'>

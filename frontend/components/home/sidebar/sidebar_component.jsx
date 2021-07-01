@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import PlaylistIndexContainer from '../music/playlists/playlist_index_container';
+import SearchContainer from '../../search/search_container';
 
 
 
@@ -44,11 +45,12 @@ class SideBar extends React.Component {
                     </Link>
                     <div className = 'sidebar-top-content'>
                         <p className = 'sidebar-tab'>Home</p>
-                        <input type="text" placeholder="Search" 
+                        <SearchContainer />
+                        {/* <input type="text" placeholder="Search" 
                            className = 'sidebar-tab'
                             value={this.state.search}
                             onChange={this.handleChange}
-                        />
+                        /> */}
                         <h5 className = 'playlist-header'>PLAYLISTS</h5>
                         <button className = 'playlist-tab' onClick={() => this.props.openModal('playlist')}> Create Playlist</button>
                     </div>

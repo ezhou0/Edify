@@ -1,22 +1,17 @@
-import { RECEIVE_ALBUM, REMOVE_ALBUMS } from "../actions/album_actions";
-import { RECEIVE_ARTIST } from '../actions/artist_actions';
 
+import {
+    RECEIVE_ALBUMS,
+    RECEIVE_ALBUM
+} from "../actions/album_actions";
 
-const albumsReducer = (oldState = {}, action) => {
-
-    Object.freeze(oldState)
-    const newState = Object.assign({}, oldState)
+export default (state = {}, action) => {
+    Object.freeze(state);
     switch (action.type) {
-        case RECEIVE_ARTIST:
-            return action.artist.albums;
+        case RECEIVE_ALBUMS:
+            return Object.assign({}, action.albums);
         case RECEIVE_ALBUM:
-            newState[action.album.id] = action.album;
-            return newState;
-        case REMOVE_ALBUMS:
-            return {};
+            return Object.assign({}, state, { [action.album.id]: action.album });
         default:
-            return oldState;
+            return state;
     }
 }
-
-export default albumsReducer;

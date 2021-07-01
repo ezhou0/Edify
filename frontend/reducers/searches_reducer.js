@@ -1,31 +1,17 @@
-import { RECEIVE_SEARCH, REMOVE_SEARCH } from "../actions/search_actions";
-import { RESET_STATE } from "../actions/session_actions"
+import {
+    RECEIVE_SEARCH,
+    CLEAR_SEARCH,
+} from '../actions/search_actions';
 
-const searchesReducer = (oldState = { songs: {}, artists: {}, albums: {} }, action) => {
-    Object.freeze(oldState)
-    const newState = Object.assign({}, oldState)
+export default (state = {}, action) => {
+    Object.freeze(state);
+
     switch (action.type) {
         case RECEIVE_SEARCH:
-            newState.songs = action.searchRes.search.songs;
-            newState.artists = action.searchRes.search.artists;
-            newState.albums = action.searchRes.search.albums;
-            if (newState.albums === undefined) {
-                newState.albums = {};
-            }
-            if (newState.artists === undefined) {
-                newState.artists = {};
-            }
-            if (newState.songs === undefined) {
-                newState.songs = {};
-            }
-            return newState
-        case REMOVE_SEARCH:
-            return { songs: {}, artists: {}, albums: {} }
-        case RESET_STATE:
-            return { songs: {}, artists: {}, albums: {} };
+            return action.results;
+        case CLEAR_SEARCH:
+            return {};
         default:
-            return oldState;
+            return state;
     }
-}
-
-export default searchesReducer;
+};

@@ -21,8 +21,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return {
         logout: () => dispatch(logout()),
-        fetchArtist: artistId => dispatch(FetchArtist(artistId)),
-        fetchArtists: () => dispatch(FetchArtists()),
+        fetchArtist: artistId => dispatch(receiveArtist(artistId)),
+        fetchArtists: () => dispatch(receiveArtists()),
         fetchPlaylists: userId => dispatch(FetchUsersPlaylist(userId)),
         createPlaylist: playlist => dispatch(CreatePlaylist(playlist)),
         openModal: (modal) => dispatch(openModal(modal)),
