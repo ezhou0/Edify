@@ -8,7 +8,7 @@ import LoggedinContainer from "./logged_in_component/logged_in_container";
 import ArtistIndexContainer from "./home/music/artists/artist_index_container";
 import ArtistShowContainer from "./home/music/artists/artist_show_container";
 import AlbumShowContainer from './home/music/albums/album_show_container';
-// import SearchContainer from '../components/search/search_container';
+ import SearchShowContainer from '../components/search/search_show_container';
 
 import SplashComponent from "./splash/splash_component";
 
@@ -29,8 +29,12 @@ const App = () => (
        <ProtcRoute exact path = "/artists/:artistId" component={ArtistShowContainer}/>
        
        <ProtcRoute exact path = '/albums/:albumId' component={AlbumShowContainer}/> 
-            {/*
-         <ProtcRoute path="/searches/:searchTerm" component={SearchContainer} />  */}
+            
+            <ProtcRoute
+                exact
+                path="/search"
+                component={SearchShowContainer}
+            />
         <Route path="*">
             <Redirect to="/" />            
         </Route>  

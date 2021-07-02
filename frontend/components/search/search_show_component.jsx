@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AlbumsIndexContainer from "../albums/album_index_container";
-import ArtistIndexContainer from "../artists/artist_index_container";
+// import AlbumsIndexContainer from "../home/music/albums/
+import ArtistIndexContainer from '../home/music/artists/artist_index_container';
 
 class SearchShowComponent extends React.Component {
     constructor(props) {
@@ -14,9 +14,9 @@ class SearchShowComponent extends React.Component {
         const { results } = this.props;
         if (results.empty) return null;
         return (
-            <div className="browse">
-                <h1 className="browse-header">Search Results</h1>
-                <h3 className="browse-headers">Artists</h3>
+            <div className="search-container">
+                <h1 className="search-header">Search Results</h1>
+                <h3 className="search-headers">Artists</h3>
                 <ul className="search">
                     {results.artists && results.artists.length
                         ? results.artists.map((artist) => (
@@ -29,11 +29,11 @@ class SearchShowComponent extends React.Component {
                                 </Link>
                             </li>
                         ))
-                        : <li>No results found</li>
+                        : <li >No results found</li>
                     }
                 </ul>
 
-                <h3 className="browse-headers">Albums</h3>
+                {/* <h3 className="browse-headers">Albums</h3>
                 <ul className="search">
                     {results.albums && results.albums.length ? (
                         results.albums.map((album) => (
@@ -51,8 +51,8 @@ class SearchShowComponent extends React.Component {
                     ) : (
                         <li>No results found</li>
                     )}
-                </ul>
-                <h3 className="browse-headers">Songs</h3>
+                </ul> */}
+                <h3 className="search-headers">Songs</h3>
                 {/* <ul className="search">
                     {results.songs && results.songs.length
                         ? results.songs.map((song) => (
@@ -73,4 +73,4 @@ class SearchShowComponent extends React.Component {
     }
 }
 
-export default SearchShow;
+export default SearchShowComponent;
