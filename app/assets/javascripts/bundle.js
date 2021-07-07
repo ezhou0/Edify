@@ -2616,18 +2616,18 @@ var SearchShowComponent = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "search-song-name"
         }, song.title)));
-      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "No results found")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "no-search"
+      }, "No results found")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "search-headers"
-      }, "Artists"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", _defineProperty({
-        className: "search",
-        id: "artist_profile_pic_div_div"
-      }, "className", "artist_profile_pic_div"), results.artists && results.artists.length ? results.artists.map(function (artist) {
+      }, "Artists"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "search-artist-container"
+      }, results.artists && results.artists.length ? results.artists.map(function (artist) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "".concat(artist.id - 1),
-          className: "artist-index-item"
+          key: "".concat(artist.id - 1)
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/artists/".concat(artist.id - 1),
-          className: "artist-outter-link"
+          className: "profile-item"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "profile_pic"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -2637,7 +2637,9 @@ var SearchShowComponent = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, artist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "profile_item_description"
         }, "Artist"))));
-      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "No results found")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "no-search"
+      }, "No results found")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "search-headers"
       }, "Albums"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", _defineProperty({
         className: "search"
@@ -2654,7 +2656,9 @@ var SearchShowComponent = /*#__PURE__*/function (_React$Component) {
         }, album.year, " \u2022 Album"), album.artist ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "album-artist-link"
         }, album.artist.name) : null)));
-      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "No results found")));
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "no-search"
+      }, "No results found")));
     }
   }]);
 

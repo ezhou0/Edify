@@ -16,14 +16,13 @@
 }
 
 .search{
-    // padding-left: 38%;
     padding-left: 20px;
 }
 
 
 
 .search-song-container{
-    background-color: #353535;
+    background-color: #222222;
    
     margin-right: 65%;
     margin-left: 20px;
@@ -43,7 +42,14 @@
 }
 
 
-.search-album-container{
+.search-album-container,.search-artist-container{
     display: flex;
     flex-direction: row;
+    padding-left: 20px;
+}
+
+.no-search{
+    font-size: 80%;
+    padding-left: 80px;
+    color: darkgray
 }

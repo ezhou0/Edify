@@ -34,19 +34,19 @@ class SearchShowComponent extends React.Component {
                                 </Link>
                             </li>
                         ))
-                        : <li>No results found</li>
+                        : <li className = 'no-search'>No results found</li>
                     }
                 </ul>
 
 
                 <h3 className="search-headers">Artists</h3>
-                <ul className="search" id="artist_profile_pic_div_div" className="artist_profile_pic_div">
+                <ul className="search-artist-container" >
                     {results.artists && results.artists.length
                         ? results.artists.map((artist) => (
-                            <li key={`${artist.id - 1}`} className = 'artist-index-item'>
+                            <li key={`${artist.id - 1}`} >
                                 <Link
                                     to={`/artists/${artist.id -1}`}
-                                    className="artist-outter-link"
+                                    className='profile-item'
                                     
                                 >  
                                     <div className='profile_pic'>
@@ -60,7 +60,7 @@ class SearchShowComponent extends React.Component {
                                 </Link>
                             </li>
                         ))
-                        : <li >No results found</li>
+                        : <li className = 'no-search' >No results found</li>
                     }
                 </ul>
 
@@ -92,7 +92,7 @@ class SearchShowComponent extends React.Component {
                             </li>
                         ))
                     ) : (
-                        <li>No results found</li>
+                            <li className='no-search'>No results found</li>
                     )}
                 </ul>
                 
