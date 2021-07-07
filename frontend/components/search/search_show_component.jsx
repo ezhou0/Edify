@@ -20,11 +20,12 @@ class SearchShowComponent extends React.Component {
                 <ul className="search">
                     {results.artists && results.artists.length
                         ? results.artists.map((artist) => (
-                            <li>
+                            <li key={`${artist.id - 1}`}>
                                 <Link
-                                    to={`/artists/${artist.id}`}
+                                    to={`/artists/${artist.id -1}`}
                                     className="artist-outter-link"
-                                >
+                                    
+                                >  
                                     <p className="artist-link">{artist.name}</p>
                                 </Link>
                             </li>
@@ -33,16 +34,16 @@ class SearchShowComponent extends React.Component {
                     }
                 </ul>
 
-                {/* <h3 className="browse-headers">Albums</h3>
+                <h3 className="browse-headers">Albums</h3>
                 <ul className="search">
                     {results.albums && results.albums.length ? (
                         results.albums.map((album) => (
                             <li>
                                 <Link to={`/albums/${album.id}`} className="album-outter-link">
-                                    <p className="album-link">{album.album_name}</p>
+                                    <p className="album-link">{album.name}</p>
                                     {album.artist ? (
                                         <p className="album-artist-link">
-                                            {album.artist.name} - {album.release_date.slice(-4)}
+                                            {album.artist.name} - {album.year}
                                         </p>
                                     ) : null}
                                 </Link>
@@ -51,7 +52,7 @@ class SearchShowComponent extends React.Component {
                     ) : (
                         <li>No results found</li>
                     )}
-                </ul> */}
+                </ul>
                 <h3 className="search-headers">Songs</h3>
                 {/* <ul className="search">
                     {results.songs && results.songs.length
