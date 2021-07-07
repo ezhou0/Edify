@@ -2604,6 +2604,17 @@ var SearchShowComponent = /*#__PURE__*/function (_React$Component) {
         className: "search-header"
       }, "Search Results"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "search-headers"
+      }, "Songs"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "search"
+      }, results.songs && results.songs.length ? results.songs.map(function (song) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/albums/".concat(song.album_id),
+          className: "album-outter-link"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "album-link"
+        }, song.title)));
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "No results found")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "search-headers"
       }, "Artists"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "search"
       }, results.artists && results.artists.length ? results.artists.map(function (artist) {
@@ -2616,7 +2627,7 @@ var SearchShowComponent = /*#__PURE__*/function (_React$Component) {
           className: "artist-link"
         }, artist.name)));
       }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "No results found")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "browse-headers"
+        className: "search-headers"
       }, "Albums"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "search"
       }, results.albums && results.albums.length ? results.albums.map(function (album) {
@@ -2628,9 +2639,7 @@ var SearchShowComponent = /*#__PURE__*/function (_React$Component) {
         }, album.name), album.artist ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "album-artist-link"
         }, album.artist.name, " - ", album.year) : null));
-      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "No results found")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "search-headers"
-      }, "Songs"));
+      }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "No results found")));
     }
   }]);
 

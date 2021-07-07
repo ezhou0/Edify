@@ -16,6 +16,25 @@ class SearchShowComponent extends React.Component {
         return (
             <div className="search-container">
                 <h1 className="search-header">Search Results</h1>
+
+                <h3 className="search-headers">Songs</h3>
+                <ul className="search">
+                    {results.songs && results.songs.length
+                        ? results.songs.map((song) => (
+                            <li>
+                                <Link
+                                    to={`/albums/${song.album_id}`}
+                                    className="album-outter-link"
+                                >
+                                    <p className="album-link">{song.title}</p>
+                                </Link>
+                            </li>
+                        ))
+                        : <li>No results found</li>
+                    }
+                </ul>
+
+                
                 <h3 className="search-headers">Artists</h3>
                 <ul className="search">
                     {results.artists && results.artists.length
@@ -34,7 +53,7 @@ class SearchShowComponent extends React.Component {
                     }
                 </ul>
 
-                <h3 className="browse-headers">Albums</h3>
+                <h3 className="search-headers">Albums</h3>
                 <ul className="search">
                     {results.albums && results.albums.length ? (
                         results.albums.map((album) => (
@@ -53,22 +72,7 @@ class SearchShowComponent extends React.Component {
                         <li>No results found</li>
                     )}
                 </ul>
-                <h3 className="search-headers">Songs</h3>
-                {/* <ul className="search">
-                    {results.songs && results.songs.length
-                        ? results.songs.map((song) => (
-                            <li>
-                                <Link
-                                    to={`/albums/${song.album_id}`}
-                                    className="album-outter-link"
-                                >
-                                    <p className="album-link">{song.name}</p>
-                                </Link>
-                            </li>
-                        ))
-                        : <li>No results found</li>
-                    }
-                </ul> */}
+                
             </div>
         );
     }
