@@ -50,7 +50,7 @@ class SearchShowComponent extends React.Component {
                                     
                                 >  
                                     <div className='profile_pic'>
-                                        <img src={artist.photo} />
+                                        <img src={artist.artistPhoto} />
                                     </div>
 
                                     <div className='profile_name'>
@@ -71,7 +71,7 @@ class SearchShowComponent extends React.Component {
                             <li >
                                 <Link to={`/albums/${album.id}`} className="album_item_div">
                                     <div className='album_item_cover'>
-                                        {album.photo}
+                                        {album.albumPhoto}
                                     </div>
                                     <div className='album_title_div'>
                                         <div>
