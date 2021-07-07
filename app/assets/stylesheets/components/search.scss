@@ -16,7 +16,29 @@
 }
 
 .search{
-    padding-left: 38%;
+    // padding-left: 38%;
+    padding-left: 20px;
+}
+
+
+
+.search-song-container{
+    background-color: #353535;
+   
+    margin-right: 65%;
+}
+
+.search-song-name{
+   padding-left: 30px;
+   padding-top: 10px;
+   padding-bottom: 10px;
+  
+
+}
+
+.search-song-name:hover{
+ background-color: darkgray;
+  border-radius: 5px;
 }
 
 

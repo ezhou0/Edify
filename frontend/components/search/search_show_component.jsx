@@ -21,12 +21,16 @@ class SearchShowComponent extends React.Component {
                 <ul className="search">
                     {results.songs && results.songs.length
                         ? results.songs.map((song) => (
-                            <li>
+                            <li className = 'search-song-container'>
+                            
                                 <Link
                                     to={`/albums/${song.album_id}`}
-                                    className="album-outter-link"
+                                    
                                 >
-                                    <p className="album-link">{song.title}</p>
+                                    
+                                    <p className="search-song-name">{song.title}</p>
+                                    
+                                   
                                 </Link>
                             </li>
                         ))
@@ -34,7 +38,7 @@ class SearchShowComponent extends React.Component {
                     }
                 </ul>
 
-                
+
                 <h3 className="search-headers">Artists</h3>
                 <ul className="search">
                     {results.artists && results.artists.length
