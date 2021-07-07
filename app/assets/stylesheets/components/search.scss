@@ -26,6 +26,7 @@
     background-color: #353535;
    
     margin-right: 65%;
+    margin-left: 20px;
 }
 
 .search-song-name{
@@ -42,3 +43,7 @@
 }
 
 
+.search-album-container{
+    display: flex;
+    flex-direction: row;
+}

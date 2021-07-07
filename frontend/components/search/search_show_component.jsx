@@ -40,16 +40,23 @@ class SearchShowComponent extends React.Component {
 
 
                 <h3 className="search-headers">Artists</h3>
-                <ul className="search">
+                <ul className="search" id="artist_profile_pic_div_div" className="artist_profile_pic_div">
                     {results.artists && results.artists.length
                         ? results.artists.map((artist) => (
-                            <li key={`${artist.id - 1}`}>
+                            <li key={`${artist.id - 1}`} className = 'artist-index-item'>
                                 <Link
                                     to={`/artists/${artist.id -1}`}
                                     className="artist-outter-link"
                                     
                                 >  
-                                    <p className="artist-link">{artist.name}</p>
+                                    <div className='profile_pic'>
+                                        <img src={artist.photo} />
+                                    </div>
+
+                                    <div className='profile_name'>
+                                        <div>{artist.name}</div>
+                                        <div className='profile_item_description'>Artist</div>
+                                    </div>
                                 </Link>
                             </li>
                         ))
@@ -58,17 +65,29 @@ class SearchShowComponent extends React.Component {
                 </ul>
 
                 <h3 className="search-headers">Albums</h3>
-                <ul className="search">
+                <ul className="search" className='search-album-container'>
                     {results.albums && results.albums.length ? (
                         results.albums.map((album) => (
-                            <li>
-                                <Link to={`/albums/${album.id}`} className="album-outter-link">
-                                    <p className="album-link">{album.name}</p>
-                                    {album.artist ? (
-                                        <p className="album-artist-link">
-                                            {album.artist.name} - {album.year}
-                                        </p>
-                                    ) : null}
+                            <li >
+                                <Link to={`/albums/${album.id}`} className="album_item_div">
+                                    <div className='album_item_cover'>
+                                        {album.photo}
+                                    </div>
+                                    <div className='album_title_div'>
+                                        <div>
+                                            {album.name}
+                                        </div>
+                                        <div className='album_year'>
+                                            {album.year} • Album
+                                        </div>
+                                        {album.artist ? (
+                                            <div className="album-artist-link">
+                                                {album.artist.name}
+                                            </div>
+                                        ) : null} 
+
+
+                                    </div>
                                 </Link>
                             </li>
                         ))
