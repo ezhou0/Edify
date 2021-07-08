@@ -1,51 +1,24 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Link } from 'react-router-dom';
-// import PlaylistSongIndexItem from '../songs/playlist_song_index_item';
-// import PlaylistEditFormContainer from './playlist_edit_form_container';
-// import PlaylistDeleteContainer from './playlist_delete_container';
+import { connect } from 'react-redux';
+import PlaylistShowComponent from './playlist_show_component';
+import { fetchPlaylist, deletePlaylist } from '../../../../actions/playlist_actions';
+import { fetchCurrentSong } from '../../../../actions/song_actions';
+import { togglePlayState } from '../../../../actions/session_actions';
 
-class PlaylistShow extends React.Component {
-    componentDidMount() {
-        this.props.fetchPlaylist(this.props.match.params.playlistId);
-    }
+const mapStateToProps = (state, ownProps) => {
+    return {
+        playlist: state.entities.playlists[ownProps.match.params.playlistId],
+        currentSong: state.session.currentSong,
+        playState: state.session.playState
+    };
+};
 
-    // componentDidUpdate(prevProps) {
-    //     if ((prevProps.match.params.playlistId !== this.props.match.params.playlistId) ||
-    //         (prevProps.playlist && prevProps.playlist.songs.length !== this.props.playlist.songs.length)) {
-    //         this.props.fetchPlaylist(this.props.match.params.playlistId);
-    //     }
-    // }
+const mapDispatchToProps = dispatch => {
+    return {
+        fetchPlaylist: playlistId => dispatch(fetchPlaylist(playlistId)),
+        togglePlayState: songId => dispatch(togglePlayState(songId)),
+        fetchSong: songId => dispatch(fetchCurrentSong(songId)),
+        deletePlaylist: playlist => dispatch(deletePlaylist(playlist)),
+    };
+};
 
-    render() {
-        const { playlist, fetchSong, togglePlayState, currentSong, playState, deletePlaylist } = this.props;
-
-        if (!playlist) return null;
-        return (
-            <div className="playlist-show">
-                {/* <img src={window.playlistURL} alt="playlist-image" /> */}
-                <div className="playlist-show-info">
-                    {/* <PlaylistEditFormContainer playlist={playlist} deletePlaylist={deletePlaylist} /> */}
-                    <div className="playlist-show">
-                        <ul className="songs-grid">
-                            {
-                                // playlist.songs.map(song => (
-                                //     <PlaylistSongIndexItem
-                                //         playlist={playlist}
-                                //         song={song}
-                                //         fetchSong={fetchSong}
-                                //         key={song.id}
-                                //         togglePlayState={togglePlayState}
-                                //         currentSong={currentSong}
-                                //         playState={playState}
-                                //     />
-                                // ))
-                            }
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}
-export default PlaylistShow;
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistShowComponent);
