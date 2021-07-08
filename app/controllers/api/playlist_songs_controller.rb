@@ -1,4 +1,5 @@
 class Api::PlaylistSongsController < ApplicationController
+    skip_before_action :verify_authenticity_token
     def create
        @playlist_song = PlaylistSong.new(playlist_song_params)
         @playlist_songs.save!

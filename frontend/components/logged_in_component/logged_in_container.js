@@ -1,11 +1,12 @@
 import { connect } from "react-redux"
-import { FetchArtist } from "../../actions/artist_actions"
-import {FetchUsersPlaylist, CreatePlaylist} from "../../actions/playlist_actions";
+import { fetchArtists } from "../../actions/artist_actions"
+import {fetchPlaylists, createPlaylist} from '../../actions/playlist_actions';
 import { logout } from "../../actions/session_actions";
 import LoggedInComponent from "./logged_in_component";
 import { withRouter } from 'react-router-dom';
 
 import { openModal, closeModal } from '../../actions/modal_actions';
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -22,9 +23,9 @@ const mapDispatchToProps = dispatch => {
     return {
         logout: () => dispatch(logout()),
         fetchArtist: artistId => dispatch(receiveArtist(artistId)),
-        fetchArtists: () => dispatch(receiveArtists()),
-        fetchPlaylists: userId => dispatch(FetchUsersPlaylist(userId)),
-        createPlaylist: playlist => dispatch(CreatePlaylist(playlist)),
+        fetchArtists: () => dispatch(fetchArtists()),
+        fetchPlaylists: ()=> dispatch(fetchPlaylists()),
+        createPlaylist: playlist => dispatch(createPlaylist(playlist)),
         openModal: (modal) => dispatch(openModal(modal)),
         closeModal: (modal) => dispatch(closeModal(modal)),
 

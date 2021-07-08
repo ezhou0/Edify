@@ -13,9 +13,9 @@ class SideBar extends React.Component {
         this.handleSearch = this.handleSearch.bind(this);
     }
 
-    // componentDidMount(){
-    //     this.props.fetchPlaylists
-    // }
+    componentDidMount(){
+        this.props.fetchPlaylists
+    }
 
     handleSearch(e) {
         e.preventDefault();

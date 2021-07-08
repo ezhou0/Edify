@@ -8,7 +8,8 @@ import LoggedinContainer from "./logged_in_component/logged_in_container";
 import ArtistIndexContainer from "./home/music/artists/artist_index_container";
 import ArtistShowContainer from "./home/music/artists/artist_show_container";
 import AlbumShowContainer from './home/music/albums/album_show_container';
- import SearchShowContainer from '../components/search/search_show_container';
+import SearchShowContainer from '../components/search/search_show_container';
+import PlaylistShowContainer from '../components/home/music/playlists/playlist_show_container';
 
 import SplashComponent from "./splash/splash_component";
 
@@ -20,24 +21,20 @@ const App = () => (
         <LoggedinContainer/>
         <Modal/>
         <Switch> 
-        <AuthRoute exact path='/' component = {SplashComponent}/> 
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />  
-        <ProtcRoute path='/home/' component={ArtistIndexContainer} />
-        
-        
-       <ProtcRoute exact path = "/artists/:artistId" component={ArtistShowContainer}/>
-       
-       <ProtcRoute exact path = '/albums/:albumId' component={AlbumShowContainer}/> 
+            <AuthRoute exact path='/' component = {SplashComponent}/> 
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />  
+            <ProtcRoute path='/home/' component={ArtistIndexContainer} />
             
-            <ProtcRoute
-                exact
-                path="/search"
-                component={SearchShowContainer}
-            />
-        <Route path="*">
-            <Redirect to="/" />            
-        </Route>  
+            
+            <ProtcRoute exact path = "/artists/:artistId" component={ArtistShowContainer}/>
+            
+            <ProtcRoute exact path = '/albums/:albumId' component={AlbumShowContainer}/> 
+            <ProtcRoute exact path="/playlists/:playlistId" component={PlaylistShowContainer}/>
+            <ProtcRoute exact path="/search" component={SearchShowContainer}/>
+             <Route path="*">
+                <Redirect to="/" />            
+             </Route>  
 
         </Switch>
     </div>
