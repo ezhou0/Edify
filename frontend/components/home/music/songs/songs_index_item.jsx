@@ -1,8 +1,7 @@
 import React, { useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
-// import AddToPlaylistFormContainer from '../playlists/add_to_playlist_form_container';
-
+import AddToPlaylistContainer from '../playlists/add_song_to_playlist_container';
 const SongsIndexItem = ({ song, fetchSong, togglePlayState, playState, currentSong }) => {
     return (
         <div className="song-container-container">
@@ -13,7 +12,7 @@ const SongsIndexItem = ({ song, fetchSong, togglePlayState, playState, currentSo
                 <button>{currentSong && song.id === currentSong.id && playState ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}<p>{song.trackNumber} </p></button>
                 <p className="song-name">{song.name}</p>
             </li>
-            {/* <AddToPlaylistFormContainer songId={song.id} /> */}
+            <AddToPlaylistContainer songId={song.id} />
         </div>
     )
 };

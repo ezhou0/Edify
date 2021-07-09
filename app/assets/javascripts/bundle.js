@@ -2133,9 +2133,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _playlists_add_song_to_playlist_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../playlists/add_song_to_playlist_container */ "./frontend/components/home/music/playlists/add_song_to_playlist_container.jsx");
 
 
- // import AddToPlaylistFormContainer from '../playlists/add_to_playlist_form_container';
+
+
 
 var SongsIndexItem = function SongsIndexItem(_ref) {
   var song = _ref.song,
@@ -2156,7 +2158,9 @@ var SongsIndexItem = function SongsIndexItem(_ref) {
     className: "fas fa-play"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, song.trackNumber, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "song-name"
-  }, song.name)));
+  }, song.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_add_song_to_playlist_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    songId: song.id
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SongsIndexItem);

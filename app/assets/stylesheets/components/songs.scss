@@ -1,0 +1,23 @@
+
+.song-container-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.song-container{
+    
+    color: white;
+    padding-top: 20px;
+    padding-bottom:20px;
+    margin-left: 35px;
+
+}
+
+.song-container-container:hover{
+   background-color: rgb(114, 108, 108);  
+   
+}
+
+.song-name{
+    margin-left: 245px;
+}
