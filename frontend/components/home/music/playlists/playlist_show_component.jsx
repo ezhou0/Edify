@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Link } from 'react-router-dom';
 import PlaylistSongIndexItem from './playlist_song_index';
-// import PlaylistEditFormContainer from './playlist_edit_form_container';
+import PlaylistEditContainer from './playlist_edit_container';
 // import PlaylistDeleteContainer from './playlist_delete_container';
 
 class PlaylistShowComponent extends React.Component {
@@ -25,9 +25,9 @@ class PlaylistShowComponent extends React.Component {
             <div className="playlist-show-container">
                 
                 <div className="playlist-show-info">
-                    <div className = 'playlist-show-header'>PLAYLIST</div>
-                    <h1 className = 'playlist-name'>{playlist.name} </h1>
-                    {/* <PlaylistEditFormContainer playlist={playlist} deletePlaylist={deletePlaylist} /> */}
+                    
+                    
+                    <PlaylistEditContainer playlist={playlist} deletePlaylist={deletePlaylist} />
                     <div className = 'playlist-bottom'>
                         <div className='playlist-song-headers'>
                            

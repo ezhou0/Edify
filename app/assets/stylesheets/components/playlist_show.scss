@@ -16,16 +16,27 @@ padding-left: 225px;
    font-size: 70%;
    font-weight: 550;
    letter-spacing: 3px; 
-   color: lightgray
+   color: lightgray;
+   margin-left: 12px;
 }
 
 .playlist-name{
     padding-left: 100px;
     margin-bottom: 60px;
     font-size: 350%;
+    margin-right: -343px;
 }
 
+.playlist-name-container{
+    display: flex;
+    flex-direction: row;
+}
 
+.playlist-confirm{
+    margin-left: 0;
+    font-size: 70%;
+    
+}
 
 .playlist-song-headers{
      display: flex;
