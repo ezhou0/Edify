@@ -2,7 +2,7 @@ class Api::PlaylistSongsController < ApplicationController
     skip_before_action :verify_authenticity_token
     def create
        @playlist_song = PlaylistSong.new(playlist_song_params)
-        @playlist_songs.save!
+        @playlist_song.save!
     end
 
     def destroy
@@ -12,7 +12,7 @@ class Api::PlaylistSongsController < ApplicationController
         render 'api/playlists/show'
     end
     
-    def songs_on_playlists_params
+    def playlist_song_params
         params.require(:playlist_song).permit(:playlist_id, :song_id)
     end
 end

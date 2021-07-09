@@ -24,7 +24,11 @@ class AddToPlaylist extends React.Component {
                     <li>Add to playlist</li>
                     {
                         playlists.map(playlist => (
-                            <button onClick={this.handleSubmit} value={playlist.id}>{playlist.name}</button>
+                            <button onClick={this.handleSubmit}
+                             value={playlist.id}
+                             key = {playlist.id}>
+                                 
+                                 {playlist.name}</button>
                         ))
                     }
                 </ul>

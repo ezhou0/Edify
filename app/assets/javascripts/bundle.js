@@ -1405,7 +1405,8 @@ var AddToPlaylist = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Add to playlist"), playlists.map(function (playlist) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           onClick: _this2.handleSubmit,
-          value: playlist.id
+          value: playlist.id,
+          key: playlist.id
         }, playlist.name);
       })));
     }
