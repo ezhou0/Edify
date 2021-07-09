@@ -1,17 +1,31 @@
 .playlist-show{
 background: linear-gradient(rgba(0,0,0,.87), rgba(0,0,0,1) );
  min-height: 100vh;
- padding-left: 30px;
- padding-top: 30px;
+padding-left: 225px;
+ padding-top: 80px;
+ color: white;
 }
 
 .playlist-show-info{
-
+    display: flex;
+    flex-direction: column;
+    
+}
+.playlist-show-header{
+    padding-left: 100px;
+   font-size: 70%;
+   font-weight: 550;
+   letter-spacing: 3px; 
+   color: lightgray
 }
 
-.songs-grid{
-
+.playlist-name{
+    padding-left: 100px;
+    margin-bottom: 60px;
+    font-size: 350%;
 }
+
+
 
 
 

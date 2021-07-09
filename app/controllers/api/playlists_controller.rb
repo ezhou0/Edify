@@ -1,4 +1,5 @@
 class Api::PlaylistsController < ApplicationController
+     skip_before_action :verify_authenticity_token
    def index
         user = current_user
         @playlists = user.playlists
@@ -36,6 +37,6 @@ class Api::PlaylistsController < ApplicationController
     private
 
     def playlist_params
-        params.require(:playlist).permit(:title, :author_id)
+        params.require(:playlist).permit(:name, :author_id)
     end
 end

@@ -30,11 +30,39 @@ class SideBar extends React.Component {
         this.setState({ search: e.currentTarget.value });
     }
 
+    componentDidUpdate(prevProps) {
+        if (
+            !prevProps.playlists ||
+            !this.props.playlists ||
+            this.props.playlists.length !== prevProps.playlists.length
+        ) {
+            this.props.fetchPlaylists();
+           
+        }
+    }
+
+    createPlaylist(playlist) {
+        this.props.createPlaylist(playlist);
+       
+    }
+
+
+
     render() {
         
-        const {playlists} = this.props;
+        const { currentUser } = this.props;
+
         
+
+
+        const basePlaylist = {
+            name: "Playlist",
+            author_id: currentUser,
+        };
+        if (!currentUser) return null;
         return (
+
+        
             
             <div className="sidebar_comp">
                 <div id="sidebar_top">
@@ -52,7 +80,7 @@ class SideBar extends React.Component {
                             onChange={this.handleChange}
                         /> */}
                         <h5 className = 'playlist-header'>PLAYLISTS</h5>
-                        <button className = 'playlist-tab' onClick={() => this.props.openModal('playlist')}> Create Playlist</button>
+                        <button onClick={() => this.createPlaylist(basePlaylist)} className = 'playlist-tab'>Create Playlist</button>
                     </div>
                 </div>
                 <div id="sidebar_bottom">

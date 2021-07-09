@@ -11,8 +11,8 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
     return {
-        currentUser: state.entities.users[state.session.id],
-        
+        // currentUser: state.entities.users[state.session.id],
+        currentUser: state.session.id,
         artists: Object.values(state.entities.artists),
         playlists: Object.values(state.entities.playlists),
         

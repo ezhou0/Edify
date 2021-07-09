@@ -6,14 +6,14 @@ import { Link } from 'react-router-dom';
 
 const PlaylistIndexItem = ({ playlist, song, fetchSong, togglePlayState, playState, currentSong }) => {
     return (
-        <div className="song-container-container">
-            <li className="song-container" onClick={() => {
+        <div className="playlist-song-container-container">
+            <li className="playlist-song-container" onClick={() => {
                 fetchSong(song.id)
             }}>
 
                 {/* <button onClick={() => fetchSong(song.id).then(() => togglePlayState(song.id))}>Play</button> */}
                 <button>{currentSong && song.id === currentSong.id && playState ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}<p>{song.trackNumber}</p></button>
-                <p className="song-name">{song.title}</p>
+                <p className="playlist-song-name">{song.title}</p>
             </li>
             {/* <AddToPlaylistFormContainer songId={song.id} />
             <PlaylistDeleteContainer song={song} playlist={playlist} /> */}

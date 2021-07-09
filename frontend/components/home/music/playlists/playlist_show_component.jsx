@@ -23,8 +23,10 @@ class PlaylistShowComponent extends React.Component {
         if (!playlist) return null;
         return (
             <div className="playlist-show">
-                {/* <img src={window.playlistURL} alt="playlist-image" /> */}
+                
                 <div className="playlist-show-info">
+                    <div className = 'playlist-show-header'>PLAYLIST</div>
+                    <h1 className = 'playlist-name'>{playlist.name} </h1>
                     {/* <PlaylistEditFormContainer playlist={playlist} deletePlaylist={deletePlaylist} /> */}
                     <div className="playlist-show">
                         <ul className="songs-grid">
