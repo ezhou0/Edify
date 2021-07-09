@@ -1,4 +1,4 @@
-.playlist-show{
+.playlist-show-container{
 background: linear-gradient(rgba(0,0,0,.87), rgba(0,0,0,1) );
  min-height: 100vh;
 padding-left: 225px;
@@ -24,6 +24,51 @@ padding-left: 225px;
     margin-bottom: 60px;
     font-size: 350%;
 }
+
+
+
+.playlist-song-headers{
+     display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+    color: white;
+     padding-left: 85px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid darkgray;
+    font-size: 75%;
+    font-weight: 750;
+    letter-spacing: 2px;
+    color: darkgray;
+}
+    
+.playlist-song-title{
+
+}
+
+
+.playist-song-container{
+     display: flex;
+    flex-direction: row;
+    color: white;  
+}
+
+.playlist-song-container-container{
+   
+     padding-top: 0px;
+    padding-bottom:15px; 
+   
+}
+.playlist-song-container-container:hover{
+   background-color: rgb(114, 108, 108); 
+   
+   
+}
+
+.playlist-song-name{
+   margin-left: 85px;
+}
+
+
 
 
 

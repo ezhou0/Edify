@@ -22,14 +22,21 @@ class PlaylistShowComponent extends React.Component {
 
         if (!playlist) return null;
         return (
-            <div className="playlist-show">
+            <div className="playlist-show-container">
                 
                 <div className="playlist-show-info">
                     <div className = 'playlist-show-header'>PLAYLIST</div>
                     <h1 className = 'playlist-name'>{playlist.name} </h1>
                     {/* <PlaylistEditFormContainer playlist={playlist} deletePlaylist={deletePlaylist} /> */}
-                    <div className="playlist-show">
-                        <ul className="songs-grid">
+                    <div className = 'playlist-bottom'>
+                        <div className='playlist-song-headers'>
+                           
+                            <div className='playlist-song-title'>
+                                TITLE
+                            </div>
+
+                        </div>
+                        <ul >
                             {
                                 playlist.songs.map(song => (
                                     <PlaylistSongIndexItem
