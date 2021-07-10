@@ -2,7 +2,7 @@ import {connect} from 'react-redux';
 import { logout, demoLogin, togglePlayState } from '../../../actions/session_actions';
 import Playbar from './playbar_component';
 
-const mapStateToProps = state => {
+const mapStateToProps = ({ session }) => {
     return{
         currentUser: session.id,
         currentSong: session.currentSong,

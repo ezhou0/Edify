@@ -35,7 +35,7 @@ padding-left: 225px;
 .playlist-confirm{
     margin-left: 0;
     font-size: 70%;
-    
+
 }
 
 .playlist-song-headers{
@@ -67,6 +67,8 @@ padding-left: 225px;
    
      padding-top: 0px;
     padding-bottom:15px; 
+    display: flex;
+    flex-direction: row;
    
 }
 .playlist-song-container-container:hover{
