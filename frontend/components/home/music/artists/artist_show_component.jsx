@@ -14,14 +14,13 @@ class ArtistShowComponent extends React.Component{
     }
 
     render(){
-        const artist = this.props.artist;
-        const albums = this.props.albums;
-        let albumNum = 0;
+        const { artist }  = this.props;
+       
 
         return(
             <div id='artist_show_container'>
                 <div className = 'artist_show_pic'>
-                    <img id="show_profile_pic" src={artist.photo} />
+                    <img id="show_profile_pic" src={artist.photo} /> 
                 </div>
 
                 <div className = 'artist_show_div'>

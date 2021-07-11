@@ -1090,7 +1090,7 @@ var ArtistIndexComponent = /*#__PURE__*/function (_React$Component) {
         id: "artist_profile_pic_div_div"
       }, artists.slice(1, 10).map(function (artist) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_artist_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: artist.id,
+          key: "".concat(artist.id).concat(artist.name),
           artist: artist
         });
       }))));
@@ -1244,8 +1244,6 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
       var _this = this;
 
       var artist = this.props.artist;
-      var albums = this.props.albums;
-      var albumNum = 0;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "artist_show_container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
