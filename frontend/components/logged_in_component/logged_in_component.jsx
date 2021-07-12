@@ -2,7 +2,7 @@ import React from "react"
 import { Redirect } from "react-router";
 import HeaderComponent from "../home/header/header_component";
 
-import Playbar from '../home/playbar/playbar_component'
+import PlaybarContainer from '../home/playbar/playbar_container'
 import SideBarMain from "../home/sidebar/sidebar_component";
 
 
@@ -26,7 +26,7 @@ class LoggedInComponent extends React.Component {
             <div className="main_div">
                 {this.redirect()};
                 <div className="playbar_component">
-                    <Playbar />
+                    <PlaybarContainer />
                 </div>
                
                 <div className="side_component">

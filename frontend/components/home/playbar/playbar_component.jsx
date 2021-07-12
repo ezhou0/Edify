@@ -53,7 +53,7 @@ class Playbar extends React.Component {
                     ref={this.audio}
                     preload="metadata"
                     src={
-                        this.props.currentSong ? this.props.currentSong.audioUrl : ""
+                        this.props.currentSong ? this.props.currentSong.audio : ""
                     }
                     volume="0.5"
                 />
