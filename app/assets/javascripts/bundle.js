@@ -1196,6 +1196,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _albums_album_index_item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../albums/album_index_item */ "./frontend/components/home/music/albums/album_index_item.jsx");
 /* harmony import */ var _songs_songs_index_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../songs/songs_index_container */ "./frontend/components/home/music/songs/songs_index_container.jsx");
 /* harmony import */ var _playlists_add_song_to_playlist_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../playlists/add_song_to_playlist_container */ "./frontend/components/home/music/playlists/add_song_to_playlist_container.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1223,6 +1224,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
   _inherits(ArtistShowComponent, _React$Component);
 
@@ -1243,8 +1245,6 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
       var artist = this.props.artist;
       var _this$props = this.props,
           songs = _this$props.songs,
@@ -1301,10 +1301,18 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
       }, "Discography"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "artist_album_div_album"
       }, artist.albums.map(function (album) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_albums_album_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          album: album,
-          key: "".concat(album.id).concat(_this.props.artist.name)
-        });
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          key: album.id
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
+          to: "/albums/".concat(album.id),
+          className: "album_item_div"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "album_item_cover"
+        }, album.albumPhoto), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "album_title_div"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, album.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "album_year"
+        }, album.year, " \u2022 Album"))));
       }))))));
     }
   }]);

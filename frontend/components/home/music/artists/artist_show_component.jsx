@@ -2,6 +2,7 @@ import React from 'react';
 import AlbumItem from '../albums/album_index_item';
 import SongsIndexContainer from '../songs/songs_index_container';
 import AddToPlaylistContainer from '../playlists/add_song_to_playlist_container';
+import { Link } from 'react-router-dom';
 
 
 class ArtistShowComponent extends React.Component{
@@ -70,10 +71,25 @@ class ArtistShowComponent extends React.Component{
                                 })} */}
                                 {artist.albums.map(album => {
                                     return (
-                                        <AlbumItem
-                                            album={album}
-                                            key={`${album.id}${this.props.artist.name}`}
-                                        />
+                                        <div key = {album.id}>
+                                            <Link to={`/albums/${album.id}`} className='album_item_div'>
+                                                <div className='album_item_cover'>
+                                                    {album.albumPhoto}
+                                                </div>
+                                                <div className='album_title_div'>
+                                                    <div>
+                                                        {album.name}
+                                                    </div>
+                                                    <div className='album_year'>
+                                                       
+                                                        {album.year} • Album
+                                                    </div>
+
+
+                                                </div>
+
+                                            </Link>
+                                        </div>
                                     )
                                 })
                                 }
