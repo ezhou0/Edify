@@ -10,7 +10,7 @@ const SongsIndexItem = ({ song, fetchSong, togglePlayState, playState, currentSo
             }}>
 
                 <button>{currentSong && song.id === currentSong.id && playState ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}<p>{song.trackNumber} </p></button>
-                <p className="song-name">{song.name}</p>
+                <p className="song-name">{song.title}</p>
             </li>
             <AddToPlaylistContainer songId={song.id} />
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'; 
 import AlbumItem from '../albums/album_index_item';
-import SongsIndexItem from '../songs/songs_index_item';
+import SongsIndexContainer from '../songs/songs_index_container';
+import AddToPlaylistContainer from '../playlists/add_song_to_playlist_container';
 
 
 class ArtistShowComponent extends React.Component{
@@ -15,7 +16,7 @@ class ArtistShowComponent extends React.Component{
 
     render(){
         const { artist }  = this.props;
-       
+        const { songs, fetchSong, togglePlayState, currentSong, playState } = this.props;
 
         return(
             <div id='artist_show_container'>
@@ -35,16 +36,25 @@ class ArtistShowComponent extends React.Component{
                         <div className='artist_album_div_title'>
                             Songs 
                         </div>
-                        <div>
-                            {this.props.artist.songs.map(song=>{
+                        <ul className="songs-grid sub-grid">
+                            {artist.songs.map((song)=>{
                                 return (
-                                    <SongsIndexItem
-                                        song = {song}
-                                        key = {song.id}
-                                    />
+                                    // <SongsIndexContainer
+                                    //     song = {song}
+                                    //     key = {song.id}
+                                    // />
+                                    <li key = {song.id}>
+                                        <div className="song-container" key={song.id} onClick={() => {
+                                            fetchSong(song.id) }}>
+                                            <button>{currentSong && song.id === currentSong.id && playState ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}<p>{song.trackNumber} </p></button>
+                                            <p className="song-name">{song.title}</p>
+                                        </div>
+                                        <AddToPlaylistContainer songId={song.id} />
+                                    </li>
+                                    
                                 )
                             })}
-                        </div>
+                        </ul>
 
                         <div className = 'artist_album_div'>
                             <div className = 'artist_album_div_title'>
@@ -58,7 +68,7 @@ class ArtistShowComponent extends React.Component{
                                         <AlbumItem key = {albumNum} album = {album} />
                                     )
                                 })} */}
-                                {this.props.artist.albums.map(album => {
+                                {artist.albums.map(album => {
                                     return (
                                         <AlbumItem
                                             album={album}
