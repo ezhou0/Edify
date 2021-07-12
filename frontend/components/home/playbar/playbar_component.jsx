@@ -1,5 +1,8 @@
 import React from 'react';
 import CurrentSong from './current_song';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay } from '@fortawesome/free-solid-svg-icons'
+import { faPause } from '@fortawesome/free-solid-svg-icons'
 
 class Playbar extends React.Component {
 
