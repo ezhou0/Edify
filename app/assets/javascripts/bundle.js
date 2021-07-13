@@ -2665,6 +2665,7 @@ var SideBar = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       var currentUser = this.props.currentUser;
+      var playlists = this.props.playlists;
       var basePlaylist = {
         name: "Playlist",
         author_id: currentUser
@@ -2764,7 +2765,7 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
   _createClass(LoggedInComponent, [{
     key: "redirect",
     value: function redirect() {
-      if (this.props.currentUser === false) {
+      if (this.props.currentUser === null) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router__WEBPACK_IMPORTED_MODULE_1__["Redirect"], {
           to: "/"
         });
@@ -2773,7 +2774,7 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      if (this.props.currentUser === undefined) {
+      if (this.props.currentUser === null) {
         return null;
       }
 
@@ -2839,7 +2840,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
-    // currentUser: state.entities.users[state.session.id],
+    //currentUser: state.entities.users[state.session.id],
     currentUser: state.session.id,
     artists: Object.values(state.entities.artists),
     playlists: Object.values(state.entities.playlists)

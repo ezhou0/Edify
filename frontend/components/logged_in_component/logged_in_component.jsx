@@ -12,13 +12,13 @@ class LoggedInComponent extends React.Component {
     }
   
     redirect(){
-        if(this.props.currentUser === false){
+        if(this.props.currentUser === null){
             return <Redirect to='/' />
         }
     }
 
     render() {
-        if (this.props.currentUser === undefined) {
+        if (this.props.currentUser === null) {
             return null;
         }
         const { currentUser, playlists, createPlaylist, fetchPlaylists} = this.props;

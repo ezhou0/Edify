@@ -51,6 +51,7 @@ class SideBar extends React.Component {
     render() {
         
         const { currentUser } = this.props;
+        const{playlists} = this.props;
 
         
 
@@ -85,6 +86,16 @@ class SideBar extends React.Component {
                 </div>
                 <div id="sidebar_bottom">
                     <PlaylistIndexContainer />
+                    {/* <div className="sidebar_bottom">
+                        {playlists.map(playlist => {
+                            return <Link to={`/playlists/${props.playlist.id}`} key={playlist.id} >{ props.playlist.name}</Link>
+                        })}
+                    </div> */}
+                    
+                    {/* <li className="playlist-index-item">
+                        <Link to={`/playlists/${props.playlist.id}`}>{props.playlist.name}</Link>
+                    </li> */}
+
                 </div>
             </div>
         )
