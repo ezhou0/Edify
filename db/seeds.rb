@@ -18,9 +18,9 @@ artistBase = Artist.create!(name:'artistBase')
 artist1 = Artist.create!(name: 'artist1', description: 'this is an artist')
 artist2 = Artist.create!(name: 'artist2')
 
-artistBasepic = open("https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/artistbase.jpeg")
-artist1pic = open("https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catduo.jpeg")
-artist2pic = open("https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catpiano.jpeg")
+artistBasepic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/artistbase.jpeg")
+artist1pic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catduo.jpeg")
+artist2pic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catpiano.jpeg")
 
 artistBase.artist_photo.attach(io: artistBasepic, filename: 'artistbase.jpeg')
 artist1.artist_photo.attach(io: artist1pic, filename:'catduo.jpeg' )
@@ -35,9 +35,9 @@ album3 = Album.create!(name: 'artist2 album', year: 2021, artist_id: artist2.id,
 
 #link album covers
 
-album1pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catalbum1.jpeg')
-album2pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catalbum2.png')
-album3pic = open('https://edify-app-dev.s3-us-west-1.amazonaws.com/Edifypics/catalbum3.jpeg')
+album1pic = open('https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catalbum1.jpeg')
+album2pic = open('https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catalbum2.png')
+album3pic = open('https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catalbum3.jpeg')
 
 # #
 album1.album_photo.attach(io: album1pic, filename: 'catalbum1.jpeg')
@@ -53,12 +53,12 @@ song5 = Song.create(title: 'song5', album_id: album3.id, track_number: 1)
 song6 = Song.create(title: 'song6', album_id: album3.id, track_number: 2)
 
 #songs mp3
-song1mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/dreams.mp3')
-song2mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/goodmorning.mp3')
-song3mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/kawaii.mp3')
-song4mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/nimbus.mp3')
-song5mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/places.mp3')
-song6mp3 = open('https://edify-app-dev.s3.us-west-1.amazonaws.com/edifySongs/summer.mp3')
+song1mp3 = open('https://edify-app-seeds.s3.us-west-1.amazonaws.com/edifySongs/dreams.mp3')
+song2mp3 = open('https://edify-app-seeds.s3.us-west-1.amazonaws.com/edifySongs/goodmorning.mp3')
+song3mp3 = open('https://edify-app-seeds.s3.us-west-1.amazonaws.com/edifySongs/kawaii.mp3')
+song4mp3 = open('https://edify-app-seeds.s3.us-west-1.amazonaws.com/edifySongs/nimbus.mp3')
+song5mp3 = open('https://edify-app-seeds.s3.us-west-1.amazonaws.com/edifySongs/places.mp3')
+song6mp3 = open('https://edify-app-seeds.s3.us-west-1.amazonaws.com/edifySongs/summer.mp3')
 
 # #
 song1.audio.attach(io: song1mp3, filename: 'dreams.mp3')

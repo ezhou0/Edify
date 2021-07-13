@@ -16,7 +16,7 @@ class ArtistShowComponent extends React.Component{
     }
 
     render(){
-        const { artist }  = this.props;
+        const { artist, albums }  = this.props;
         const { songs, fetchSong, togglePlayState, currentSong, playState } = this.props;
 
         return(
@@ -63,18 +63,17 @@ class ArtistShowComponent extends React.Component{
                             </div>
 
                             <div id="artist_album_div_album">
-                                {/* {albums.map(album => {
-                                    albumNum += 1;
+                                {this.props.artist.albums.map(album => {
                                     return(
-                                        <AlbumItem key = {albumNum} album = {album} />
+                                        <AlbumItem key = {album.id} album = {album} />
                                     )
-                                })} */}
-                                {artist.albums.map(album => {
+                                })}
+                                {/* {artist.albums.map(album => {
                                     return (
                                         <div key = {album.id}>
                                             <Link to={`/albums/${album.id}`} className='album_item_div'>
                                                 <div className='album_item_cover'>
-                                                    {album.albumPhoto}
+                                                    {this.props.album.albumPhoto}
                                                 </div>
                                                 <div className='album_title_div'>
                                                     <div>
@@ -92,7 +91,7 @@ class ArtistShowComponent extends React.Component{
                                         </div>
                                     )
                                 })
-                                }
+                                } */}
                             </div>
 
                         </div>

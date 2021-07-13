@@ -859,7 +859,7 @@ var AlbumItem = /*#__PURE__*/function (_React$Component) {
         className: "album_item_div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album_item_cover"
-      }, album.albumPhoto), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.album.albumPhoto), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album_title_div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, album.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "album_year"
@@ -1245,13 +1245,15 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var artist = this.props.artist;
       var _this$props = this.props,
-          songs = _this$props.songs,
-          fetchSong = _this$props.fetchSong,
-          togglePlayState = _this$props.togglePlayState,
-          currentSong = _this$props.currentSong,
-          playState = _this$props.playState;
+          artist = _this$props.artist,
+          albums = _this$props.albums;
+      var _this$props2 = this.props,
+          songs = _this$props2.songs,
+          fetchSong = _this$props2.fetchSong,
+          togglePlayState = _this$props2.togglePlayState,
+          currentSong = _this$props2.currentSong,
+          playState = _this$props2.playState;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "artist_show_container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1300,19 +1302,11 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
         className: "artist_album_div_title"
       }, "Discography"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "artist_album_div_album"
-      }, artist.albums.map(function (album) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          key: album.id
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Link"], {
-          to: "/albums/".concat(album.id),
-          className: "album_item_div"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "album_item_cover"
-        }, album.albumPhoto), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "album_title_div"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, album.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "album_year"
-        }, album.year, " \u2022 Album"))));
+      }, this.props.artist.albums.map(function (album) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_albums_album_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          key: album.id,
+          album: album
+        });
       }))))));
     }
   }]);
