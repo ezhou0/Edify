@@ -15,6 +15,12 @@ class ArtistShowComponent extends React.Component{
         this.props.fetchArtist(this.props.match.params.artistId);
     }
 
+    play(){
+        if(this.props.currentSong !== undefined){
+            this.props.currentSong.audio.play();
+        }
+    }
+
     render(){
         const { artist, albums }  = this.props;
         const { songs, fetchSong, togglePlayState, currentSong, playState } = this.props;
@@ -47,7 +53,7 @@ class ArtistShowComponent extends React.Component{
                                     <li key = {song.id}>
                                         <div className="song-container" key={song.id} onClick={() => {
                                             fetchSong(song.id) }}>
-                                            <button>{currentSong && song.id === currentSong.id && playState ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}<p>{song.trackNumber} </p></button>
+                                            <button >{currentSong && song.id === currentSong.id && playState ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}<p>{song.trackNumber} </p></button>
                                             <p className="song-name">{song.title}</p>
                                         </div>
                                         <AddToPlaylistContainer songId={song.id} />

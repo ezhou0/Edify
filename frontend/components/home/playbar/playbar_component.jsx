@@ -120,6 +120,7 @@ class Playbar extends React.Component {
 
     render() {
         return this.MusicPlayer();
+    
     }
 }
 

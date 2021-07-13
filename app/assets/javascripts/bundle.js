@@ -1243,6 +1243,13 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
       this.props.fetchArtist(this.props.match.params.artistId);
     }
   }, {
+    key: "play",
+    value: function play() {
+      if (this.props.currentSong !== undefined) {
+        this.props.currentSong.audio.play();
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
