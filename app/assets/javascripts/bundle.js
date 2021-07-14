@@ -626,51 +626,79 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(HeaderComponent);
 
   function HeaderComponent(props) {
+    var _this;
+
     _classCallCheck(this, HeaderComponent);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.state = {
+      dropdownButton: "hidden"
+    };
+    _this.linkStatus = "link_div_hidden";
+    return _this;
   }
 
   _createClass(HeaderComponent, [{
-    key: "handleChange",
-    value: function handleChange(e) {
-      this.setState({
-        search: e.currentTarget.value
-      });
+    key: "handleDropDown",
+    value: function handleDropDown() {
+      if (this.state.dropdownButton === "hidden") {
+        this.setState({
+          dropdownButton: "revealed"
+        });
+        this.linkStatus = "link_div_revealed";
+      } else {
+        this.setState({
+          dropdownButton: "hidden"
+        });
+        this.linkStatus = "link_div_hidden";
+      }
     }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this2 = this;
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "header_component"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "header_buttons_and_search"
+        className: "header_buttons"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header_history",
         id: "header_back_button",
         onClick: function onClick() {
-          return _this.props.history.goBack();
+          return _this2.props.history.goBack();
         },
         value: "back"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-angle-left"
+        className: "fas fa-angle-left fa-lg"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header_history",
         id: "header_forward_button",
         onClick: function onClick() {
-          return _this.props.history.goForward();
+          return _this2.props.history.goForward();
         },
         value: "forward"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-angle-right"
+        className: "fas fa-angle-right fa-lg"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "".concat(this.userProfile),
         className: "header-content"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "header_user_name"
-      }, this.props.currentUser), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "links-container",
+        id: "".concat(this.linkStatus)
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "links-btn",
+        onClick: this.handleDropDown
+      }, "Links")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: this.state.dropdownButton
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "drop_down_div",
+        href: "https://github.com/andrewc2695/dotify",
+        target: "_blank"
+      }, "Github"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "drop_down_div",
+        href: "https://www.linkedin.com/in/andrew-curd-054997b1/",
+        target: "_blank"
+      }, "LinkedIn")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header-logout-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header-logout",

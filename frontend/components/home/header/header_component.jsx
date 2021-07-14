@@ -5,44 +5,56 @@ import { Link, Redirect, Route } from "react-router-dom";
 class HeaderComponent extends React.Component {
     constructor(props) {
         super(props);
-
+        this.state = { dropdownButton: "hidden"};
+        this.linkStatus = "link_div_hidden";
        
+    }
+    handleDropDown() {
+        if (this.state.dropdownButton === "hidden") {
+            this.setState({ dropdownButton: "revealed"});
+            this.linkStatus = "link_div_revealed";
+        } else {
+            this.setState({ dropdownButton: "hidden"});
+            this.linkStatus = "link_div_hidden";
+        }
     }
 
    
-    
-
-    handleChange(e) {
-        this.setState({ search: e.currentTarget.value });
-    }
 
     
 
     render() {
         return (
             <div id="header_component">
-                <div className="header_buttons_and_search">
+                <div className="header_buttons">
                     <button className="header_history" id="header_back_button"
                         onClick={() => this.props.history.goBack()} value = 'back'>
-                        <i className="fas fa-angle-left"></i>
+                        <i className="fas fa-angle-left fa-lg"></i>
                     </button>
                     <button className="header_history" id="header_forward_button"
                         onClick={() => this.props.history.goForward()} value = 'forward'>
-                        <i className="fas fa-angle-right"></i>
+                        <i className="fas fa-angle-right fa-lg"></i>
                     </button>
                 </div>
 
 
-                <div id={`${this.userProfile}`} className = 'header-content'>
-                    
-                    <div id="header_user_name">
-                        {this.props.currentUser}
+                <div  className = 'header-content'>
+
+                    <div className='links-container' id={`${this.linkStatus}`}>
+                        <button className='links-btn' onClick={this.handleDropDown}>
+                            Links
+                        </button>
+                    </div>
+
+                    <div id={this.state.dropdownButton}>
+                        <a className="drop_down_div" href="https://github.com/andrewc2695/dotify" target="_blank">Github</a>
+                        <a className="drop_down_div" href="https://www.linkedin.com/in/andrew-curd-054997b1/" target="_blank">LinkedIn</a>
                     </div>
                     
                     <div className = 'header-logout-container'>
-                    <button className="header-logout" onClick={this.props.logout}>
-                        Log Out
-                    </button>
+                        <button className="header-logout" onClick={this.props.logout}>
+                            Log Out
+                        </button>
                     </div>
                 </div>
                 
