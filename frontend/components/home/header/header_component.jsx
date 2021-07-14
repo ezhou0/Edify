@@ -45,8 +45,8 @@ class HeaderComponent extends React.Component {
                             Links
                         </button>
                         <div id={this.state.dropdownButton}>
-                            <a className="drop_down_div" href="https://github.com/andrewc2695/dotify" target="_blank">Github</a>
-                            <a className="drop_down_div" href="https://www.linkedin.com/in/andrew-curd-054997b1/" target="_blank">LinkedIn</a>
+                            <a className="drop_down_div" href="https://github.com/ezhou0/Edify/wiki">Github</a>
+                            <a className="drop_down_div" href="https://www.linkedin.com/in/edwin-zhou-a231b31b6/" target="_blank">LinkedIn</a>
                         </div>
                     </div>
                     

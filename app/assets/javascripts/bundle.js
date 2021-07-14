@@ -693,11 +693,10 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
         id: this.state.dropdownButton
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "drop_down_div",
-        href: "https://github.com/andrewc2695/dotify",
-        target: "_blank"
+        href: "https://github.com/ezhou0/Edify/wiki"
       }, "Github"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "drop_down_div",
-        href: "https://www.linkedin.com/in/andrew-curd-054997b1/",
+        href: "https://www.linkedin.com/in/edwin-zhou-a231b31b6/",
         target: "_blank"
       }, "LinkedIn"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header-logout-container"
