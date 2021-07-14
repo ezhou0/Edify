@@ -2,6 +2,7 @@
 .song-container-container{
     display: flex;
     flex-direction: row;
+    
 }
 
 .song-container{
@@ -10,6 +11,9 @@
     padding-top: 20px;
     padding-bottom:20px;
     margin-left: 35px;
+    display: flex;
+    flex-direction: row;
+   
 
 }
 
@@ -20,4 +24,13 @@
 
 .song-name{
     margin-left: 245px;
+    
+}
+
+.play-button{
+    margin-right: 25px;
+}
+
+.add-playlist-container{
+    justify-content: flex-end;
 }
