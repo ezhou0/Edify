@@ -626,36 +626,12 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(HeaderComponent);
 
   function HeaderComponent(props) {
-    var _this;
-
     _classCallCheck(this, HeaderComponent);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      dropdownButton: "header_dropdown_button_down"
-    };
-    _this.userProfile = "header_users_div";
-    _this.handleDropDown = _this.handleDropDown.bind(_assertThisInitialized(_this));
-    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
-    return _this;
+    return _super.call(this, props);
   }
 
   _createClass(HeaderComponent, [{
-    key: "handleDropDown",
-    value: function handleDropDown() {
-      if (this.state.dropdownButton === "header_dropdown_button_down") {
-        this.setState({
-          dropdownButton: "header_dropdown_button_up"
-        });
-        this.userProfile = "header_users_div_up";
-      } else {
-        this.setState({
-          dropdownButton: "header_dropdown_button_down"
-        });
-        this.userProfile = "header_users_div";
-      }
-    }
-  }, {
     key: "handleChange",
     value: function handleChange(e) {
       this.setState({
@@ -665,7 +641,7 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this = this;
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "header_component"
@@ -675,40 +651,31 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
         className: "header_history",
         id: "header_back_button",
         onClick: function onClick() {
-          return _this2.props.history.goBack();
+          return _this.props.history.goBack();
         },
         value: "back"
-      }, "back"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-angle-left"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header_history",
         id: "header_forward_button",
         onClick: function onClick() {
-          return _this2.props.history.goForward();
+          return _this.props.history.goForward();
         },
         value: "forward"
-      }, "forward")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-angle-right"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "".concat(this.userProfile),
         className: "header-content"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "header_profile"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "header_user_name"
-      }, this.props.currentUser), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "header_dropdown_button",
-        onClick: this.handleDropDown
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.props.currentUser), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header-logout-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header-logout",
         onClick: this.props.logout
-      }, "Log Out"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: this.state.dropdownButton
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "drop_down_div",
-        href: "https://github.com/ezhou0"
-      }, "Github"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        className: "drop_down_div",
-        href: "https://www.linkedin.com/"
-      }, "LinkedIn")));
+      }, "Log Out"))));
     }
   }]);
 
