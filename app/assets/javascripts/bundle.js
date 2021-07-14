@@ -635,6 +635,7 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
       dropdownButton: "hidden"
     };
     _this.linkStatus = "link_div_hidden";
+    _this.handleDropDown = _this.handleDropDown.bind(_assertThisInitialized(_this));
     return _this;
   }
 

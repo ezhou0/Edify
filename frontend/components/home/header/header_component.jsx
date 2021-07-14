@@ -7,7 +7,7 @@ class HeaderComponent extends React.Component {
         super(props);
         this.state = { dropdownButton: "hidden"};
         this.linkStatus = "link_div_hidden";
-       
+        this.handleDropDown = this.handleDropDown.bind(this);
     }
     handleDropDown() {
         if (this.state.dropdownButton === "hidden") {
