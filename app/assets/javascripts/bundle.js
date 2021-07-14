@@ -689,7 +689,7 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "links-btn",
         onClick: this.handleDropDown
-      }, "Links")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Links"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: this.state.dropdownButton
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "drop_down_div",
@@ -699,7 +699,7 @@ var HeaderComponent = /*#__PURE__*/function (_React$Component) {
         className: "drop_down_div",
         href: "https://www.linkedin.com/in/andrew-curd-054997b1/",
         target: "_blank"
-      }, "LinkedIn")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "LinkedIn"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "header-logout-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "header-logout",

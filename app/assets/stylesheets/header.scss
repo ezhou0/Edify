@@ -7,6 +7,7 @@
     left: 241px;
     width: fill;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     // background-color: rgba(0, 0, 0, 1)
@@ -28,14 +29,24 @@
 
 
 
-.header-logout-container, .links-container{
+.header-logout-container{
     width: 10px;
     height: 50px;
-    margin-top:70%;
-    margin-left: -80px;
+   
+    margin-right: 80px;
     
 }
-.header-logout, .links-btn{
+
+.links-container{
+    width: 10px;
+    height: 50px;
+    margin-right: 60px;
+    display: flex;
+    flex-direction: column;
+    
+   
+}
+.header-logout{
      background-color: #3d3d3d;
      border-radius: 15px;
      width: 42px;
@@ -44,6 +55,18 @@
     font-size: 80%;
     font-weight: 500;
     
+}
+.links-btn{
+     background-color: #3d3d3d;
+     border-radius: 15px;
+    height: 26px;
+    padding-top: 6px;
+    display: inline-flex;
+    padding-left: 16px;
+    margin-top: 3px;
+    width: 50px;
+    font-size: 80%;
+    font-weight: 500;
 }
 
 
@@ -56,11 +79,7 @@
     margin-right: 30px;
 }
 
-.menu{
-    width: 100px;
-    height: 100px;
-    background-color: white;
-}
+
 
 #hidden{
     display: none;
@@ -68,17 +87,21 @@
 
 
 #revealed{
+    display: flex;
+    flex-direction: column;
+
     height: 32px;
     width: max-content;
     min-width: 160px;
-    margin-right: 35px;
+    
     color: azure;
-    display: flex;
-    flex-direction: row;
+   
     justify-content: space-between;
     align-items: center;
     font-size: 13px;
-    border-radius: 22px;
+    border-radius: 15px;
     background-color: #282828;
     font-family: Verdana;
+    margin-right: 60px;
+    margin-top: 10px;
 }

@@ -39,16 +39,15 @@ class HeaderComponent extends React.Component {
 
 
                 <div  className = 'header-content'>
-
+                    
                     <div className='links-container' id={`${this.linkStatus}`}>
                         <button className='links-btn' onClick={this.handleDropDown}>
                             Links
                         </button>
-                    </div>
-
-                    <div id={this.state.dropdownButton}>
-                        <a className="drop_down_div" href="https://github.com/andrewc2695/dotify" target="_blank">Github</a>
-                        <a className="drop_down_div" href="https://www.linkedin.com/in/andrew-curd-054997b1/" target="_blank">LinkedIn</a>
+                        <div id={this.state.dropdownButton}>
+                            <a className="drop_down_div" href="https://github.com/andrewc2695/dotify" target="_blank">Github</a>
+                            <a className="drop_down_div" href="https://www.linkedin.com/in/andrew-curd-054997b1/" target="_blank">LinkedIn</a>
+                        </div>
                     </div>
                     
                     <div className = 'header-logout-container'>
@@ -57,6 +56,8 @@ class HeaderComponent extends React.Component {
                         </button>
                     </div>
                 </div>
+
+               
                 
             </div>
         )
