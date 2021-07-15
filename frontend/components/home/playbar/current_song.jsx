@@ -3,29 +3,29 @@ import React from 'react';
 class CurrentSong extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {
-            time: null,
-            duration: null,
-        };
+        // this.state = {
+        //     time: null,
+        //     duration: null,
+        // };
 
-        this.seekTrack = this.seekTrack.bind(this);
+        // this.seekTrack = this.seekTrack.bind(this);
     }
 
-    componentDidMount() {
-        this.interval = setInterval(() => this.refresh(), 100);
-    }
+    // componentDidMount() {
+    //     this.interval = setInterval(() => this.refresh(), 100);
+    // }
 
-    refresh() {
-        this.setState({
-            time: this.props.time,
-            duration: this.props.duration || 500,
-        });
-    }
+    // refresh() {
+    //     this.setState({
+    //         time: this.props.time,
+    //         duration: this.props.duration || 500,
+    //     });
+    // }
 
-    seekTrack(e) {
-        this.setState({ time: e.target.value });
-        this.props.audio.current.currentTime = e.target.value; // this works
-    }
+    // seekTrack(e) {
+    //     this.setState({ time: e.target.value });
+    //     this.props.audio.current.currentTime = e.target.value; // this works
+    // }
 
     render() {
         if (!this.props.currentSong) {
@@ -38,7 +38,7 @@ class CurrentSong extends React.Component {
 
         return (
             <div className="current-info">
-                {/* <img src={window.testalbumURL} alt="song-album-cover" /> */}
+                <img src={this.props.currentSong.artist.artistPhoto} alt="song-album-cover" /> 
                 <div className="with-info">
                     <div className = 'current-info'>
                         <p className="current-song-name">{this.props.currentSong.title}</p>

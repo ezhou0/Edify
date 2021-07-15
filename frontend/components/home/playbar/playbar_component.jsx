@@ -51,6 +51,7 @@ class Playbar extends React.Component {
             }
         }
     }
+    
     refresh() {
         this.setState({ time: this.audio.current.currentTime });
     }

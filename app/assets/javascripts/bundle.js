@@ -2258,45 +2258,29 @@ var CurrentSong = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(CurrentSong);
 
   function CurrentSong(props) {
-    var _this;
-
     _classCallCheck(this, CurrentSong);
 
-    _this = _super.call(this, props);
-    _this.state = {
-      time: null,
-      duration: null
-    };
-    _this.seekTrack = _this.seekTrack.bind(_assertThisInitialized(_this));
-    return _this;
-  }
+    return _super.call(this, props); // this.state = {
+    //     time: null,
+    //     duration: null,
+    // };
+    // this.seekTrack = this.seekTrack.bind(this);
+  } // componentDidMount() {
+  //     this.interval = setInterval(() => this.refresh(), 100);
+  // }
+  // refresh() {
+  //     this.setState({
+  //         time: this.props.time,
+  //         duration: this.props.duration || 500,
+  //     });
+  // }
+  // seekTrack(e) {
+  //     this.setState({ time: e.target.value });
+  //     this.props.audio.current.currentTime = e.target.value; // this works
+  // }
+
 
   _createClass(CurrentSong, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      var _this2 = this;
-
-      this.interval = setInterval(function () {
-        return _this2.refresh();
-      }, 100);
-    }
-  }, {
-    key: "refresh",
-    value: function refresh() {
-      this.setState({
-        time: this.props.time,
-        duration: this.props.duration || 500
-      });
-    }
-  }, {
-    key: "seekTrack",
-    value: function seekTrack(e) {
-      this.setState({
-        time: e.target.value
-      });
-      this.props.audio.current.currentTime = e.target.value; // this works
-    }
-  }, {
     key: "render",
     value: function render() {
       if (!this.props.currentSong) {
@@ -2307,7 +2291,10 @@ var CurrentSong = /*#__PURE__*/function (_React$Component) {
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "current-info"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.props.currentSong.artist.artistPhoto,
+        alt: "song-album-cover"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "with-info"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "current-info"
