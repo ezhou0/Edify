@@ -31,12 +31,12 @@ class ArtistShowComponent extends React.Component{
         return(
             <div id='artist_show_container'>
                 <div className= 'artist_show_pic'>
-                    <img id="show_profile_pic" src={artist.photo} /> 
+                    <img id="show_profile_pic" src={artist.artist.photo} /> 
                 </div>
 
                 <div className = 'artist_show_div'>
                     <div className = 'artist_show_name'>
-                        {artist.name}
+                        {this.props.artist.artist.name}
                     </div>
                     <div className = 'artist_show_bulk'>
                         
