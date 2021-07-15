@@ -26,15 +26,23 @@
    
     margin-right: 65%;
     margin-left: 20px;
+    justify-items: center;
+    align-items: center;
+   
 }
+
 
 .search-song-name{
-   padding-left: 30px;
+   padding-left: 120px;
    padding-top: 10px;
    padding-bottom: 10px;
-  
-
+    border: 1px solid rgb(43, 42, 42); 
+   
 }
+
+
+    
+
 
 .search-song-name:hover{
  background-color: darkgray;

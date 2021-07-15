@@ -9,7 +9,7 @@ class AlbumItem extends React.Component{
         return(
             <Link to={`/albums/${album.id}`} className = 'album_item_div'>
                 <div className = 'album_item_cover'>
-                   {this.props.album.albumPhoto}
+                   <img src = {album.albumPhoto} />
                 </div>
                 <div className = 'album_title_div'>
                     <div>

@@ -18,7 +18,9 @@ class SearchShowComponent extends React.Component {
                 <h1 className="search-header">Search Results</h1>
 
                 <h3 className="search-headers">Songs</h3>
+              
                 <ul className="search">
+                    
                     {results.songs && results.songs.length
                         ? results.songs.map((song) => (
                             <li className = 'search-song-container'>
@@ -50,7 +52,7 @@ class SearchShowComponent extends React.Component {
                                     
                                 >  
                                     <div className='profile_pic'>
-                                        <img src={artist.artistPhoto} />
+                                        <img src={artist.artistPhoto } alt='artist image' />
                                     </div>
 
                                     <div className='profile_name'>
@@ -71,7 +73,7 @@ class SearchShowComponent extends React.Component {
                             <li >
                                 <Link to={`/albums/${album.id}`} className="album_item_div">
                                     <div className='album_item_cover'>
-                                        {album.albumPhoto}
+                                       <img src= {album.albumPhoto}/>
                                     </div>
                                     <div className='album_title_div'>
                                         <div>
