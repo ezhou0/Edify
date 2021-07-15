@@ -24,7 +24,7 @@ class ArtistShowComponent extends React.Component{
     render(){
         const { artist, albums }  = this.props;
         const { songs, fetchSong, togglePlayState, currentSong, playState } = this.props;
-
+        if (!artist) return null;
         return(
             <div id='artist_show_container'>
                 <div className = 'artist_show_pic'>

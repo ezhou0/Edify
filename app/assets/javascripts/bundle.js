@@ -1258,6 +1258,7 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
           togglePlayState = _this$props2.togglePlayState,
           currentSong = _this$props2.currentSong,
           playState = _this$props2.playState;
+      if (!artist) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "artist_show_container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1336,11 +1337,9 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_artist_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../actions/artist_actions */ "./frontend/actions/artist_actions.js");
-/* harmony import */ var _actions_album_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../actions/album_actions */ "./frontend/actions/album_actions.js");
-/* harmony import */ var _artist_show_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./artist_show_component */ "./frontend/components/home/music/artists/artist_show_component.jsx");
-/* harmony import */ var _actions_song_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../actions/song_actions */ "./frontend/actions/song_actions.js");
-/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../../actions/session_actions */ "./frontend/actions/session_actions.js");
-
+/* harmony import */ var _artist_show_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./artist_show_component */ "./frontend/components/home/music/artists/artist_show_component.jsx");
+/* harmony import */ var _actions_song_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../actions/song_actions */ "./frontend/actions/song_actions.js");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../actions/session_actions */ "./frontend/actions/session_actions.js");
 
 
 
@@ -1350,7 +1349,7 @@ __webpack_require__.r(__webpack_exports__);
 var mapStateToProps = function mapStateToProps(state, ownProps) {
   return {
     artist: state.entities.artists[ownProps.match.params.artistId],
-    albums: Object.values(state.entities.albums),
+    // albums: Object.values(state.entities.albums), 
     currentSong: state.session.currentSong,
     playState: state.session.playState
   };
@@ -1361,22 +1360,19 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchArtist: function fetchArtist(artistId) {
       return dispatch(Object(_actions_artist_actions__WEBPACK_IMPORTED_MODULE_1__["fetchArtist"])(artistId));
     },
-    removeAlbums: function removeAlbums() {
-      return dispatch(Object(_actions_album_actions__WEBPACK_IMPORTED_MODULE_2__["removeAlbums"])());
-    },
     fetchSongs: function fetchSongs(albumId) {
-      return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_4__["fetchSongs"])(albumId));
+      return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_3__["fetchSongs"])(albumId));
     },
     fetchSong: function fetchSong(songId) {
-      return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_4__["fetchCurrentSong"])(songId));
+      return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_3__["fetchCurrentSong"])(songId));
     },
     togglePlayState: function togglePlayState(songId) {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["togglePlayState"])(songId));
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["togglePlayState"])(songId));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_artist_show_component__WEBPACK_IMPORTED_MODULE_3__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_artist_show_component__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
