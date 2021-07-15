@@ -60,6 +60,24 @@ class Playbar extends React.Component {
                     }
                     volume="0.5"
                 />
+
+                {this.audio.current ? (
+                    <div className="song-seeker">
+                        <CurrentSong
+                            currentSong={this.props.currentSong}
+                            audio={this.audio}
+                            time={this.state.time}
+                            playing={this.props.playState}
+                            duration={this.audio.current.duration}
+                        />
+                    </div>
+                ) : (
+                    <div className="current-info">
+
+
+                    </div>
+                )}
+                
                 <div className="player">
                     <button
                         className="rewind-button"
@@ -80,22 +98,7 @@ class Playbar extends React.Component {
                     </button>
 
                 </div>
-                {this.audio.current ? (
-                    <div className="song-seeker">
-                        <CurrentSong
-                            currentSong={this.props.currentSong}
-                            audio={this.audio}
-                            time={this.state.time}
-                            playing={this.props.playState}
-                            duration={this.audio.current.duration}
-                        />
-                    </div>
-                ) : (
-                    <div className="current-info">
-                        null image
-                        
-                    </div>
-                )}
+              
                 <div className="volume-slider">
                     <p className="volume-icon">
                         <i className="fas fa-volume-up"></i>

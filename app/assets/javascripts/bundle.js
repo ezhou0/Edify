@@ -2464,6 +2464,16 @@ var Playbar = /*#__PURE__*/function (_React$Component) {
         preload: "metadata",
         src: this.props.currentSong ? this.props.currentSong.audio : "",
         volume: "0.5"
+      }), this.audio.current ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "song-seeker"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_current_song__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        currentSong: this.props.currentSong,
+        audio: this.audio,
+        time: this.state.time,
+        playing: this.props.playState,
+        duration: this.audio.current.duration
+      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "current-info"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "player"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -2489,17 +2499,7 @@ var Playbar = /*#__PURE__*/function (_React$Component) {
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-forward"
-      }))), this.audio.current ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "song-seeker"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_current_song__WEBPACK_IMPORTED_MODULE_1__["default"], {
-        currentSong: this.props.currentSong,
-        audio: this.audio,
-        time: this.state.time,
-        playing: this.props.playState,
-        duration: this.audio.current.duration
-      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "current-info"
-      }, "null image"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "volume-slider"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "volume-icon"
