@@ -1,76 +1,79 @@
- i {
-                        color: white;
-                        ul {
-                            display: none;
-                            transition: all 0.2s;
-                        }
-                    }
-                    i:hover {
-                        ul {
-                            font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
-                            color: white;
-                            font-weight: 400;
-                            font-size: 14px;
-                            padding-top: 5px;
-                            margin-left: -120px;
-                            display: flex;
-                            flex-direction: column;
-                            align-items: center;
-                            width: 180px;
-                            position: absolute;
-                            background-color: #464646;
-                            opacity: .9;
-                            border: 1px solid #343434;
-                            border-radius: 5px;                      
-                            li {
-                                padding-left: 7px;
-                                padding-bottom: 2px;
-                                color: #808080;
-                            }
-                            li:hover {
-                                cursor: default;
-                            }
-                            button {
-                                height: 20px;
-                                width: 100%;
-                                background: none;
-                                border: none;
-                                appearance: none;
-                                outline: none;
-                                font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
-                                color: white;
-                                font-weight: 400;
-                                font-size: 14px;
-                                padding-top: 2px;
-                                padding-bottom: 2px;
-                                text-align: left;
-                                margin: 0px;
-                            }
-                            button:hover {
-                                cursor: pointer;
-                                background: rgb(11, 68, 255);
-                                border-radius: 5px;
-                            }
-                        }
-                        ul:hover {
-                            cursor: default;
-                        }
-                    }
-                    button {
-                        background: transparent;
-                        color: white;
-                        margin-left: -40px;
-                        font-size: 30px;
-                        outline: none;
-                        appearance: none;
-                        border: none;
-                        margin-top: -5px;
-                        line-height: .6;
-                    }
-                    button:hover {
-                        color: #FA2D48;
-                        background-color: rgb(40, 40, 40);
-                        cursor: pointer;
-                        border-radius: 6px;
-                    }
-                
+i {
+    color: white;
+    ul {
+        display: none;
+        transition: all 0.2s;
+    }
+}
+i:hover {
+    ul {
+        font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+        color: white;
+        font-weight: 400;
+        font-size: 14px;
+        padding-top: 5px;
+        margin-left: -120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 180px;
+        position: absolute;
+        background-color: #464646;
+        opacity: .9;
+        border: 1px solid #343434;
+        border-radius: 5px;                      
+        li {
+            padding-left: 7px;
+            padding-bottom: 2px;
+            color: #808080;
+        }
+        li:hover {
+            cursor: default;
+        }
+        button {
+            height: 20px;
+            width: 100%;
+            background: none;
+            border: none;
+            appearance: none;
+            outline: none;
+            font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+            color: white;
+            font-weight: 400;
+            font-size: 14px;
+            padding-top: 2px;
+            padding-bottom: 2px;
+            text-align: left;
+            margin: 0px;
+        }
+        button:hover {
+            cursor: pointer;
+            background: rgb(163, 163, 163);
+            border-radius: 5px;
+        }
+    }
+    ul:hover {
+        cursor: default;
+    }
+}
+
+
+
+
+    button {
+    background: transparent;
+    color: white;
+    margin-left: -40px;
+    font-size: 30px;
+    outline: none;
+    appearance: none;
+    border: none;
+    margin-top: -5px;
+    line-height: .6;
+}
+button:hover {
+    color: lightgray;
+    
+    cursor: pointer;
+    border-radius: 6px;
+}
