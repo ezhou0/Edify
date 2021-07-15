@@ -10,13 +10,13 @@ const PlaylistIndexItem = ({ playlist, song, fetchSong, togglePlayState, playSta
             <li className="playlist-song-container" onClick={() => {
                 fetchSong(song.id)
             }}>
-
-                {/* <button onClick={() => fetchSong(song.id).then(() => togglePlayState(song.id))}>Play</button> */}
-                <button>{currentSong && song.id === currentSong.id && playState ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}<p>{song.trackNumber}</p></button>
+                <button className='playlist-play-button'>{currentSong && song.id === currentSong.id && playState ? <i className="fas fa-pause"></i> : <i className="fas fa-play"></i>}</button>
                 <p className="playlist-song-name">{song.title}</p>
             </li>
+            <div className = 'add-delete-song-btns'>
             <AddToPlaylistContainer songId={song.id} />
             <PlaylistDeleteContainer song={song} playlist={playlist} />
+            </div>
         </div>
     )
 };

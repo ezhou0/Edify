@@ -56,21 +56,26 @@ padding-left: 225px;
 
 }
 
-
-.playist-song-container{
-     display: flex;
-    flex-direction: row;
-    color: white;  
-}
-
 .playlist-song-container-container{
    
-     padding-top: 0px;
-    padding-bottom:15px; 
+     
+    
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+   
+    align-items: center;
+    color: white;
+}
+
+.playlist-song-container{
     display: flex;
     flex-direction: row;
-   
+    color: white;  
+     padding-top: 20px;
+    padding-bottom:20px;
 }
+
+
 .playlist-song-container-container:hover{
    background-color: rgb(114, 108, 108); 
    
@@ -81,8 +86,16 @@ padding-left: 225px;
    margin-left: 85px;
 }
 
+.playlist-play-button{
+   
+    margin-left: 35px;
+}
 
-
+.add-delete-song-btns{
+   display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
 
 
 
