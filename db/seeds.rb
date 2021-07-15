@@ -14,16 +14,16 @@ user2 = User.create(username: 'username2', email: 'email2.com', password: 'passw
 
 
 #artists
-artistBase = Artist.create!(name:'artistBase')
+# artistBase = Artist.create!(name:'artistBase')
 artist1 = Artist.create!(name: 'artist1', description: 'this is an artist')
 artist2 = Artist.create!(name: 'artist2')
 
-artistBasepic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/artistbase.jpeg")
-artist1pic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catduo.jpeg")
+# artistBasepic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/artistbase.jpeg")
+artist1pic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catartist.jpeg")
 artist2pic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catpiano.jpeg")
 
-artistBase.artist_photo.attach(io: artistBasepic, filename: 'artistbase.jpeg')
-artist1.artist_photo.attach(io: artist1pic, filename:'catduo.jpeg' )
+# artistBase.artist_photo.attach(io: artistBasepic, filename: 'artistbase.jpeg')
+artist1.artist_photo.attach(io: artist1pic, filename:'catartist.jpeg' )
 artist2.artist_photo.attach(io: artist2pic, filename:'catpiano.jpeg' )
 
 

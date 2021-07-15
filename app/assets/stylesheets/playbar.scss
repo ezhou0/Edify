@@ -13,6 +13,7 @@
     align-items: center;
     margin-top: 20px;
     grid-row-gap: 20px;
+   
 
    
     
@@ -36,7 +37,7 @@
     display: flex;
     flex-direction: row;
     grid-column-start: 3;
-    grid-row: span 2;
+    grid-row: 1;
   
 }
 .volume-icon{
@@ -49,13 +50,13 @@
       grid-column-end: 2;
       grid-row: span 2;
       display: flex;
-      flex-direction: column;
+      flex-direction:row;
      
 }
 
-.with-info{
+.current-song-info{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .current-song-name{
@@ -65,13 +66,44 @@
 .duration-bar{
      grid-column-start: 2;
      grid-column-end: 3;
-     grid-row-start: 2;
+     grid-row-start: 2; 
 }
 
 
 .current-song-pic{
-    width: 80px;
-    height: 80px;
+    grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+    width: 60px;
+    height: 60px;
     margin-right: 15px;
-    
+
 }
+
+
+
+
+// input[type="range"] {
+//   -webkit-appearance: none;
+//   width: 100%;
+// }
+
+// input[type="range"]::-webkit-slider-runnable-track{
+//     background: lightgray;
+//     height: 7px;
+//     border-radius: 3px;
+//     width: 100%;
+// border: 1px solid #29334f
+// }
+
+// input[type="range"]::-webkit-slider-thumb{
+//     -webkit-appearance: none;
+//         appearance: none;
+//         width: 12px;
+//         height: 12px;
+//         border-radius: 50%; 
+//         background: white;
+//         cursor: pointer;
+  
+
+// }

@@ -86,7 +86,10 @@ class Playbar extends React.Component {
                 />
 
                 {this.audio.current ? (
-                    // <div className="song-seeker">
+                    <div className="song-seeker">
+                         {/* <div className = 'current-song-pic'>
+                    <img src={window.currentSong} alt="song-album-cover" />
+                </div> */}
                         <CurrentSong
                             currentSong={this.props.currentSong}
                             audio={this.audio}
@@ -94,9 +97,9 @@ class Playbar extends React.Component {
                             playing={this.props.playState}
                             duration={this.audio.current.duration}
                         />
-                    // </div>
+                    </div>
                 ) : (
-                    <div className="current-info">
+                    <div >
 
 
                     </div>

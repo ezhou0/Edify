@@ -7,7 +7,7 @@ import { togglePlayState } from '../../../../actions/session_actions';
 const mapStateToProps = (state, ownProps) =>{
     return{
         artist: state.entities.artists[ownProps.match.params.artistId],
-        // albums: Object.values(state.entities.albums), 
+        // albums: Object.values(state.entities.albums),
         currentSong: state.session.currentSong,
         playState: state.session.playState
        

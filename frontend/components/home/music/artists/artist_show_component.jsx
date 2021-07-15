@@ -12,7 +12,8 @@ class ArtistShowComponent extends React.Component{
 
     componentDidMount(){
         window.scrollTo(0, 0)
-        this.props.fetchArtist(this.props.match.params.artistId);
+        // console.log(this.props.match);
+        this.props.fetchArtist(this.props.match.params.artistId).then((response)=>console.log('hello',response));
     }
 
     play(){
@@ -24,10 +25,12 @@ class ArtistShowComponent extends React.Component{
     render(){
         const { artist, albums }  = this.props;
         const { songs, fetchSong, togglePlayState, currentSong, playState } = this.props;
+        console.log('artist',this.props);
         if (!artist) return null;
+        else{
         return(
             <div id='artist_show_container'>
-                <div className = 'artist_show_pic'>
+                <div className= 'artist_show_pic'>
                     <img id="show_profile_pic" src={artist.photo} /> 
                 </div>
 
@@ -109,6 +112,7 @@ class ArtistShowComponent extends React.Component{
 
         )
     }
+}
 }
 
 export default ArtistShowComponent;

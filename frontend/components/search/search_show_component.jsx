@@ -45,9 +45,9 @@ class SearchShowComponent extends React.Component {
                 <ul className="search-artist-container" >
                     {results.artists && results.artists.length
                         ? results.artists.map((artist) => (
-                            <li key={`${artist.id - 1}`} >
+                            <li key={`${artist.id }`} >
                                 <Link
-                                    to={`/artists/${artist.id -1}`}
+                                    to={`/artists/${artist.id}`}
                                     className='profile-item'
                                     
                                 >  
