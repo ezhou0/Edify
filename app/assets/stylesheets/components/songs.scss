@@ -1,18 +1,23 @@
 
 .song-container-container{
-    display: flex;
-    flex-direction: row;
+  display: grid;
+    grid-template-columns: 4fr 1fr;
+    
+    align-items: center;
+    color: white;
+     
+   
     
 }
 
 .song-container{
     
-    color: white;
+   display: flex;
+   flex-direction: row;
     padding-top: 20px;
     padding-bottom:20px;
-    margin-left: 35px;
-    display: flex;
-    flex-direction: row;
+  
+  
    
 
 }
@@ -23,7 +28,7 @@
 }
 
 .song-name{
-    margin-left: 245px;
+    margin-left: 350px;
     
 }
 
@@ -31,6 +36,3 @@
     margin-right: 25px;
 }
 
-.add-playlist-container{
-    justify-content: flex-end;
-}
