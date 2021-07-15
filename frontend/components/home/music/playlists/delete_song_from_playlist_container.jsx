@@ -9,7 +9,7 @@ const PlaylistDeleteContainer = ({ playlist, song }) => {
     }
     return (
         <div>
-            <button onClick={() => dispatch(deletePlaylistSong(playlistSong))}>-</button>
+            <button onClick={() => dispatch(deletePlaylistSong(playlistSong))}><i className="fa fa-minus" aria-hidden="true"></i></button>
         </div>
     )
 

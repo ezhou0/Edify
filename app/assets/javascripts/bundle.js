@@ -1447,8 +1447,9 @@ var AddToPlaylist = /*#__PURE__*/function (_React$Component) {
       var playlists = this.props.playlists;
       if (!playlists) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "add-song-icon"
-      }, "+", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "fa fa-plus",
+        "aria-hidden": "true"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "playlistadd"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Add to playlist"), playlists.map(function (playlist) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -1529,7 +1530,10 @@ var PlaylistDeleteContainer = function PlaylistDeleteContainer(_ref) {
     onClick: function onClick() {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["deletePlaylistSong"])(playlistSong));
     }
-  }, "-"));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fa fa-minus",
+    "aria-hidden": "true"
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (PlaylistDeleteContainer);

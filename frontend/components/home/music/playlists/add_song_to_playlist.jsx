@@ -19,7 +19,7 @@ class AddToPlaylist extends React.Component {
         const { playlists } = this.props;
         if (!playlists) return null;
         return (
-            <i className="add-song-icon">+
+            <i className="fa fa-plus" aria-hidden="true">
                 <ul className="playlistadd">
                     <li>Add to playlist</li>
                     {
