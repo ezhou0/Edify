@@ -24,7 +24,7 @@ class LoggedInComponent extends React.Component {
         const { currentUser, playlists, createPlaylist, fetchPlaylists} = this.props;
         return (
             <div className="main_div">
-                {this.redirect()};
+                {this.redirect()}
                 <div className="playbar_component">
                     <PlaybarContainer />
                 </div>

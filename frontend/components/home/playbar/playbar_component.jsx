@@ -12,10 +12,33 @@ class Playbar extends React.Component {
         this.changeVolume = this.changeVolume.bind(this);
         this.resetAudio = this.resetAudio.bind(this);
         this.skip = this.skip.bind(this);
+        this.seekTrack = this.seekTrack.bind(this);
         this.state = {
-            time: null
+            time: null,
+            duration: null,
         };
+       
     }
+
+
+    componentDidMount() {
+        this.interval = setInterval(() => this.refresh(), 100);
+    }
+
+    refresh() {
+        this.setState({
+            time: this.props.time,
+            duration: this.props.duration || 500,
+        });
+    }
+
+    seekTrack(e) {
+        this.setState({ time: e.target.value });
+        this.props.audio.current.currentTime = e.target.value; // this works
+    }
+
+   
+
 
     componentDidUpdate(prevProps) {
         if (prevProps.playState !== this.props.playState || prevProps.currentSong !== this.props.currentSong) {
@@ -62,7 +85,7 @@ class Playbar extends React.Component {
                 />
 
                 {this.audio.current ? (
-                    <div className="song-seeker">
+                    // <div className="song-seeker">
                         <CurrentSong
                             currentSong={this.props.currentSong}
                             audio={this.audio}
@@ -70,14 +93,13 @@ class Playbar extends React.Component {
                             playing={this.props.playState}
                             duration={this.audio.current.duration}
                         />
-                    </div>
+                    // </div>
                 ) : (
                     <div className="current-info">
 
 
                     </div>
                 )}
-                
                 <div className="player">
                     <button
                         className="rewind-button"
@@ -97,6 +119,19 @@ class Playbar extends React.Component {
                         <i className="fas fa-forward"></i>
                     </button>
 
+                </div>
+
+                <div className = 'duration-bar'>
+                    <input
+                        className="song-progress"
+                        
+                        type="range"
+                        min="0"
+                        max={this.state.duration}
+                        step="1"
+                        value={this.state.time || 0}
+                        onChange={(e) => this.seekTrack(e)}
+                    />
                 </div>
               
                 <div className="volume-slider">

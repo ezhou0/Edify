@@ -41,18 +41,19 @@ class CurrentSong extends React.Component {
                 {/* <img src={window.testalbumURL} alt="song-album-cover" /> */}
                 <div className="with-info">
                     <div className = 'current-info'>
-                        <p className="song-name">{this.props.currentSong.title}</p>
-                        <p className="song-artist">{this.props.currentSong.artist.name}</p>
+                        <p className="current-song-name">{this.props.currentSong.title}</p>
+                        <p className="current-song-artist">{this.props.currentSong.artist.name}</p>
                     </div>
-                    <input
+                    {/* <input
                         className="song-progress"
+                        id = 'song-progress'
                         type="range"
                         min="0"
                         max={this.state.duration}
                         step="1"
                         value={this.state.time || 0}
                         onChange={(e) => this.seekTrack(e)}
-                    />
+                    /> */}
                 </div>
             </div>
         );

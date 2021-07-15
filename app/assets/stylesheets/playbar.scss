@@ -1,18 +1,25 @@
 .playbar_component{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   
+    
     color: white;
+   
 }
 
 .player-toolbar{
-    display:flex;
-    flex-direction: row;
+     display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    margin-top: 20px;
+   
+    
    
 }
 
 .player{
-    
+    grid-column-start: 2;
+    grid-column-end:3;
 }
 
 .player{
@@ -26,10 +33,25 @@
 .volume-slider{
     display: flex;
     flex-direction: row;
+    grid-column-start: 3;
+  
 }
 .volume-icon{
     margin-right: 10px;
 }
 
+.current-info{
+   
+      grid-column-start: 1;
+      grid-column-end: 2;
+      
+     
+}
+
+.duration-bar{
+     grid-column-start: 2;
+     grid-column-end: 3;
+     grid-row-start: 2;
+}
 
 

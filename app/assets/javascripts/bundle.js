@@ -2299,8 +2299,6 @@ var CurrentSong = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
-
       if (!this.props.currentSong) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "current-info"
@@ -2314,20 +2312,10 @@ var CurrentSong = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "current-info"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "song-name"
+        className: "current-song-name"
       }, this.props.currentSong.title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "song-artist"
-      }, this.props.currentSong.artist.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "song-progress",
-        type: "range",
-        min: "0",
-        max: this.state.duration,
-        step: "1",
-        value: this.state.time || 0,
-        onChange: function onChange(e) {
-          return _this3.seekTrack(e);
-        }
-      })));
+        className: "current-song-artist"
+      }, this.props.currentSong.artist.name))));
     }
   }]);
 
@@ -2395,28 +2383,22 @@ var Playbar = /*#__PURE__*/function (_React$Component) {
     _this.changeVolume = _this.changeVolume.bind(_assertThisInitialized(_this));
     _this.resetAudio = _this.resetAudio.bind(_assertThisInitialized(_this));
     _this.skip = _this.skip.bind(_assertThisInitialized(_this));
+    _this.seekTrack = _this.seekTrack.bind(_assertThisInitialized(_this));
     _this.state = {
-      time: null
+      time: null,
+      duration: null
     };
     return _this;
   }
 
   _createClass(Playbar, [{
-    key: "componentDidUpdate",
-    value: function componentDidUpdate(prevProps) {
+    key: "componentDidMount",
+    value: function componentDidMount() {
       var _this2 = this;
 
-      if (prevProps.playState !== this.props.playState || prevProps.currentSong !== this.props.currentSong) {
-        if (this.props.playState) {
-          this.interval = setInterval(function () {
-            return _this2.refresh();
-          }, 1000);
-          this.audio.current.play();
-        } else {
-          clearInterval(this.interval);
-          this.audio.current.pause();
-        }
-      }
+      this.interval = setInterval(function () {
+        return _this2.refresh();
+      }, 100);
     }
   }, {
     key: "refresh",
@@ -2424,6 +2406,31 @@ var Playbar = /*#__PURE__*/function (_React$Component) {
       this.setState({
         time: this.audio.current.currentTime
       });
+    }
+  }, {
+    key: "seekTrack",
+    value: function seekTrack(e) {
+      this.setState({
+        time: e.target.value
+      });
+      this.props.audio.current.currentTime = e.target.value; // this works
+    }
+  }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps) {
+      var _this3 = this;
+
+      if (prevProps.playState !== this.props.playState || prevProps.currentSong !== this.props.currentSong) {
+        if (this.props.playState) {
+          this.interval = setInterval(function () {
+            return _this3.refresh();
+          }, 1000);
+          this.audio.current.play();
+        } else {
+          clearInterval(this.interval);
+          this.audio.current.pause();
+        }
+      }
     }
   }, {
     key: "skip",
@@ -2455,7 +2462,7 @@ var Playbar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "MusicPlayer",
     value: function MusicPlayer() {
-      var _this3 = this;
+      var _this4 = this;
 
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "player-toolbar"
@@ -2464,29 +2471,33 @@ var Playbar = /*#__PURE__*/function (_React$Component) {
         preload: "metadata",
         src: this.props.currentSong ? this.props.currentSong.audio : "",
         volume: "0.5"
-      }), this.audio.current ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "song-seeker"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_current_song__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      }), this.audio.current ?
+      /*#__PURE__*/
+      // <div className="song-seeker">
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_current_song__WEBPACK_IMPORTED_MODULE_1__["default"], {
         currentSong: this.props.currentSong,
         audio: this.audio,
         time: this.state.time,
         playing: this.props.playState,
         duration: this.audio.current.duration
-      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }) // </div>
+      :
+      /*#__PURE__*/
+      react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "current-info"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "player"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "rewind-button",
         onClick: function onClick() {
-          return _this3.resetAudio();
+          return _this4.resetAudio();
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-backward"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "play-button",
         onClick: function onClick() {
-          return _this3.toggle();
+          return _this4.toggle();
         }
       }, this.props.playState ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-pause"
@@ -2495,11 +2506,23 @@ var Playbar = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "next-button",
         onClick: function onClick() {
-          return _this3.skip();
+          return _this4.skip();
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-forward"
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "duration-bar"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "song-progress",
+        type: "range",
+        min: "0",
+        max: this.state.duration,
+        step: "1",
+        value: this.state.time || 0,
+        onChange: function onChange(e) {
+          return _this4.seekTrack(e);
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "volume-slider"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
         className: "volume-icon"
@@ -2514,7 +2537,7 @@ var Playbar = /*#__PURE__*/function (_React$Component) {
         className: "slider",
         id: "myRange",
         onChange: function onChange(e) {
-          return _this3.changeVolume(e);
+          return _this4.changeVolume(e);
         }
       })));
     }
@@ -2790,7 +2813,7 @@ var LoggedInComponent = /*#__PURE__*/function (_React$Component) {
           fetchPlaylists = _this$props.fetchPlaylists;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main_div"
-      }, this.redirect(), ";", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.redirect(), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playbar_component"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_home_playbar_playbar_container__WEBPACK_IMPORTED_MODULE_3__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "side_component"
