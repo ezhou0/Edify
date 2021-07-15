@@ -1269,7 +1269,7 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
         className: "artist_show_name"
       }, artist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist_show_bulk"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "play button here"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist_album_div_title"
       }, "Songs"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "songs-grid sub-grid"
@@ -1280,22 +1280,25 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
           //     song = {song}
           //     key = {song.id}
           // />
-          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+          react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "song-container-container",
             key: song.id
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
             className: "song-container",
-            key: song.id,
             onClick: function onClick() {
               fetchSong(song.id);
             }
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, currentSong && song.id === currentSong.id && playState ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            className: "play-button"
+          }, currentSong && song.id === currentSong.id && playState ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-pause"
           }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
             className: "fas fa-play"
-          }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, song.trackNumber, " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, song.trackNumber, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
             className: "song-name"
           }, song.title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_add_song_to_playlist_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            songId: song.id
+            songId: song.id,
+            className: "add-playlist-container"
           }))
         );
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
