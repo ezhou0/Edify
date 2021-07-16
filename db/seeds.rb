@@ -20,11 +20,11 @@ artist2 = Artist.create!(name: 'artist2')
 
 # artistBasepic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/artistbase.jpeg")
 artist1pic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catartist.jpeg")
-artist2pic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/catpiano.jpeg")
+artist2pic = open("https://edify-app-seeds.s3-us-west-1.amazonaws.com/Edifypics/guitarcat.jpeg")
 
 # artistBase.artist_photo.attach(io: artistBasepic, filename: 'artistbase.jpeg')
 artist1.artist_photo.attach(io: artist1pic, filename:'catartist.jpeg' )
-artist2.artist_photo.attach(io: artist2pic, filename:'catpiano.jpeg' )
+artist2.artist_photo.attach(io: artist2pic, filename:'guitarcat.jpeg' )
 
 
 #albums
