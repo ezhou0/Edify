@@ -39,7 +39,7 @@ class CurrentSong extends React.Component {
         return (
             <div className="current-info">
                 <div className='current-song-pic'>
-                    <img src={window.currentSong} alt="song-album-cover" />
+                    <img src={window.currentSongURL} alt="song-album-cover" />
                 </div>
                 <div className="with-info">
                     <div className = 'current-song-info'>
