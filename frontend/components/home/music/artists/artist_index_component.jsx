@@ -15,7 +15,7 @@ class ArtistIndexComponent extends React.Component{
     render(){
         const {artists} = this.props;
         // console.log(artists)
-        console.log(this.props);
+        //console.log(this.props);
         return(
             <div id='artist-index'>
                 

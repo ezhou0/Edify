@@ -1075,8 +1075,8 @@ var ArtistIndexComponent = /*#__PURE__*/function (_React$Component) {
     key: "render",
     value: function render() {
       var artists = this.props.artists; // console.log(artists)
+      //console.log(this.props);
 
-      console.log(this.props);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "artist-index"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
