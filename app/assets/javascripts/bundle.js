@@ -1076,6 +1076,7 @@ var ArtistIndexComponent = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var artists = this.props.artists; // console.log(artists)
 
+      console.log(this.props);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "artist-index"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1112,6 +1113,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_artist_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../actions/artist_actions */ "./frontend/actions/artist_actions.js");
 /* harmony import */ var _artist_index_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./artist_index_component */ "./frontend/components/home/music/artists/artist_index_component.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 
@@ -1268,8 +1271,8 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
   _createClass(ArtistShowComponent, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      window.scrollTo(0, 0); // console.log(this.props.match);
-
+      window.scrollTo(0, 0);
+      console.log(this.props.match);
       this.props.fetchArtist(this.props.match.params.artistId); // .then((response)=>console.log('hello',response));
     }
   }, {
@@ -1283,10 +1286,9 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
           fetchSong = _this$props2.fetchSong,
           togglePlayState = _this$props2.togglePlayState,
           currentSong = _this$props2.currentSong,
-          playState = _this$props2.playState;
-      console.log('artist', this.props);
+          playState = _this$props2.playState; // console.log('artist',this.props);
 
-      if (artist === undefined) {
+      if (this.props.artist === undefined || artist.artist === undefined) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "null page");
       } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1295,7 +1297,7 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
           className: "artist_show_pic"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           id: "show_profile_pic",
-          src: artist.artist.photo
+          src: this.props.artist.artist.photo
         })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "artist_show_div"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1371,6 +1373,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _artist_show_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./artist_show_component */ "./frontend/components/home/music/artists/artist_show_component.jsx");
 /* harmony import */ var _actions_song_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../actions/song_actions */ "./frontend/actions/song_actions.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 

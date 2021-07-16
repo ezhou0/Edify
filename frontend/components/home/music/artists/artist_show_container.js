@@ -3,6 +3,7 @@ import { fetchArtist } from '../../../../actions/artist_actions';
 import ArtistShowComponent from './artist_show_component';
 import { fetchSongs, fetchCurrentSong } from '../../../../actions/song_actions';
 import { togglePlayState } from '../../../../actions/session_actions';
+import { withRouter } from 'react-router-dom';
 
 const mapStateToProps = (state, ownProps) =>{
     return{
@@ -23,4 +24,4 @@ const mapDispatchToProps = (dispatch) =>{
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArtistShowComponent)
+export default connect(mapStateToProps, mapDispatchToProps)(ArtistShowComponent);

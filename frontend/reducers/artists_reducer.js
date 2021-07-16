@@ -15,3 +15,5 @@ const artistsReducer = (state = {}, action) => {
 }
 
 export default artistsReducer;
+
+
