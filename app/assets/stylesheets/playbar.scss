@@ -7,22 +7,30 @@
 
 .player-toolbar{
      display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 5fr 1fr;
     grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "info buttons volume"
+        "info player volume";
     justify-items: center;
     align-items: center;
-    margin-top: 20px;
-    grid-row-gap: 20px;
+   height: 118px;
    
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #101010;
 
-   
+   z-index: 1;
     
    
 }
 
 .player{
-    grid-column-start: 2;
-    grid-column-end:3;
+    grid-area: buttons;
+    // background: orange;
+    
 }
 
 .player{
@@ -36,25 +44,35 @@
 .volume-slider{
     display: flex;
     flex-direction: row;
-    grid-column-start: 3;
-    grid-row: 1;
+    // grid-column-start: 3;
+    // grid-row: 1;
+    grid-area: volume;
+    // background: green;
+    
   
 }
 .volume-icon{
     margin-right: 10px;
 }
 
-.current-info{
+.song-seeker{
    
-      grid-column-start: 1;
-      grid-column-end: 2;
-      grid-row: span 2;
-      display: flex;
-      flex-direction:row;
+    //   grid-column-start: 1;
+    //   grid-column-end: 2;
+    //   grid-row: span 2;
+     
+      grid-area: info;
+    //   background:red;
      
 }
 
+.current-info{
+ display: flex;
+      flex-direction:row;
+}
+
 .current-song-info{
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
 }
@@ -64,9 +82,11 @@
 }
 
 .duration-bar{
-     grid-column-start: 2;
-     grid-column-end: 3;
-     grid-row-start: 2; 
+    //  grid-column-start: 2;
+    //  grid-column-end: 3;
+    //  grid-row-start: 2; 
+    grid-area: player;
+    // background: pink;
 }
 
 
@@ -74,8 +94,8 @@
     grid-column-start: 1;
       grid-column-end: 2;
       grid-row-start: 1;
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     margin-right: 15px;
 
 }

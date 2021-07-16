@@ -13,20 +13,20 @@ class ArtistShowComponent extends React.Component{
     componentDidMount(){
         window.scrollTo(0, 0)
         // console.log(this.props.match);
-        this.props.fetchArtist(this.props.match.params.artistId).then((response)=>console.log('hello',response));
+        this.props.fetchArtist(this.props.match.params.artistId);
+        // .then((response)=>console.log('hello',response));
     }
 
-    play(){
-        if(this.props.currentSong !== undefined){
-            this.props.currentSong.audio.play();
-        }
-    }
+
 
     render(){
         const { artist, albums }  = this.props;
         const { songs, fetchSong, togglePlayState, currentSong, playState } = this.props;
         console.log('artist',this.props);
-        if (!artist) return null;
+        if (artist === undefined) {return (<div>
+            null page
+        </div>)
+        } 
         else{
         return(
             <div id='artist_show_container'>

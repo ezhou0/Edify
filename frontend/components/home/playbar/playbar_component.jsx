@@ -99,7 +99,7 @@ class Playbar extends React.Component {
                         />
                     </div>
                 ) : (
-                    <div >
+                    <div className = 'song-seeker'>
 
 
                     </div>

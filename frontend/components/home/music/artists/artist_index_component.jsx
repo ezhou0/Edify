@@ -14,7 +14,7 @@ class ArtistIndexComponent extends React.Component{
 
     render(){
         const {artists} = this.props;
-        console.log(artists)
+        // console.log(artists)
         return(
             <div id='artist-index'>
                 
@@ -24,7 +24,7 @@ class ArtistIndexComponent extends React.Component{
                 <div className="artist_profile_pic_div">
                     <ul id="artist_profile_pic_div_div">
                         {artists.map(artist => (
-                            <ArtistIndexItem key={artist.id} artist={artist} />
+                            <ArtistIndexItem key={`${artist.id}${artist.name}`} artist={artist} />
                         ))}
 
                         {/* {artists.map(artist => {

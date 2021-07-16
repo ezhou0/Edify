@@ -1074,8 +1074,8 @@ var ArtistIndexComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var artists = this.props.artists;
-      console.log(artists);
+      var artists = this.props.artists; // console.log(artists)
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "artist-index"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1086,7 +1086,7 @@ var ArtistIndexComponent = /*#__PURE__*/function (_React$Component) {
         id: "artist_profile_pic_div_div"
       }, artists.map(function (artist) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_artist_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
-          key: artist.id,
+          key: "".concat(artist.id).concat(artist.name),
           artist: artist
         });
       }))));
@@ -1270,16 +1270,7 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       window.scrollTo(0, 0); // console.log(this.props.match);
 
-      this.props.fetchArtist(this.props.match.params.artistId).then(function (response) {
-        return console.log('hello', response);
-      });
-    }
-  }, {
-    key: "play",
-    value: function play() {
-      if (this.props.currentSong !== undefined) {
-        this.props.currentSong.audio.play();
-      }
+      this.props.fetchArtist(this.props.match.params.artistId); // .then((response)=>console.log('hello',response));
     }
   }, {
     key: "render",
@@ -1294,7 +1285,10 @@ var ArtistShowComponent = /*#__PURE__*/function (_React$Component) {
           currentSong = _this$props2.currentSong,
           playState = _this$props2.playState;
       console.log('artist', this.props);
-      if (!artist) return null;else {
+
+      if (artist === undefined) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "null page");
+      } else {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           id: "artist_show_container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2514,7 +2508,9 @@ var Playbar = /*#__PURE__*/function (_React$Component) {
         time: this.state.time,
         playing: this.props.playState,
         duration: this.audio.current.duration
-      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "song-seeker"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "player"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "rewind-button",
