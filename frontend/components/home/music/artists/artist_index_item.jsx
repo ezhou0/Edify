@@ -13,7 +13,7 @@ class ArtistIndexItem extends React.Component{
                     
                      <Link to={`/artists/${artist.id}`} className='profile-item'>
                          <div className='profile_pic'>
-                                    <img src={artist.photo} />
+                                    <img className='item-pic' src={artist.photo} />
                        </div>
 
                          <div className='profile_name'>
