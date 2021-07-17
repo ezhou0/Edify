@@ -1643,7 +1643,7 @@ var PlaylistEditContainer = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentWillReceiveProps",
     value: function componentWillReceiveProps(nextProps) {
-      this.setState(nextProps.playlist); // this.setState(nextProps.playlist);
+      this.setState(nextProps.playlist);
     }
   }, {
     key: "update",
@@ -1659,6 +1659,8 @@ var PlaylistEditContainer = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-edit"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1670,14 +1672,25 @@ var PlaylistEditContainer = /*#__PURE__*/function (_React$Component) {
         value: this.state.name,
         onChange: this.update("name"),
         className: "playlist-name"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "playlist-edit-btns"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         value: this.state.name,
         onClick: this.handleSubmit,
         className: "playlist-confirm"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         "class": "far fa-check-circle"
-      })))));
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        to: "/home",
+        onClick: function onClick() {
+          return _this3.props.deletePlaylist(_this3.state);
+        },
+        className: "playlist-dlt"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        "class": "fa fa-trash fa-xs",
+        "aria-hidden": "true"
+      }))))));
     }
   }]);
 
@@ -1929,8 +1942,6 @@ var PlaylistShowComponent = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
-
       var _this$props = this.props,
           playlist = _this$props.playlist,
           fetchSong = _this$props.fetchSong,
@@ -1952,16 +1963,7 @@ var PlaylistShowComponent = /*#__PURE__*/function (_React$Component) {
         className: "playlist-song-headers"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-song-title"
-      }, "TITLE"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/home",
-        onClick: function onClick() {
-          return _this.props.deletePlaylist(_this.state);
-        },
-        className: "playlist-dlt"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fa fa-trash",
-        "aria-hidden": "true"
-      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, playlist.songs.map(function (song) {
+      }, "TITLE")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, playlist.songs.map(function (song) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_song_index__WEBPACK_IMPORTED_MODULE_3__["default"], {
           playlist: playlist,
           song: song,

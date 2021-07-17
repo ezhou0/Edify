@@ -17,7 +17,7 @@ class PlaylistEditContainer extends React.Component {
 
     componentWillReceiveProps(nextProps) {
         this.setState(nextProps.playlist);
-        // this.setState(nextProps.playlist);
+        
     }
 
     update(name) {
@@ -31,11 +31,18 @@ class PlaylistEditContainer extends React.Component {
                     <div className='playlist-show-header'>PLAYLIST</div>
                     <div className = 'playlist-name-container'>
                     <input type="text"  value={this.state.name} onChange={this.update("name")} className = 'playlist-name'/>
+                    <div className='playlist-edit-btns'>
                     <button type="submit"
                             value={this.state.name}
                             onClick={this.handleSubmit} 
                             className='playlist-confirm'><i class="far fa-check-circle"></i></button>
                             
+                    </div>
+                    <button>
+                        <Link to="/home" onClick={() => this.props.deletePlaylist(this.state)} className='playlist-dlt'>
+                            <i class="fa fa-trash fa-xs" aria-hidden="true"></i>
+                        </Link>
+                    </button>
                     </div>
                 </div>
                    

@@ -81,12 +81,14 @@ padding-left: 225px;
     grid-area: title;
 }
 
+.playlist-edit-btns{
+    display: flex;
+    flex-direction: row;
+}
+
 .playlist-dlt{
-    grid-area: button;
+   margin-left: 15px;
     
-    
-    
-    margin-left: 45em;
 }
 
 
@@ -105,6 +107,7 @@ padding-left: 225px;
 .playlist-play-button{
    
     margin-left: 35px;
+    padding-bottom: 10px;
 }
 
 .add-delete-song-btns{
