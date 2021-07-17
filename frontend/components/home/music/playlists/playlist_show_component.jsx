@@ -34,6 +34,11 @@ class PlaylistShowComponent extends React.Component {
                             <div className='playlist-song-title'>
                                 TITLE
                             </div>
+                            <button>
+                                <Link to="/home" onClick={() => this.props.deletePlaylist(this.state)} className='playlist-dlt'>
+                                    <i class="fa fa-trash" aria-hidden="true"></i>
+                                </Link>
+                            </button>
 
                         </div>
                         <ul >

@@ -32,17 +32,13 @@ class PlaylistEditContainer extends React.Component {
                     <div className = 'playlist-name-container'>
                     <input type="text"  value={this.state.name} onChange={this.update("name")} className = 'playlist-name'/>
                     <button type="submit"
-                         value={this.state.name}
+                            value={this.state.name}
                             onClick={this.handleSubmit} 
-                            className='playlist-confirm'> o</button>
+                            className='playlist-confirm'><i class="far fa-check-circle"></i></button>
                             
                     </div>
                 </div>
-                    <button>
-                        <Link  to="/home" onClick={() => this.props.deletePlaylist(this.state)}>
-                            Delete
-                        </Link>
-                    </button>
+                   
                 </div>
             
         );
