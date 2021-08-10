@@ -12,7 +12,9 @@ class AddToPlaylist extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const pSong = Object.assign({}, this.state, { playlist_id: e.target.value });
+       console.log(playlists);
         this.props.createPlaylistSong(pSong);
+        
     }
 
     render() {
@@ -26,9 +28,8 @@ class AddToPlaylist extends React.Component {
                         playlists.map(playlist => (
                             <button onClick={this.handleSubmit}
                              value={playlist.id}
-                             key = {playlist.id}>
-                                 
-                                 {playlist.name}</button>
+                             key = {playlist.id}> 
+                            {playlist.name}</button>
                         ))
                     }
                 </ul>

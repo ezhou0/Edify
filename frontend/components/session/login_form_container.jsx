@@ -6,7 +6,7 @@ import LoginForm from './login_form';
 
 const mapStateToProps = ({ errors }) => {
     return {
-        errors: errors.session,
+        errors: errors,
         formType: 'login',
         navLink: <Link className = 'login-to-signup-link'to="/signup">SIGN UP FOR EDIFY</Link>,
         homeLink: <Link to='/'> <div className='logo_div_login'>

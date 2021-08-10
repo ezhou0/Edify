@@ -19,16 +19,16 @@ class SignupForm extends React.Component {
         
        
 
-        this.usernameErrors = "username_errors_hidden";
-        this.passwordErrors = "password_errors_hidden";
-        this.usernameTaken = "";
-        this.usernameErrorMsg = "This appears on your profile.";
-        this.passwordErrorMsg = "";
-        this.passwordInput = "signup_session_input";
-        this.usernameInput = "signup_session_input";
-        this.emailInput = "signup_session_input";
-        this.emailErrors = "email_errors_hidden";
-        this.genderErrors = "gender_errors_hidden";
+        // this.usernameErrors = "username_errors_hidden";
+        // this.passwordErrors = "password_errors_hidden";
+        // this.usernameTaken = "";
+        // this.usernameErrorMsg = "This appears on your profile.";
+        // this.passwordErrorMsg = "";
+        // this.passwordInput = "signup_session_input";
+        // this.usernameInput = "signup_session_input";
+        // this.emailInput = "signup_session_input";
+        // this.emailErrors = "email_errors_hidden";
+        // this.genderErrors = "gender_errors_hidden";
         
 
        
@@ -45,21 +45,21 @@ class SignupForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.processForm(user);
-        this.props.clearErrors();
-        this.usernameErrors = "username_errors_hidden";
-        this.passwordErrors = "password_errors_hidden";
-        this.emailErrors = "email_errors_hidden";
-        this.genderErrors = "gender_errors_hidden";
-        this.usernameTaken = "";
-        this.usernameErrorMsg = "";
-        this.passwordErrorMsg = "";
-        this.emailErrorMsg = "";
-        this.passwordInput = "signup_session_input";
-        this.usernameInput = "signup_session_input";
-        this.emailInput = "signup_session_input";
-        this.genderErrors = "email_errors_hidden";
-        this.genderInput = "signup_input_errors";
-        this.genderErrorMsg = '';
+        // this.props.clearErrors();
+        // this.usernameErrors = "username_errors_hidden";
+        // this.passwordErrors = "password_errors_hidden";
+        // this.emailErrors = "email_errors_hidden";
+        // this.genderErrors = "gender_errors_hidden";
+        // this.usernameTaken = "";
+        // this.usernameErrorMsg = "";
+        // this.passwordErrorMsg = "";
+        // this.emailErrorMsg = "";
+        // this.passwordInput = "signup_session_input";
+        // this.usernameInput = "signup_session_input";
+        // this.emailInput = "signup_session_input";
+        // this.genderErrors = "email_errors_hidden";
+        // this.genderInput = "signup_input_errors";
+        // this.genderErrorMsg = '';
        
     }
 
@@ -109,51 +109,55 @@ class SignupForm extends React.Component {
     
 
     renderErrors() {
-        return (
-            <ul>
-                {this.props.errors.map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {error}
-                    </li>
-                ))}
-            </ul>
-        );
+      
+            return (
+                <ul>
+                    {this.props.errors.session.map((error, i) => (
+                        <li key={`error-${i}`}>
+                            {error}
+                        </li>
+                    ))}
+                </ul>
+            );
+        
     }
 
 
 
     render() {
-        this.props.errors.forEach(error => {
-            if (error.split(" ")[0] === "Username") {
-                this.usernameErrors = "username_errors_displayed";
-                this.usernameInput = "username_input_errors";
-                this.usernameErrorMsg = error;
-                // if (error === "Username has already been taken") {
-                //     this.usernameTaken = <Link to="/login"
-                //         onClick={() => clearErrors()}>
-                //         . Log in?
-                //     </Link>;
-                // };
-            } else if (error.split(" ")[0] === "Password") {
-                this.passwordErrors = "password_errors_displayed";
-                this.passwordInput = "password_input_errors";
-                this.passwordErrorMsg = error;
-            } else if (error.split(" ")[0] === "Email"){
-                this.emailErrors = "email_errors_displayed";
-                this.emailInput = "email_input_errors";
-                this.emailErrorMsg = error;
-            }
-            else if (error.split(" ")[0] === "Gender") {
-                this.genderErrors = "gender_errors_displayed";
-                this.genderInput = "gender_input_errors";
-                this.genderErrorMsg = error;
-            };
-            if (this.usernameErrors !== "username_errors_displayed") {
-                this.usernameErrorMsg = "This appears on your profile."
-            };
-        });
+        // this.props.errors.session.forEach(error => {
+        //     if (error.split(" ")[0] === "Username") {
+        //         this.usernameErrors = "username_errors_displayed";
+        //         this.usernameInput = "username_input_errors";
+        //         this.usernameErrorMsg = error;
+        //         // if (error === "Username has already been taken") {
+        //         //     this.usernameTaken = <Link to="/login"
+        //         //         onClick={() => clearErrors()}>
+        //         //         . Log in?
+        //         //     </Link>;
+        //         // };
+        //     } else if (error.split(" ")[0] === "Password") {
+        //         this.passwordErrors = "password_errors_displayed";
+        //         this.passwordInput = "password_input_errors";
+        //         this.passwordErrorMsg = error;
+        //     } else if (error.split(" ")[0] === "Email"){
+        //         this.emailErrors = "email_errors_displayed";
+        //         this.emailInput = "email_input_errors";
+        //         this.emailErrorMsg = error;
+        //     }
+        //     else if (error.split(" ")[0] === "Gender") {
+        //         this.genderErrors = "gender_errors_displayed";
+        //         this.genderInput = "gender_input_errors";
+        //         this.genderErrorMsg = error;
+        //     };
+        //     if (this.usernameErrors !== "username_errors_displayed") {
+        //         this.usernameErrorMsg = "This appears on your profile."
+        //     };
+        // });
         return (
+           
         <div className="signup-form-div">
+                
             <header>
                {this.props.homeLink};
             </header>
@@ -170,7 +174,7 @@ class SignupForm extends React.Component {
                             placeholder='Enter your email.'
                         />
                         
-                        <div className="signup_session_label" className={this.emailErrors} id="under_input">{this.emailErrorMsg}</div>
+                        {/* <div className="signup_session_label" className={this.emailErrors} id="under_input">{this.emailErrorMsg}</div> */}
                     <br/>
                         {/* <label className='sign-up-form-label'>Confirm your email </label>
                             <input type="text"
@@ -190,7 +194,7 @@ class SignupForm extends React.Component {
                             className = {this.passwordInput}
                             placeholder='Create a password.'
                         />
-                        <div className="signup_session_label" className={this.passwordErrors} id="under_input">{this.passwordErrorMsg}</div>
+                        {/* <div className="signup_session_label" className={this.passwordErrors} id="under_input">{this.passwordErrorMsg}</div> */}
                     <br/>
                     <label className='sign-up-form-label'> What should we call you? </label>
               <input type="text"
@@ -200,7 +204,7 @@ class SignupForm extends React.Component {
                             className = {this.usernameInput}
                             placeholder = 'Enter a profile name.'
                         />
-                        <div className="signup_session_label" className={this.usernameErrors} id="under_input">{this.usernameErrorMsg}{this.usernameTaken}</div>
+                        {/* <div className="signup_session_label" className={this.usernameErrors} id="under_input">{this.usernameErrorMsg}{this.usernameTaken}</div> */}
                         
                     <br/>
                     
@@ -269,6 +273,7 @@ class SignupForm extends React.Component {
                     <div className = 'login-link-wrap'>
                             <p className='login-link-filler'>Have an account? </p> <p className = 'login-link'> {this.props.navLink} </p>
                     </div>
+                  
                 </div>
             </form>
         </div>);
