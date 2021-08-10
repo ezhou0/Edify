@@ -3676,16 +3676,17 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       // day: '',
       // year: '',
 
-    }; // this.usernameErrors = "username_errors_hidden";
-    // this.passwordErrors = "password_errors_hidden";
-    // this.usernameTaken = "";
-    // this.usernameErrorMsg = "This appears on your profile.";
-    // this.passwordErrorMsg = "";
-    // this.passwordInput = "signup_session_input";
-    // this.usernameInput = "signup_session_input";
-    // this.emailInput = "signup_session_input";
-    // this.emailErrors = "email_errors_hidden";
-    // this.genderErrors = "gender_errors_hidden";
+    };
+    _this.usernameErrors = "username_errors_hidden";
+    _this.passwordErrors = "password_errors_hidden";
+    _this.usernameTaken = "";
+    _this.usernameErrorMsg = "This appears on your profile.";
+    _this.passwordErrorMsg = "";
+    _this.passwordInput = "signup_session_input";
+    _this.usernameInput = "signup_session_input";
+    _this.emailInput = "signup_session_input";
+    _this.emailErrors = "email_errors_hidden";
+    _this.genderErrors = "gender_errors_hidden";
 
     _this.props.clearErrors();
 
@@ -3703,21 +3704,22 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
-      this.props.processForm(user); // this.props.clearErrors();
-      // this.usernameErrors = "username_errors_hidden";
-      // this.passwordErrors = "password_errors_hidden";
-      // this.emailErrors = "email_errors_hidden";
-      // this.genderErrors = "gender_errors_hidden";
-      // this.usernameTaken = "";
-      // this.usernameErrorMsg = "";
-      // this.passwordErrorMsg = "";
-      // this.emailErrorMsg = "";
-      // this.passwordInput = "signup_session_input";
-      // this.usernameInput = "signup_session_input";
-      // this.emailInput = "signup_session_input";
-      // this.genderErrors = "email_errors_hidden";
-      // this.genderInput = "signup_input_errors";
-      // this.genderErrorMsg = '';
+      this.props.processForm(user);
+      this.props.clearErrors();
+      this.usernameErrors = "username_errors_hidden";
+      this.passwordErrors = "password_errors_hidden";
+      this.emailErrors = "email_errors_hidden";
+      this.genderErrors = "gender_errors_hidden";
+      this.usernameTaken = "";
+      this.usernameErrorMsg = "";
+      this.passwordErrorMsg = "";
+      this.emailErrorMsg = "";
+      this.passwordInput = "signup_session_input";
+      this.usernameInput = "signup_session_input";
+      this.emailInput = "signup_session_input";
+      this.genderErrors = "email_errors_hidden";
+      this.genderInput = "signup_input_errors";
+      this.genderErrorMsg = '';
     }
   }, {
     key: "update",
@@ -3767,37 +3769,44 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _React$createElement;
+      var _this3 = this,
+          _React$createElement,
+          _React$createElement2,
+          _React$createElement3,
+          _React$createElement4;
 
-      // this.props.errors.session.forEach(error => {
-      //     if (error.split(" ")[0] === "Username") {
-      //         this.usernameErrors = "username_errors_displayed";
-      //         this.usernameInput = "username_input_errors";
-      //         this.usernameErrorMsg = error;
-      //         // if (error === "Username has already been taken") {
-      //         //     this.usernameTaken = <Link to="/login"
-      //         //         onClick={() => clearErrors()}>
-      //         //         . Log in?
-      //         //     </Link>;
-      //         // };
-      //     } else if (error.split(" ")[0] === "Password") {
-      //         this.passwordErrors = "password_errors_displayed";
-      //         this.passwordInput = "password_input_errors";
-      //         this.passwordErrorMsg = error;
-      //     } else if (error.split(" ")[0] === "Email"){
-      //         this.emailErrors = "email_errors_displayed";
-      //         this.emailInput = "email_input_errors";
-      //         this.emailErrorMsg = error;
-      //     }
-      //     else if (error.split(" ")[0] === "Gender") {
-      //         this.genderErrors = "gender_errors_displayed";
-      //         this.genderInput = "gender_input_errors";
-      //         this.genderErrorMsg = error;
-      //     };
-      //     if (this.usernameErrors !== "username_errors_displayed") {
-      //         this.usernameErrorMsg = "This appears on your profile."
-      //     };
-      // });
+      this.props.errors.session.forEach(function (error) {
+        if (error.split(" ")[0] === "Username") {
+          _this3.usernameErrors = "username_errors_displayed";
+          _this3.usernameInput = "username_input_errors";
+          _this3.usernameErrorMsg = error; // if (error === "Username has already been taken") {
+          //     this.usernameTaken = <Link to="/login"
+          //         onClick={() => clearErrors()}>
+          //         . Log in?
+          //     </Link>;
+          // };
+        } else if (error.split(" ")[0] === "Password") {
+          _this3.passwordErrors = "password_errors_displayed";
+          _this3.passwordInput = "password_input_errors";
+          _this3.passwordErrorMsg = error;
+        } else if (error.split(" ")[0] === "Email") {
+          _this3.emailErrors = "email_errors_displayed";
+          _this3.emailInput = "email_input_errors";
+          _this3.emailErrorMsg = error;
+        } else if (error.split(" ")[0] === "Gender") {
+          _this3.genderErrors = "gender_errors_displayed";
+          _this3.genderInput = "gender_input_errors";
+          _this3.genderErrorMsg = error;
+        }
+
+        ;
+
+        if (_this3.usernameErrors !== "username_errors_displayed") {
+          _this3.usernameErrorMsg = "This appears on your profile.";
+        }
+
+        ;
+      });
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-form-div"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("header", null, this.props.homeLink, ";"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
@@ -3818,7 +3827,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         id: "signup-input",
         className: this.emailInput,
         placeholder: "Enter your email."
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement = {
+        className: "signup_session_label"
+      }, _defineProperty(_React$createElement, "className", this.emailErrors), _defineProperty(_React$createElement, "id", "under_input"), _React$createElement), this.emailErrorMsg), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sign-up-form-label"
       }, "Password: "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
@@ -3827,7 +3838,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         id: "signup-input",
         className: this.passwordInput,
         placeholder: "Create a password."
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement2 = {
+        className: "signup_session_label"
+      }, _defineProperty(_React$createElement2, "className", this.passwordErrors), _defineProperty(_React$createElement2, "id", "under_input"), _React$createElement2), this.passwordErrorMsg), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sign-up-form-label"
       }, " What should we call you? "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
@@ -3836,7 +3849,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         id: "signup-input",
         className: this.usernameInput,
         placeholder: "Enter a profile name."
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement3 = {
+        className: "signup_session_label"
+      }, _defineProperty(_React$createElement3, "className", this.usernameErrors), _defineProperty(_React$createElement3, "id", "under_input"), _React$createElement3), this.usernameErrorMsg, this.usernameTaken), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "sign-up-form-label"
       }, "What's your gender?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "radio-div"
@@ -3864,9 +3879,9 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         value: "Non-binary",
         className: "gender",
         onChange: this.update('gender')
-      }), "Non-binary")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement = {
+      }), "Non-binary")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", (_React$createElement4 = {
         className: "signup_session_label"
-      }, _defineProperty(_React$createElement, "className", this.genderErrors), _defineProperty(_React$createElement, "id", "under_input"), _React$createElement), this.genderErrorMsg), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, _defineProperty(_React$createElement4, "className", this.genderErrors), _defineProperty(_React$createElement4, "id", "under_input"), _React$createElement4), this.genderErrorMsg), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         id: "session-button",
         className: "session-submit",
         type: "submit",
