@@ -1474,13 +1474,23 @@ var AddToPlaylist = /*#__PURE__*/function (_React$Component) {
       var pSong = Object.assign({}, this.state, {
         playlist_id: e.target.value
       });
-      console.log(playlists);
       this.props.createPlaylistSong(pSong);
+    }
+  }, {
+    key: "playlistBool",
+    value: function playlistBool() {
+      var _this2 = this;
+
+      this.props.playlists.map(function (playlist) {
+        return playlist.songs.map(function (song) {
+          return song.id == _this2.state.song_id ? true : false;
+        }) ? true : false;
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var playlists = this.props.playlists;
       if (!playlists) return null;
@@ -1489,12 +1499,33 @@ var AddToPlaylist = /*#__PURE__*/function (_React$Component) {
         "aria-hidden": "true"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "playlistadd"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Add to playlist"), playlists.map(function (playlist) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          onClick: _this2.handleSubmit,
-          value: playlist.id,
-          key: playlist.id
-        }, playlist.name);
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Add to playlist"), // playlists.map(playlist => (
+      //    < button onClick = { this.handleSubmit }
+      //      value = { playlist.id }
+      //      key = { playlist.id } >
+      //         { playlist.name }
+      //         {/* {console.log(this.props)} */ }
+      //        {/* { console.log(playlist.songs.map(song => (song.id === this.state.song_id ? true : false))) }) */}
+      //        {console.log(playlist.songs)}
+      //     </button>
+      // ))
+      playlists.map(function (playlist) {
+        var checker = false;
+        playlist.songs.map(function (song) {
+          if (song.id === _this3.state.song_id) {
+            checker = true;
+          }
+        });
+
+        if (checker === false) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+            onClick: _this3.handleSubmit,
+            value: playlist.id,
+            key: playlist.id
+          }, playlist.name, console.log(playlist.songs));
+        } else {
+          return;
+        }
       })));
     }
   }]);
