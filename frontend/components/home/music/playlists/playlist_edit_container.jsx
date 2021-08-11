@@ -36,7 +36,7 @@ class PlaylistEditContainer extends React.Component {
                                     <button type="submit"
                                     value={this.state.name}
                                     onClick={this.handleSubmit} 
-                                    className='playlist-confirm'><i class="far fa-check-circle"></i></button>
+                                    className='playlist-confirm'><i className="far fa-check-circle"></i></button>
                                     
                         </div>
                         {/* <button>
