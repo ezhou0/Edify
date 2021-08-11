@@ -22,7 +22,7 @@ padding-left: 225px;
 
 .playlist-name{
     padding-left: 100px;
-    margin-bottom: 60px;
+    margin-bottom: 15px;
     font-size: 350%;
     margin-right: -343px;
     
@@ -30,36 +30,33 @@ padding-left: 225px;
 
 .playlist-name-container{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     overflow-wrap: break-word;
 }
 
 .playlist-confirm{
-    margin-left: 0;
-    font-size: 70%;
+    padding-left: 110px;
+    font-size: 80%;
 
 }
 
 .playlist-song-headers{
-     display: flex;
-    flex-direction: row;
+    //  display: flex;
+    // flex-direction: row;
     padding-top: 20px;
     color: white;
-     padding-left: 135px;
+   padding-left: 135px;
     padding-bottom: 10px;
     border-bottom: 1px solid darkgray;
-    font-size: 75%;
+    // font-size: 75%;
     font-weight: 750;
     letter-spacing: 2px;
     color: darkgray;
+    display: grid;
+    grid-template-columns: 10fr 1fr;
 }
     
-.playlist-song-headers{
-    display: grid;
-    grid-template-columns: 1fr  1fr;
-    grid-template-areas: "title empty button";
-    align-items: right;
-}
+
 
 .playlist-song-container-container{
     display: grid;
@@ -78,12 +75,11 @@ padding-left: 225px;
 }
 
 .playlist-song-title{
-    grid-area: title;
+    font-size: 75%;
 }
 
-.playlist-edit-btns{
-    display: flex;
-    flex-direction: row;
+.playlist-edit{
+   margin-bottom: 30px;
 }
 
 .playlist-dlt{

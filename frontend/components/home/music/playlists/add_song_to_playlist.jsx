@@ -64,9 +64,7 @@ class AddToPlaylist extends React.Component {
                                     value={playlist.id}
                                     key={playlist.id} >
                                     {playlist.name}
-                                    {/* {console.log(this.props)} */}
-                                    {/* { console.log(playlist.songs.map(song => (song.id === this.state.song_id ? true : false))) }) */}
-                                    {console.log(playlist.songs)}
+                                   
                                 </button>)
                             }
                           else{
